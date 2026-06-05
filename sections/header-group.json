@@ -17,7 +17,7 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "Hello World",
+            "text": "Free Shipping on Orders over $49.99",
             "link": ""
           }
         }
