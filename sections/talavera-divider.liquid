@@ -1,7 +1,7 @@
 {{ 'section-talavera-divider.css' | asset_url | stylesheet_tag }}
 
 <div
-  class="talavera-divider color-{{ section.settings.color_scheme }} gradient"
+  class="talavera-divider color-{{ section.settings.color_scheme }} gradient {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
   style="
     --talavera-height: {{ section.settings.height }}px;
     --talavera-opacity: {{ section.settings.opacity | divided_by: 100.0 }};
