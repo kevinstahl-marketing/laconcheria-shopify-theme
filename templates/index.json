@@ -9,90 +9,121 @@
  */
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "la_concheria_slideshow_f9YViH": {
+      "type": "la-concheria-slideshow",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "slide_H4UMqC": {
+          "type": "slide",
           "settings": {
-            "heading": "Image banner",
-            "heading_size": "h0"
+            "image": "shopify://shop_images/Conchas_Hero_3.jpg",
+            "image_overlay_opacity": 30,
+            "heading": "Love at first bite.",
+            "heading_size": "h0",
+            "subheading": "<em>The best gourmet conchas</em>",
+            "button_label": "Shop Online",
+            "link": "",
+            "button_style_secondary": false,
+            "show_text_box": false,
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": "scheme-3"
           }
         },
-        "text": {
-          "type": "text",
+        "slide_63h7gM": {
+          "type": "slide",
           "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
-            "text_style": "body"
+            "image": "shopify://shop_images/Conchas_Hero_2.jpg",
+            "image_overlay_opacity": 30,
+            "heading": "Handcrafted daily. Always Fresh",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "Visit Us",
+            "link": "",
+            "button_style_secondary": false,
+            "show_text_box": false,
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": "scheme-3"
           }
         },
-        "button": {
-          "type": "buttons",
+        "slide_egjXTa": {
+          "type": "slide",
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "image": "shopify://shop_images/Conchas_Hero_1.jpg",
+            "image_overlay_opacity": 30,
+            "heading": "La Concheria Cafe. To your door.",
+            "heading_size": "h1",
+            "subheading": "Tell your brand's story through images",
+            "button_label": "Visit Us",
+            "link": "",
+            "button_style_secondary": false,
+            "show_text_box": false,
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": "scheme-3"
+          }
+        },
+        "slide_yhc7rV": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Conchas_Hero_4.jpg",
+            "image_overlay_opacity": 30,
+            "heading": "The Minis. The Obsession.",
+            "heading_size": "h1",
+            "subheading": "<em>8 flavors. One box.</em>",
+            "button_label": "Shop the Box",
+            "link": "",
+            "button_style_secondary": false,
+            "show_text_box": false,
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": "scheme-3"
           }
         }
       },
       "block_order": [
-        "heading",
-        "text",
-        "button"
+        "slide_H4UMqC",
+        "slide_63h7gM",
+        "slide_egjXTa",
+        "slide_yhc7rV"
       ],
+      "custom_css": [
+        ".slider-button {display: none !important;}",
+        ".slideshow__controls {background: 0 !important; border: 0 !important; box-shadow: none !important; padding: 0 !important;}",
+        ".slideshow__control-wrapper {gap: 1rem;}",
+        ".slider-counter__link--dots .dot {border-color: #fff !important; background: #fff !important;}",
+        ".slider-counter__link:not(.slider-counter__link--active) {opacity: 0.4;}",
+        ".banner__buttons .button,.banner__buttons .button:before,.banner__buttons .button:after {opacity: 1 !important;}",
+        ".slideshow__text {color: #fff !important;}"
+      ],
+      "name": "La Concheria slideshow",
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
+        "layout": "full_bleed",
+        "slide_height": "medium",
+        "slider_visual": "dots",
+        "auto_rotate": true,
+        "change_slides_speed": 5,
         "image_behavior": "none",
-        "desktop_content_position": "bottom-center",
-        "desktop_content_alignment": "center",
-        "show_text_box": false,
-        "color_scheme": "scheme-1",
-        "stack_images_on_mobile": false,
-        "mobile_content_alignment": "center",
-        "show_text_below": false
-      }
-    },
-    "rich_text": {
-      "type": "rich-text",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Talk about your brand",
-            "heading_size": "h1"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "text"
-      ],
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "scheme-1",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 0
+        "show_text_below": false,
+        "accessibility_info": "Slideshow about La Concheria Cafe"
       }
     },
     "featured_collection": {
       "type": "featured-collection",
+      "custom_css": [
+        ".quick-add__submit,.quick-add__submit:before,.quick-add__submit:after {--color-button: 251, 94, 51; --color-button-text: 255, 255, 255;}",
+        ".quick-add__submit {background-color: #fb5e33 !important; color: #fff !important;}",
+        ".quick-add__submit:after{box-shadow:0 0 0 var(--buttons-border-width) #FB5E33!important;}"
+      ],
       "settings": {
         "collection": "all",
         "products_to_show": 8,
-        "title": "Featured products",
-        "heading_size": "h2",
+        "title": "",
+        "heading_size": "h1",
         "description": "",
         "show_description": false,
         "description_style": "body",
@@ -102,16 +133,26 @@
         "show_view_all": false,
         "view_all_style": "solid",
         "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
+        "image_ratio": "square",
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
-        "quick_add": "none",
+        "quick_add": "standard",
         "columns_mobile": "2",
         "swipe_on_mobile": false,
-        "padding_top": 28,
-        "padding_bottom": 36
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "talavera_divider_CpfYqp": {
+      "type": "talavera-divider",
+      "name": "Talavera divider",
+      "settings": {
+        "divider_image": "shopify://shop_images/Talavera_3.jpg",
+        "height": 44,
+        "opacity": 95,
+        "color_scheme": "scheme-3"
       }
     },
     "collage": {
@@ -222,9 +263,9 @@
     }
   },
   "order": [
-    "image_banner",
-    "rich_text",
+    "la_concheria_slideshow_f9YViH",
     "featured_collection",
+    "talavera_divider_CpfYqp",
     "collage",
     "video",
     "multicolumn"

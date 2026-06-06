@@ -53,10 +53,21 @@
         "padding_top": 8,
         "padding_bottom": 8
       }
+    },
+    "talavera_divider_CkmqcN": {
+      "type": "talavera-divider",
+      "name": "Talavera divider",
+      "settings": {
+        "divider_image": "shopify://shop_images/Talavera_3.jpg",
+        "height": 36,
+        "opacity": 80,
+        "color_scheme": "scheme-2"
+      }
     }
   },
   "order": [
     "announcement-bar",
-    "header"
+    "header",
+    "talavera_divider_CkmqcN"
   ]
 }
