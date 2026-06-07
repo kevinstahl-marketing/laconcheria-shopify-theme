@@ -12,40 +12,45 @@
     "main": {
       "type": "main-article",
       "blocks": {
-        "featured_image": {
+        "featured_image_BBPXEX": {
           "type": "featured_image",
           "settings": {
-            "image_height": "adapt"
+            "image_height": "small"
           }
         },
-        "title": {
-          "type": "title",
-          "settings": {
-            "blog_show_date": true,
-            "blog_show_author": false
-          }
+        "content": {
+          "type": "content",
+          "settings": {}
         },
         "share": {
           "type": "share",
           "settings": {
             "share_label": "Share"
           }
-        },
-        "content": {
-          "type": "content",
-          "settings": {}
         }
       },
       "block_order": [
-        "featured_image",
-        "title",
-        "share",
-        "content"
+        "featured_image_BBPXEX",
+        "content",
+        "share"
       ],
+      "custom_css": [],
+      "name": "Blog Post - Chilaquiles",
       "settings": {}
+    },
+    "talavera_divider_zmWXpf": {
+      "type": "talavera-divider",
+      "name": "Talavera divider",
+      "settings": {
+        "divider_image": "shopify://shop_images/Cafe_De_Olla_Talavera.png",
+        "height": 40,
+        "opacity": 85,
+        "color_scheme": "scheme-1"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "talavera_divider_zmWXpf"
   ]
 }

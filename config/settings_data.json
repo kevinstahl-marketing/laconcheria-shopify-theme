@@ -15,7 +15,7 @@
     "heading_scale": 100,
     "type_body_font": "dm_sans_n4",
     "body_scale": 100,
-    "page_width": 1600,
+    "page_width": 1000,
     "spacing_sections": 0,
     "spacing_grid_horizontal": 8,
     "spacing_grid_vertical": 8,
@@ -45,7 +45,7 @@
     "card_style": "card",
     "card_image_padding": 0,
     "card_text_alignment": "left",
-    "card_color_scheme": "scheme-94485d61-ade5-48b2-8342-2eded570ac8e",
+    "card_color_scheme": "scheme-1",
     "card_border_thickness": 0,
     "card_border_opacity": 10,
     "card_corner_radius": 16,
@@ -64,16 +64,16 @@
     "collection_card_shadow_horizontal_offset": 0,
     "collection_card_shadow_vertical_offset": 4,
     "collection_card_shadow_blur": 5,
-    "blog_card_style": "standard",
+    "blog_card_style": "card",
     "blog_card_image_padding": 0,
     "blog_card_text_alignment": "left",
-    "blog_card_color_scheme": "scheme-1",
+    "blog_card_color_scheme": "scheme-94485d61-ade5-48b2-8342-2eded570ac8e",
     "blog_card_border_thickness": 0,
     "blog_card_border_opacity": 10,
-    "blog_card_corner_radius": 0,
-    "blog_card_shadow_opacity": 5,
+    "blog_card_corner_radius": 16,
+    "blog_card_shadow_opacity": 0,
     "blog_card_shadow_horizontal_offset": 0,
-    "blog_card_shadow_vertical_offset": 2,
+    "blog_card_shadow_vertical_offset": 0,
     "blog_card_shadow_blur": 10,
     "text_boxes_border_thickness": 0,
     "text_boxes_border_opacity": 10,
@@ -196,6 +196,28 @@
         }
       },
       "scheme-94485d61-ade5-48b2-8342-2eded570ac8e": {
+        "settings": {
+          "background": "#ffffff",
+          "background_gradient": "",
+          "text": "#1c1c1c",
+          "button": "#ffffff",
+          "button_label": "#fb5e33",
+          "secondary_button_label": "#ffffff",
+          "shadow": "#fb5e33"
+        }
+      },
+      "scheme-a15ae79d-afab-450f-b749-f2bf681add7f": {
+        "settings": {
+          "background": "#fff4e4",
+          "background_gradient": "",
+          "text": "#1c1c1c",
+          "button": "#fb5e33",
+          "button_label": "#ffffff",
+          "secondary_button_label": "#1c1c1c",
+          "shadow": "#000000"
+        }
+      },
+      "scheme-21f03ace-8a97-4331-b603-4137aaa7e0e2": {
         "settings": {
           "background": "#fff4e4",
           "background_gradient": "",
