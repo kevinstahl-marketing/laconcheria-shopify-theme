@@ -55,7 +55,7 @@
             "image_overlay_opacity": 30,
             "heading": "La Concheria Cafe. To your door.",
             "heading_size": "h1",
-            "subheading": "Tell your brand's story through images",
+            "subheading": "<em>Ships anywhere in the U.S.</em>",
             "button_label": "Visit Us",
             "link": "",
             "button_style_secondary": false,
@@ -122,14 +122,14 @@
       "settings": {
         "collection": "all",
         "products_to_show": 4,
-        "title": "",
-        "heading_size": "h1",
-        "description": "",
+        "title": "Fresh. Baked Daily. Shipped Fast",
+        "heading_size": "h2",
+        "description": "<p><em>Freshly baked and shipped quickly so every bite arrives just right.</em><br/></p>",
         "show_description": false,
         "description_style": "body",
         "columns_desktop": 4,
         "enable_desktop_slider": false,
-        "full_width": false,
+        "full_width": true,
         "show_view_all": false,
         "view_all_style": "solid",
         "color_scheme": "scheme-1",
@@ -139,10 +139,10 @@
         "show_vendor": false,
         "show_rating": false,
         "quick_add": "standard",
-        "columns_mobile": "1",
+        "columns_mobile": "2",
         "swipe_on_mobile": true,
-        "padding_top": 40,
-        "padding_bottom": 40
+        "padding_top": 56,
+        "padding_bottom": 56
       }
     },
     "talavera_divider_CpfYqp": {
@@ -157,6 +157,7 @@
     },
     "featured_blog_4B47iP": {
       "type": "featured-blog",
+      "custom_css": [],
       "name": "Products and Blog Posts",
       "settings": {
         "blog": "products-and-blog",
@@ -172,12 +173,57 @@
         "padding_top": 44,
         "padding_bottom": 44
       }
+    },
+    "image_with_text_TYmALP": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_nfdHAy": {
+          "type": "heading",
+          "settings": {
+            "heading": "3rd generation bakers. Veteran and woman operated.",
+            "heading_size": "h1"
+          }
+        },
+        "text_TztpkU": {
+          "type": "text",
+          "settings": {
+            "text": "<p><em>Family business. Made with love.</em></p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_nfdHAy",
+        "text_TztpkU"
+      ],
+      "custom_css": [
+        ".image-with-text__media-item {padding-left: 16px; padding-right: 16px;}",
+        ".image-with-text__media {border-radius: 16px; overflow: hidden;}",
+        ".image-with-text__content {padding-left: 24px; padding-right: 24px;}"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Group_Photo.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-2",
+        "color_scheme": "scheme-2",
+        "padding_top": 44,
+        "padding_bottom": 44
+      }
     }
   },
   "order": [
     "la_concheria_slideshow_f9YViH",
     "featured_collection",
     "talavera_divider_CpfYqp",
-    "featured_blog_4B47iP"
+    "featured_blog_4B47iP",
+    "image_with_text_TYmALP"
   ]
 }
