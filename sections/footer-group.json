@@ -17,21 +17,21 @@
         "footer-0": {
           "type": "link_list",
           "settings": {
-            "heading": "Quick links",
+            "heading": "Order",
             "menu": "footer"
           }
         },
         "footer-1": {
           "type": "link_list",
           "settings": {
-            "heading": "Info",
+            "heading": "Visit Us",
             "menu": "footer"
           }
         },
         "link_list_n9cVMP": {
           "type": "link_list",
           "settings": {
-            "heading": "Quick links",
+            "heading": "Policies",
             "menu": "footer"
           }
         }

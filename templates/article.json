@@ -42,7 +42,7 @@
       "type": "talavera-divider",
       "name": "Talavera divider",
       "settings": {
-        "divider_image": "shopify://shop_images/Cafe_De_Olla_Talavera.png",
+        "divider_image": "shopify://shop_images/Talavera_Colorful_Pastreis.png",
         "height": 40,
         "opacity": 85,
         "color_scheme": "scheme-1"
