@@ -91,22 +91,14 @@
         "slide_egjXTa",
         "slide_yhc7rV"
       ],
-      "custom_css": [
-        ".slider-button {display: none !important;}",
-        ".slideshow__controls {background: 0 !important; border: 0 !important; box-shadow: none !important; padding: 0 !important;}",
-        ".slideshow__control-wrapper {gap: 1rem;}",
-        ".slider-counter__link--dots .dot {border-color: #fff !important; background: #fff !important;}",
-        ".slider-counter__link:not(.slider-counter__link--active) {opacity: 0.4;}",
-        ".banner__buttons .button,.banner__buttons .button:before,.banner__buttons .button:after {opacity: 1 !important;}",
-        ".slideshow__text {color: #fff !important;}"
-      ],
+      "custom_css": [],
       "name": "La Concheria slideshow",
       "settings": {
         "layout": "full_bleed",
-        "slide_height": "medium",
+        "slide_height": "large",
         "slider_visual": "dots",
         "auto_rotate": true,
-        "change_slides_speed": 5,
+        "change_slides_speed": 7,
         "image_behavior": "none",
         "show_text_below": false,
         "accessibility_info": "Slideshow about La Concheria Cafe"
@@ -211,7 +203,7 @@
         ".image-with-text__media {border-radius: 16px; overflow: hidden;}",
         ".image-with-text__content {padding-left: 24px; padding-right: 24px;}"
       ],
-      "name": "t:sections.image-with-text.presets.name",
+      "name": "Group Photo",
       "settings": {
         "image": "shopify://shop_images/Group_Photo.jpg",
         "height": "adapt",
@@ -231,15 +223,15 @@
     "floating_shipping_cta_iU7Kk6": {
       "type": "floating-shipping-cta",
       "custom_css": [],
-      "name": "Floating shipping CTA",
+      "name": "Floating CTA",
       "settings": {
-        "collapsed_text": "We ship!",
         "heading": "We ship anywhere in the U.S.",
         "description": "Fresh-baked conchas, packed with love and shipped fast.",
         "button_text": "Shop Now",
         "button_link": "shopify://collections/all",
-        "icon_image": "shopify://shop_images/Png_Concha_vanilla.png",
+        "icon_image": "shopify://shop_images/Png_Concha_pink.png",
         "icon_text": "📦",
+        "icon_size": 72,
         "position": "bottom-right",
         "size": "small",
         "default_open": false,
@@ -247,8 +239,8 @@
         "enable_animation": true,
         "card_width": 420,
         "border_radius": 16,
-        "offset_x": 10,
-        "offset_y": 8,
+        "offset_x": 12,
+        "offset_y": 12,
         "shadow_opacity": 16,
         "z_index": 50,
         "background_color": "#fff7ef",
