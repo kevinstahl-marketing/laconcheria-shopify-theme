@@ -1,0 +1,201 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "rich_text_8fpHaA": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_AbfR8J": {
+          "type": "heading",
+          "settings": {
+            "heading": "Visit Us",
+            "heading_size": "h1"
+          }
+        },
+        "text_ftMNFd": {
+          "type": "text",
+          "settings": {
+            "text": "<p><em>Two locations in the Rio Grande Valley</em></p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_AbfR8J",
+        "text_ftMNFd"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_NgnJUz": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_KQUpEE": {
+          "type": "heading",
+          "settings": {
+            "heading": "Walk Up and Order",
+            "heading_size": "h2"
+          }
+        },
+        "text_8tgDqz": {
+          "type": "text",
+          "settings": {
+            "text": "<p><em>No waiters, no reservations needed. Just walk up, order at the counter, and enjoy fresh pan dulce and cafe drinks made to order.</em></p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_KQUpEE",
+        "text_8tgDqz"
+      ],
+      "custom_css": [
+        ".rich-text {border: 3px solid #fb58a9; border-radius: 16px; box-shadow: 0 0 16px rgba(251, 88, 169, 0.35), 0 0 16px rgba(251, 88, 169, 0.2);}",
+        ".rich-text__wrapper,.rich-text__blocks,.rich-text__text {max-width: none;}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-94485d61-ade5-48b2-8342-2eded570ac8e",
+        "full_width": false,
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "locations_hdJRdy": {
+      "type": "locations",
+      "blocks": {
+        "location_NRjKkj": {
+          "type": "location",
+          "settings": {
+            "map_embed": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3578.575566452932!2d-98.2383672!3d26.2429771!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8665a7b56e77abbd%3A0x69848df4cd0c17a6!2sLa%20Concheria%20Cafe!5e0!3m2!1sen!2sus!4v1781156964629!5m2!1sen!2sus\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
+            "title": "McAllen",
+            "address": "4120 N 23rd St, McAllen, TX 78504",
+            "phone": "(956) 372-9236",
+            "hours": "Open Daily • 7 AM – 7 PM",
+            "button_label": "Get Directions",
+            "button_link": "https://maps.app.goo.gl/TcXuphW5SsZNnX9A7"
+          }
+        },
+        "location_b8qEWn": {
+          "type": "location",
+          "settings": {
+            "map_embed": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3579.6693338191467!2d-98.2858412!3d26.2074328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8665a77f323eb8d1%3A0x142b5a7375c17e87!2sLa%20Concheria%20Cafe%20Shary!5e0!3m2!1sen!2sus!4v1781158042643!5m2!1sen!2sus\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
+            "title": "Mission Location",
+            "address": "608 N Shary Rd Suite 13, Mission, TX 78572",
+            "phone": "(956) 340-8909",
+            "hours": "Open Daily • 7 AM – 7 PM",
+            "button_label": "Get directions",
+            "button_link": "https://maps.app.goo.gl/k9E5ZhqwFiYCpyvq8"
+          }
+        }
+      },
+      "block_order": [
+        "location_NRjKkj",
+        "location_b8qEWn"
+      ],
+      "name": "Locations",
+      "settings": {
+        "color_scheme": "",
+        "heading": "Our Locations",
+        "text": "",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "inline",
+        "columns": 2,
+        "card_radius": 12,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "mobile_padding_top": 28,
+        "mobile_padding_bottom": 28
+      }
+    },
+    "floating_shipping_cta_nbzUiT": {
+      "type": "floating-shipping-cta",
+      "name": "Floating CTA",
+      "settings": {
+        "heading": "We ship anywhere in the U.S.",
+        "description": "Fresh-baked conchas, packed with love and shipped fast.",
+        "button_text": "Shop Now",
+        "button_link": "shopify://collections/all",
+        "icon_image": "shopify://shop_images/Png_Concha_pink.png",
+        "icon_text": "📦",
+        "icon_size": 72,
+        "position": "bottom-right",
+        "size": "small",
+        "default_open": false,
+        "show_close": true,
+        "enable_animation": true,
+        "card_width": 420,
+        "border_radius": 16,
+        "offset_x": 12,
+        "offset_y": 12,
+        "shadow_opacity": 16,
+        "z_index": 50,
+        "background_color": "#fff7ef",
+        "text_color": "#3b2a22",
+        "accent_color": "#fb5e33",
+        "button_background": "#fb5e33",
+        "button_text_color": "#ffffff"
+      }
+    },
+    "rich_text_jBLEJU": {
+      "type": "rich-text",
+      "blocks": {
+        "text_8tzTnA": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Kitchen closes at 3pm daily. Breakfast tacos available until 11:30am. Follow us on Instagram <a href=\"https://instagram.com/laconcheriacafe\" target=\"_blank\">@laconcheriacafe</a> for daily specials and updates.<br/><br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_8tzTnA"
+      ],
+      "custom_css": [
+        ".rich-text__wrapper,.rich-text__blocks,.rich-text__text {max-width: none;}",
+        ".rich-text__wrapper {padding-top: 0px; padding-bottom: 0px;}",
+        ".rich-text a {color: #fb58a9; font-weight: 600; text-decoration: none;}",
+        ".rich-text a:hover {color: #fb58a9; text-decoration: underline;}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-94485d61-ade5-48b2-8342-2eded570ac8e",
+        "full_width": false,
+        "padding_top": 28,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "rich_text_8fpHaA",
+    "rich_text_NgnJUz",
+    "main",
+    "locations_hdJRdy",
+    "floating_shipping_cta_nbzUiT",
+    "rich_text_jBLEJU"
+  ]
+}

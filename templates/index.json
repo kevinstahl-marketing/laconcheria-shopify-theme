@@ -15,7 +15,7 @@
         "slide_H4UMqC": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Conchas_Hero_3.jpg",
+            "image": "shopify://shop_images/Untitled_design_72.png",
             "image_overlay_opacity": 30,
             "heading": "Love at first bite.",
             "heading_size": "h0",
@@ -33,7 +33,7 @@
         "slide_63h7gM": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Conchas_Hero_2.jpg",
+            "image": "shopify://shop_images/IMG_1260-Edit.jpg",
             "image_overlay_opacity": 30,
             "heading": "Handcrafted daily. Always Fresh",
             "heading_size": "h1",
@@ -51,7 +51,7 @@
         "slide_egjXTa": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Conchas_Hero_1.jpg",
+            "image": "shopify://shop_images/the_minis_8_pack.jpg",
             "image_overlay_opacity": 30,
             "heading": "La Concheria Cafe. To your door.",
             "heading_size": "h1",
@@ -69,7 +69,7 @@
         "slide_yhc7rV": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Conchas_Hero_4.jpg",
+            "image": "shopify://shop_images/The_minis_conchas.webp",
             "image_overlay_opacity": 30,
             "heading": "The Minis. The Obsession.",
             "heading_size": "h1",
@@ -170,7 +170,7 @@
       "type": "talavera-divider",
       "name": "Talavera divider",
       "settings": {
-        "divider_image": "shopify://shop_images/Talavera_3.jpg",
+        "divider_image": "shopify://shop_images/Talavera_Colorful_Pastreis.png",
         "height": 32,
         "opacity": 85,
         "color_scheme": "scheme-2"
@@ -222,7 +222,6 @@
     },
     "floating_shipping_cta_iU7Kk6": {
       "type": "floating-shipping-cta",
-      "custom_css": [],
       "name": "Floating CTA",
       "settings": {
         "heading": "We ship anywhere in the U.S.",
