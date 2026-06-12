@@ -219,35 +219,6 @@
         "padding_top": 36,
         "padding_bottom": 0
       }
-    },
-    "floating_shipping_cta_iU7Kk6": {
-      "type": "floating-shipping-cta",
-      "name": "Floating CTA",
-      "settings": {
-        "heading": "We ship anywhere in the U.S.",
-        "description": "Fresh-baked conchas, packed with love and shipped fast.",
-        "button_text": "Shop Now",
-        "button_link": "shopify://collections/all",
-        "icon_image": "shopify://shop_images/Png_Concha_pink.png",
-        "icon_text": "📦",
-        "icon_size": 72,
-        "position": "bottom-right",
-        "size": "small",
-        "default_open": false,
-        "show_close": true,
-        "enable_animation": true,
-        "card_width": 420,
-        "border_radius": 16,
-        "offset_x": 12,
-        "offset_y": 12,
-        "shadow_opacity": 16,
-        "z_index": 50,
-        "background_color": "#fff7ef",
-        "text_color": "#3b2a22",
-        "accent_color": "#fb5e33",
-        "button_background": "#fb5e33",
-        "button_text_color": "#ffffff"
-      }
     }
   },
   "order": [
@@ -256,7 +227,6 @@
     "talavera_divider_CpfYqp",
     "featured_blog_4B47iP",
     "talavera_divider_eFbi8M",
-    "image_with_text_TYmALP",
-    "floating_shipping_cta_iU7Kk6"
+    "image_with_text_TYmALP"
   ]
 }

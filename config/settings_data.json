@@ -45,7 +45,7 @@
     "card_style": "card",
     "card_image_padding": 0,
     "card_text_alignment": "left",
-    "card_color_scheme": "scheme-1",
+    "card_color_scheme": "scheme-94485d61-ade5-48b2-8342-2eded570ac8e",
     "card_border_thickness": 0,
     "card_border_opacity": 10,
     "card_corner_radius": 16,
@@ -102,7 +102,7 @@
     "drawer_shadow_horizontal_offset": 0,
     "drawer_shadow_vertical_offset": 4,
     "drawer_shadow_blur": 5,
-    "badge_position": "bottom right",
+    "badge_position": "bottom left",
     "badge_corner_radius": 40,
     "sale_badge_color_scheme": "scheme-3",
     "sold_out_badge_color_scheme": "scheme-3",
@@ -180,7 +180,7 @@
           "background_gradient": "",
           "text": "#ffffff",
           "button": "#1c1c1c",
-          "button_label": "#121212",
+          "button_label": "#ffffff",
           "secondary_button_label": "#1c1c1c",
           "shadow": "#000000"
         }
@@ -203,7 +203,7 @@
           "text": "#1c1c1c",
           "button": "#ffffff",
           "button_label": "#fb5e33",
-          "secondary_button_label": "#ffffff",
+          "secondary_button_label": "#fb5e33",
           "shadow": "#fb5e33"
         }
       },
