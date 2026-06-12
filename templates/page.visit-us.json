@@ -175,7 +175,7 @@
       ],
       "custom_css": [
         ".rich-text__wrapper,.rich-text__blocks,.rich-text__text {max-width: none;}",
-        ".rich-text__wrapper {padding-top: 0px; padding-bottom: 0px;}",
+        ".rich-text__wrapper {padding-top: 0px; padding-bottom: 0px; margin-bottom: 16px;}",
         ".rich-text a {color: #fb58a9; font-weight: 600; text-decoration: none;}",
         ".rich-text a:hover {color: #fb58a9; text-decoration: underline;}"
       ],
