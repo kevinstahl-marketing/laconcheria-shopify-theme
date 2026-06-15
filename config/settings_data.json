@@ -102,9 +102,9 @@
     "drawer_shadow_horizontal_offset": 0,
     "drawer_shadow_vertical_offset": 4,
     "drawer_shadow_blur": 5,
-    "badge_position": "bottom left",
+    "badge_position": "top right",
     "badge_corner_radius": 40,
-    "sale_badge_color_scheme": "scheme-3",
+    "sale_badge_color_scheme": "scheme-4",
     "sold_out_badge_color_scheme": "scheme-3",
     "brand_headline": "",
     "brand_description": "<p>Handcrafted Mexican pastries made fresh daily in McAllen & Mission, TX.<br/><br/></p>",
@@ -121,10 +121,10 @@
     "predictive_search_show_vendor": false,
     "predictive_search_show_price": false,
     "currency_code_enabled": true,
-    "cart_type": "notification",
+    "cart_type": "drawer",
     "show_vendor": false,
     "show_cart_note": true,
-    "cart_drawer_collection": "",
+    "cart_drawer_collection": "frontpage",
     "sections": {
       "main-password-header": {
         "type": "main-password-header",
@@ -221,6 +221,39 @@
       "scheme-21f03ace-8a97-4331-b603-4137aaa7e0e2": {
         "settings": {
           "background": "#fff4e4",
+          "background_gradient": "",
+          "text": "#1c1c1c",
+          "button": "#fb5e33",
+          "button_label": "#ffffff",
+          "secondary_button_label": "#1c1c1c",
+          "shadow": "#000000"
+        }
+      },
+      "scheme-8e7b90d5-73ab-4683-83b2-240303ea0ea0": {
+        "settings": {
+          "background": "#fff4e4",
+          "background_gradient": "",
+          "text": "#1c1c1c",
+          "button": "#fb5e33",
+          "button_label": "#ffffff",
+          "secondary_button_label": "#1c1c1c",
+          "shadow": "#000000"
+        }
+      },
+      "scheme-bffdd5b5-e782-4d91-b037-0844adb45c8e": {
+        "settings": {
+          "background": "#fff4e4",
+          "background_gradient": "",
+          "text": "#1c1c1c",
+          "button": "#fb5e33",
+          "button_label": "#ffffff",
+          "secondary_button_label": "#1c1c1c",
+          "shadow": "#000000"
+        }
+      },
+      "scheme-cd69c2dc-485f-4707-8fe5-d8c570cf3bfc": {
+        "settings": {
+          "background": "#dbbbfe",
           "background_gradient": "",
           "text": "#1c1c1c",
           "button": "#fb5e33",
@@ -416,5 +449,27 @@
         }
       }
     }
+  },
+  "platform_customizations": {
+    "custom_css": [
+      "body {background: #fff4e4;}",
+      "h1,h2,h3,.card__heading {letter-spacing: -0.025em;}",
+      "a {transition: color 0.2s ease;}",
+      ".card-wrapper,.card,.card--card {border: 0 !important; box-shadow: none !important;}",
+      ".card-wrapper {border-radius: 16px; overflow: hidden; transition: transform 0.2s ease;}",
+      ".card-wrapper:hover {transform: translateY(-1px);}",
+      ".card__heading {font-size: 1.55rem !important; line-height: 1.25; font-weight: 600; margin-bottom: 0.35rem;}",
+      ".price,.price-item {font-size: 1.35rem; font-weight: 500; color: rgba(28, 28, 28, 0.8);}",
+      ".card-information {padding-top: 0.6rem;}",
+      ".card__media img {transition: transform 0.3s ease;}",
+      ".card-wrapper:hover .card__media img {transform: scale(1.015);}",
+      ".header__menu-item {font-weight: 500; letter-spacing: 0.01em;}",
+      ".page-width {padding-left: 2.5rem; padding-right: 2.5rem;}",
+      ".button,.quick-add__submit {border: 0 !important;}",
+      ".button:before,.button:after,.quick-add__submit:before,.quick-add__submit:after {border: 0 !important; box-shadow: none !important;}",
+      ".quick-add__submit {background: #fb5e33 !important; color: #fff !important;}",
+      ".quick-add__submit:hover {opacity: 0.92;}",
+      ".card::after,.card-wrapper::after {display: none !important;}"
+    ]
   }
 }

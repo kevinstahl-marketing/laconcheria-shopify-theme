@@ -103,17 +103,6 @@
         "padding_top": 40,
         "padding_bottom": 40
       }
-    },
-    "talavera_divider_h43B3a": {
-      "type": "talavera-divider",
-      "custom_css": [],
-      "name": "Talavera divider",
-      "settings": {
-        "divider_image": "shopify://shop_images/Talavera_Conchas.png",
-        "height": 36,
-        "opacity": 100,
-        "color_scheme": "scheme-2"
-      }
     }
   },
   "order": [
@@ -121,7 +110,6 @@
     "image_container_JTPfmn",
     "main",
     "custom_liquid_JPTJNW",
-    "rich_text_D77P6R",
-    "talavera_divider_h43B3a"
+    "rich_text_D77P6R"
   ]
 }

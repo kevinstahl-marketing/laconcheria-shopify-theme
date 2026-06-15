@@ -29,8 +29,8 @@
         "enable_animation": true,
         "card_width": 420,
         "border_radius": 16,
-        "offset_x": 24,
-        "offset_y": 24,
+        "offset_x": 14,
+        "offset_y": 14,
         "shadow_opacity": 16,
         "z_index": 50,
         "background_color": "#fff7ef",
@@ -40,6 +40,20 @@
         "button_text_color": "#ffffff"
       }
     },
+    "178141439587343f7e": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "talavera_divider_HMUccN": {
+      "type": "talavera-divider",
+      "name": "Talavera divider",
+      "settings": {
+        "divider_image": "shopify://shop_images/Talavera_Conchas.png",
+        "height": 36,
+        "opacity": 100,
+        "color_scheme": "scheme-2"
+      }
+    },
     "footer": {
       "type": "footer",
       "blocks": {
@@ -47,21 +61,21 @@
           "type": "link_list",
           "settings": {
             "heading": "Order",
-            "menu": "footer"
+            "menu": "order"
           }
         },
         "footer-1": {
           "type": "link_list",
           "settings": {
             "heading": "Visit Us",
-            "menu": "footer"
+            "menu": "visit-us"
           }
         },
         "link_list_n9cVMP": {
           "type": "link_list",
           "settings": {
             "heading": "Policies",
-            "menu": "footer"
+            "menu": "policies"
           }
         }
       },
@@ -88,6 +102,8 @@
   },
   "order": [
     "floating_shipping_cta_dPgDUC",
+    "178141439587343f7e",
+    "talavera_divider_HMUccN",
     "footer"
   ]
 }

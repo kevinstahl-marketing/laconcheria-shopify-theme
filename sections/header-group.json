@@ -34,9 +34,9 @@
       "type": "talavera-divider",
       "name": "Talavera divider",
       "settings": {
-        "divider_image": "shopify://shop_images/Sun_Talavera_-_Breakfast.webp",
+        "divider_image": "shopify://shop_images/IMG_3025.webp",
         "height": 36,
-        "opacity": 80,
+        "opacity": 100,
         "color_scheme": "scheme-2"
       }
     }
