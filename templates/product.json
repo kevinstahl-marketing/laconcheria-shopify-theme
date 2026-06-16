@@ -16,24 +16,6 @@
           "type": "title",
           "settings": {}
         },
-        "collapsible-row-0": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Ingredients",
-            "icon": "clipboard",
-            "content": "<p>{{ product.metafields.custom.ingredients | metafield_tag }}</p>",
-            "page": ""
-          }
-        },
-        "collapsible-row-2": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Count & Weight",
-            "icon": "ruler",
-            "content": "<p>Count: {{ product.metafields.custom.count.value }}</p><p>Weight: {{ product.metafields.custom.weight.value }}</p>",
-            "page": ""
-          }
-        },
         "price": {
           "type": "price",
           "settings": {}
@@ -60,6 +42,24 @@
           "type": "quantity_selector",
           "settings": {}
         },
+        "collapsible-row-0": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Ingredients",
+            "icon": "clipboard",
+            "content": "<p>{{ product.metafields.custom.ingredients | metafield_tag }}</p>",
+            "page": ""
+          }
+        },
+        "collapsible-row-2": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Count & Weight",
+            "icon": "ruler",
+            "content": "<p>Count: {{ product.metafields.custom.count.value }}</p><p>Weight: {{ product.metafields.custom.weight.value }}</p>",
+            "page": ""
+          }
+        },
         "share": {
           "type": "share",
           "settings": {
@@ -69,14 +69,20 @@
       },
       "block_order": [
         "title",
-        "collapsible-row-0",
-        "collapsible-row-2",
         "price",
         "variant_picker",
         "description",
         "buy_buttons",
         "quantity_selector",
+        "collapsible-row-0",
+        "collapsible-row-2",
         "share"
+      ],
+      "custom_css": [
+        ".product__title h1 {font-size: 3.8rem; line-height: 1.05; margin-bottom: 0.75rem;}",
+        ".price-item--regular {font-size: 3rem !important; font-weight: 700; color: #fb5e33;}",
+        ".product__description {font-size: 1.6rem; line-height: 1.8; color: rgba(28, 28, 28, 0.75);}",
+        ".product-form__submit {border-radius: 999px; min-height: 5.6rem; font-size: 1.7rem; font-weight: 600;}"
       ],
       "settings": {
         "enable_sticky_info": true,
@@ -88,7 +94,7 @@
         "mobile_thumbnails": "hide",
         "media_position": "left",
         "image_zoom": "none",
-        "hide_variants": false,
+        "hide_variants": true,
         "enable_video_looping": false,
         "padding_top": 36,
         "padding_bottom": 76
@@ -120,6 +126,15 @@
         "column_wtmnpm",
         "column_ddRaNH"
       ],
+      "custom_css": [
+        ".product__info-container {background: #fff; padding: 2.5rem; border-radius: 24px;}",
+        ".product__title h1 {font-size: 3.2rem; line-height: 1.1; margin-bottom: 0.5rem;}",
+        ".price-item--regular {font-size: 2.4rem !important; font-weight: 700; color: #fb5e33;}",
+        ".product__description {color: rgba(28, 28, 28, 0.75); line-height: 1.7;}",
+        ".product-form__submit {border-radius: 999px;}",
+        ".product__accordion {border-radius: 12px; overflow: hidden; margin-top: 0.75rem;}",
+        ".product__accordion details {background: #fff8fb;}"
+      ],
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
         "title": "Policies",
@@ -129,7 +144,7 @@
         "button_label": "Policies",
         "button_link": "shopify://policies/privacy-policy",
         "columns_desktop": 2,
-        "column_alignment": "center",
+        "column_alignment": "left",
         "background_style": "primary",
         "color_scheme": "scheme-3",
         "columns_mobile": "1",
@@ -155,11 +170,41 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
+    },
+    "featured_collection_WdxpfT": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "collection": "frontpage",
+        "products_to_show": 4,
+        "title": "La Concheria Cafe - To Your Door",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "scheme-2",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "standard",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "main",
     "multicolumn_JgnBWV",
-    "related-products"
+    "related-products",
+    "featured_collection_WdxpfT"
   ]
 }
