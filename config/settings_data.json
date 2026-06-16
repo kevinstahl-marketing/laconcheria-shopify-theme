@@ -11,6 +11,7 @@
   "current": {
     "logo": "shopify://shop_images/La_Concheria_Cafe_Logo_BG_Removed.png",
     "logo_width": 50,
+    "favicon": "shopify://shop_images/La_Concheria_Cafe_Logo_BG_Removed.png",
     "type_header_font": "playfair_display_n7",
     "heading_scale": 100,
     "type_body_font": "dm_sans_n4",
@@ -108,7 +109,7 @@
     "sold_out_badge_color_scheme": "scheme-3",
     "brand_headline": "",
     "brand_description": "<p>Handcrafted Mexican pastries made fresh daily in McAllen & Mission, TX.<br/><br/></p>",
-    "social_facebook_link": "profile.php/?id=61559961907178",
+    "social_facebook_link": "https://www.facebook.com/profile.php/?id=61559961907178",
     "social_instagram_link": "https://www.instagram.com/laconcheriacafe/",
     "social_youtube_link": "",
     "social_tiktok_link": "https://www.tiktok.com/@laconcheriacafe",
@@ -452,24 +453,21 @@
   },
   "platform_customizations": {
     "custom_css": [
-      "body {background: #fff4e4;}",
-      "h1,h2,h3,.card__heading {letter-spacing: -0.025em;}",
-      "a {transition: color 0.2s ease;}",
-      ".card-wrapper,.card,.card--card {border: 0 !important; box-shadow: none !important;}",
-      ".card-wrapper {border-radius: 16px; overflow: hidden; transition: transform 0.2s ease;}",
-      ".card-wrapper:hover {transform: translateY(-1px);}",
-      ".card__heading {font-size: 1.55rem !important; line-height: 1.25; font-weight: 600; margin-bottom: 0.35rem;}",
-      ".price,.price-item {font-size: 1.35rem; font-weight: 500; color: rgba(28, 28, 28, 0.8);}",
-      ".card-information {padding-top: 0.6rem;}",
-      ".card__media img {transition: transform 0.3s ease;}",
-      ".card-wrapper:hover .card__media img {transform: scale(1.015);}",
-      ".header__menu-item {font-weight: 500; letter-spacing: 0.01em;}",
-      ".page-width {padding-left: 2.5rem; padding-right: 2.5rem;}",
-      ".button,.quick-add__submit {border: 0 !important;}",
-      ".button:before,.button:after,.quick-add__submit:before,.quick-add__submit:after {border: 0 !important; box-shadow: none !important;}",
-      ".quick-add__submit {background: #fb5e33 !important; color: #fff !important;}",
-      ".quick-add__submit:hover {opacity: 0.92;}",
-      ".card::after,.card-wrapper::after {display: none !important;}"
+      "body{background:#fff4e4}",
+      "h1,h2,h3,.card__heading{letter-spacing:-.025em}",
+      ".card-wrapper,.card,.card--card{border:0!important; box-shadow:none!important;}",
+      ".card-wrapper{border-radius:16px; overflow:hidden; transition:transform .2s ease;}",
+      ".card-wrapper:hover{transform:translateY(-1px)}",
+      ".card__media img{transition:transform .3s ease}",
+      ".card-wrapper:hover .card__media img{transform:scale(1.015)}",
+      ".card__heading{font-size:1.55rem!important; line-height:1.25; font-weight:600; margin-bottom:.35rem;}",
+      ".price,.price-item{font-size:1.35rem; font-weight:500; color:rgba(28,28,28,.8);}",
+      ".card-information{padding-top:.6rem}",
+      ".header__menu-item{font-weight:500; letter-spacing:.01em;}",
+      ".button,.quick-add__submit{border:0!important; box-shadow:none!important;}",
+      ".button:before,.button:after,.quick-add__submit:before,.quick-add__submit:after{display:none!important;}",
+      ".quick-add__submit{background:#fb5e33!important; color:#fff!important;}",
+      ".quick-add__submit:hover{opacity:.92}"
     ]
   }
 }

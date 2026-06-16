@@ -30,7 +30,7 @@
         "card_width": 420,
         "border_radius": 16,
         "offset_x": 14,
-        "offset_y": 14,
+        "offset_y": 8,
         "shadow_opacity": 16,
         "z_index": 50,
         "background_color": "#fff7ef",

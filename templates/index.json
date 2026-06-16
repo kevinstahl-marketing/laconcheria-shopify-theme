@@ -98,7 +98,7 @@
         "slide_height": "large",
         "slider_visual": "dots",
         "auto_rotate": true,
-        "change_slides_speed": 7,
+        "change_slides_speed": 5,
         "image_behavior": "none",
         "show_text_below": false,
         "accessibility_info": "Slideshow about La Concheria Cafe"
@@ -106,16 +106,7 @@
     },
     "featured_collection": {
       "type": "featured-collection",
-      "custom_css": [
-        ".card-wrapper,.card,.card--card {border: 0 !important; box-shadow: none !important;}",
-        ".card-wrapper {border-radius: 16px; overflow: hidden; transition: 0.2s ease;}",
-        ".card-wrapper:hover {transform: translateY(-2px);}",
-        ".card__media img {transition: 0.3s ease;}",
-        ".card-wrapper:hover .card__media img {transform: scale(1.02);}",
-        ".card__heading {font-size: 1.55rem !important; font-weight: 600;}",
-        ".price-item {font-size: 1.35rem; font-weight: 500;}",
-        ".quick-add__submit {background: #fb5e33 !important; color: #fff !important;}"
-      ],
+      "custom_css": [],
       "settings": {
         "collection": "all",
         "products_to_show": 4,
@@ -155,13 +146,13 @@
     "featured_blog_4B47iP": {
       "type": "featured-blog",
       "custom_css": [
-        ".article-card-wrapper {border-radius: 18px; overflow: hidden; transition: .2s ease;}",
+        ".article-card-wrapper {border-radius: 18px; overflow: hidden; transition: 0.2s ease;}",
         ".article-card-wrapper:hover {transform: translateY(-2px);}",
         ".article-card,.article-card:after {border: 0 !important; box-shadow: none !important;}",
-        ".article-card__image img {transition: .35s ease;}",
+        ".article-card__image img {transition: 0.35s ease;}",
         ".article-card-wrapper:hover img {transform: scale(1.03);}",
         ".article-card .card__heading {font-size: 1.9rem !important; line-height: 1.15;}",
-        ".article-card__excerpt {opacity: .75;}"
+        ".article-card__excerpt {opacity: 0.75;}"
       ],
       "name": "Products and Blog Posts",
       "settings": {

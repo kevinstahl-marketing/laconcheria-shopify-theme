@@ -16,32 +16,6 @@
           "type": "title",
           "settings": {}
         },
-        "price": {
-          "type": "price",
-          "settings": {}
-        },
-        "variant_picker": {
-          "type": "variant_picker",
-          "settings": {
-            "picker_type": "button",
-            "swatch_shape": "circle"
-          }
-        },
-        "quantity_selector": {
-          "type": "quantity_selector",
-          "settings": {}
-        },
-        "buy_buttons": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_dynamic_checkout": false,
-            "show_gift_card_recipient": true
-          }
-        },
-        "description": {
-          "type": "description",
-          "settings": {}
-        },
         "collapsible-row-0": {
           "type": "collapsible_tab",
           "settings": {
@@ -60,6 +34,32 @@
             "page": ""
           }
         },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": true
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
         "share": {
           "type": "share",
           "settings": {
@@ -69,13 +69,13 @@
       },
       "block_order": [
         "title",
-        "price",
-        "variant_picker",
-        "quantity_selector",
-        "buy_buttons",
-        "description",
         "collapsible-row-0",
         "collapsible-row-2",
+        "price",
+        "variant_picker",
+        "description",
+        "buy_buttons",
+        "quantity_selector",
         "share"
       ],
       "settings": {
@@ -101,7 +101,7 @@
           "type": "column",
           "settings": {
             "title": "Shipping",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text": "<p><br/>At La Concheria Cafe, we work hard to ensure every order arrives fresh and in excellent condition. Most orders are processed and shipped within 1–2 business days, and customers will receive a confirmation email with tracking information once their package is on its way. To help prevent products from sitting in transit over the weekend, we generally ship Monday through Wednesday, with limited Thursday shipping for Texas destinations. While we carefully coordinate our shipping schedule, delivery times are ultimately determined by the carrier, and occasional delays may occur.<br/><br/></p>",
             "link_label": "",
             "link": ""
           }
@@ -110,7 +110,7 @@
           "type": "column",
           "settings": {
             "title": "Returns",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text": "<p><br/>Due to the perishable nature of our baked goods and food products, all sales are final and we are unable to accept returns. However, if your order arrives damaged, incorrect, or with missing items, please contact us within 48 hours of delivery with your order number and photos of the issue. We review each situation individually and will work with you to provide an appropriate resolution whenever possible. Customer satisfaction is important to us, and we appreciate the opportunity to make things right.<br/><br/></p>",
             "link_label": "",
             "link": ""
           }
