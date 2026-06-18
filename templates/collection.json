@@ -64,6 +64,16 @@
         "padding_bottom": 36
       }
     },
+    "talavera_divider_KLXGqA": {
+      "type": "talavera-divider",
+      "name": "Talavera divider",
+      "settings": {
+        "divider_image": "shopify://shop_images/Sun_Talavera_-_Breakfast.webp",
+        "height": 36,
+        "opacity": 80,
+        "color_scheme": "scheme-4"
+      }
+    },
     "product-grid": {
       "type": "main-collection-product-grid",
       "custom_css": [
@@ -99,6 +109,7 @@
   "order": [
     "banner",
     "image_with_text_JGFbzT",
+    "talavera_divider_KLXGqA",
     "product-grid"
   ]
 }

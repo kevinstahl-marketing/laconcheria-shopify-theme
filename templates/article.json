@@ -38,19 +38,57 @@
       "name": "Blog Post - Chilaquiles",
       "settings": {}
     },
-    "talavera_divider_zmWXpf": {
-      "type": "talavera-divider",
-      "name": "Talavera divider",
+    "featured_blog_CYxweQ": {
+      "type": "featured-blog",
+      "name": "t:sections.featured-blog.presets.name",
       "settings": {
-        "divider_image": "shopify://shop_images/Talavera_Colorful_Pastreis.png",
-        "height": 40,
-        "opacity": 85,
-        "color_scheme": "scheme-2"
+        "blog": "products-and-blog",
+        "post_limit": 3,
+        "heading": "Blogs",
+        "heading_size": "h2",
+        "columns_desktop": 3,
+        "show_view_all": true,
+        "show_image": true,
+        "show_date": true,
+        "show_author": false,
+        "color_scheme": "scheme-3",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_collection_8wzLDy": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "collection": "frontpage",
+        "products_to_show": 4,
+        "title": "Shop Now",
+        "heading_size": "h2",
+        "description": "<p><em>La Concheria Cafe - To Your Door</em></p>",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": true,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "scheme-2",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "standard",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     }
   },
   "order": [
     "main",
-    "talavera_divider_zmWXpf"
+    "featured_blog_CYxweQ",
+    "featured_collection_8wzLDy"
   ]
 }

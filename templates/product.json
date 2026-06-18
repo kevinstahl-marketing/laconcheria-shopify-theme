@@ -100,6 +100,16 @@
         "padding_bottom": 76
       }
     },
+    "talavera_divider_FWChYg": {
+      "type": "talavera-divider",
+      "name": "Talavera divider",
+      "settings": {
+        "divider_image": "shopify://shop_images/Cafe_De_Olla_Talavera.png",
+        "height": 32,
+        "opacity": 100,
+        "color_scheme": "scheme-3"
+      }
+    },
     "multicolumn_JgnBWV": {
       "type": "multicolumn",
       "blocks": {
@@ -150,11 +160,12 @@
         "columns_mobile": "1",
         "swipe_on_mobile": false,
         "padding_top": 36,
-        "padding_bottom": 0
+        "padding_bottom": 16
       }
     },
     "related-products": {
       "type": "related-products",
+      "disabled": true,
       "settings": {
         "heading": "You may also like",
         "heading_size": "h2",
@@ -203,6 +214,7 @@
   },
   "order": [
     "main",
+    "talavera_divider_FWChYg",
     "multicolumn_JgnBWV",
     "related-products",
     "featured_collection_WdxpfT"

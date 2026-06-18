@@ -12,12 +12,12 @@
     "cart-items": {
       "type": "main-cart-items",
       "custom_css": [
-        ".cart-item{border:1px solid rgba(219,187,254,.25); border-radius:16px; transition:.2s ease;}",
-        ".cart-item:hover{border-color:rgba(251,88,169,.25);}",
-        ".cart-item td{padding:1rem;}",
-        ".cart-item__image-container{border-radius:12px!important; overflow:hidden;}",
-        ".cart-item__name{font-weight:600; line-height:1.35;}",
-        ".price{display:inline-block; padding:.5rem .9rem; border-radius:999px; background:rgba(251,88,169,.08); font-weight:600;}"
+        ".cart-item {border: 1px solid rgba(219, 187, 254, 0.25); border-radius: 16px; transition: 0.2s ease;}",
+        ".cart-item:hover {border-color: rgba(251, 88, 169, 0.25);}",
+        ".cart-item td {padding: 1rem;}",
+        ".cart-item__image-container {border-radius: 12px !important; overflow: hidden;}",
+        ".cart-item__name {font-weight: 600; line-height: 1.35;}",
+        ".price {display: inline-block; padding: 0.5rem 0.9rem; border-radius: 999px; background: rgba(251, 88, 169, 0.08); font-weight: 600;}"
       ],
       "settings": {
         "color_scheme": "scheme-1",
@@ -46,6 +46,16 @@
         "color_scheme": "scheme-a15ae79d-afab-450f-b749-f2bf681add7f",
         "padding_top": 40,
         "padding_bottom": 40
+      }
+    },
+    "talavera_divider_JKU6gf": {
+      "type": "talavera-divider",
+      "name": "Talavera divider",
+      "settings": {
+        "divider_image": "shopify://shop_images/Talavera_3.jpg",
+        "height": 36,
+        "opacity": 85,
+        "color_scheme": "scheme-4"
       }
     },
     "featured-collection": {
@@ -90,6 +100,7 @@
   "order": [
     "cart-items",
     "cart-footer",
+    "talavera_divider_JKU6gf",
     "featured-collection"
   ]
 }
