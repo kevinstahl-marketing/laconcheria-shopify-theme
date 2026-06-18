@@ -1,20 +1,16 @@
 /* Universal card styling */
 .card-wrapper {
     overflow: visible !important;
-    border-radius: 16px !important;
     transition: .2s ease;
 }
 
 .card {
     border-radius: 16px !important;
-    border: 1px solid rgba(var(--color-foreground), .18) !important;
-    box-shadow: 8px 8px 0 rgba(var(--color-shadow), .65) !important;
     transition: transform .2s ease, box-shadow .2s ease;
 }
 
 .card-wrapper:hover .card {
     transform: translate(-2px, -2px);
-    box-shadow: 10px 10px 0 rgba(var(--color-shadow), .65) !important;
     background-image: linear-gradient(rgba(251, 88, 169, .06), rgba(251, 88, 169, .06));
 }
 
@@ -65,7 +61,7 @@
 
 @media (max-width:749px) {
     .card__heading {
-        font-size: 1.35rem !important;
+        font-size: 1.30rem !important;
         -webkit-line-clamp: 2 !important;
     }
 }
