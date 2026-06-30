@@ -34,10 +34,10 @@
       "type": "talavera-divider",
       "name": "Talavera divider",
       "settings": {
-        "divider_image": "shopify://shop_images/Talavera_Pink.webp",
+        "divider_image": "shopify://shop_images/Talavera_1.png",
         "height": 36,
         "opacity": 100,
-        "color_scheme": "scheme-2"
+        "color_scheme": "scheme-1"
       }
     },
     "announcement_bar_a6H83w": {
