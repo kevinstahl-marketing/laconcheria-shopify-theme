@@ -23,7 +23,7 @@
 }
 
 /* Hide Dawn duplicate title inside image */
-.product-card-wrapper .card__inner>.card__content {
+.product-card-wrapper .card__inner > .card__content .card__information {
     display: none !important;
 }
 
