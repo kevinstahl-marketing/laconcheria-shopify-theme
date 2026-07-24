@@ -23,7 +23,7 @@
 }
 
 /* Hide Dawn duplicate title inside image */
-.product-card-wrapper .card__inner > .card__content .card__information {
+.product-card-wrapper .card__inner>.card__content .card__information {
     display: none !important;
 }
 
@@ -156,7 +156,9 @@
         -webkit-line-clamp: 2 !important;
     }
 
-    .card-wrapper .quick-add__submit {
+    .card-wrapper .quick-add__submit,
+    .collection__view-all .button,
+    .blog__view-all .button {
         min-height: 3.5rem !important;
         padding: .5rem 1rem !important;
         font-size: 1rem !important;
@@ -175,4 +177,8 @@
     .price-item {
         font-size: 1rem !important;
     }
+}
+
+.product-card-wrapper .card__inner .card__badge {
+    display: block !important;
 }
