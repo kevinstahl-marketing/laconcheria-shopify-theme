@@ -1,0 +1,66 @@
+{{ 'section-talavera-divider.css' | asset_url | stylesheet_tag }}
+
+<div
+  class="talavera-divider color-{{ section.settings.color_scheme }} gradient {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
+  style="
+    --talavera-height: {{ section.settings.height }}px;
+    --talavera-opacity: {{ section.settings.opacity | divided_by: 100.0 }};
+  "
+>
+  {% if section.settings.divider_image != blank %}
+    <div
+      class="talavera-divider__image"
+      style="background-image: url('{{ section.settings.divider_image | image_url: width: 2400 }}');"
+    >
+      <span class="visually-hidden">Decorative divider</span>
+    </div>
+  {% else %}
+    <div class="talavera-divider__placeholder">Add a divider image</div>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Talavera divider",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "divider_image",
+      "label": "Divider image"
+    },
+    {
+      "type": "range",
+      "id": "height",
+      "label": "Divider height",
+      "min": 24,
+      "max": 240,
+      "step": 4,
+      "default": 72,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "opacity",
+      "label": "Image opacity",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "default": 100,
+      "unit": "%"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Talavera divider"
+    }
+  ]
+}
+{% endschema %}

@@ -10,13 +10,11 @@
 {
   "sections": {
     "main": {
-      "type": "main-list-collections",
+      "type": "main-page",
+      "name": "Our Story",
       "settings": {
-        "title": "Collections",
-        "sort": "alphabetical",
-        "image_ratio": "square",
-        "columns_desktop": 3,
-        "columns_mobile": "2"
+        "padding_top": 28,
+        "padding_bottom": 28
       }
     }
   },

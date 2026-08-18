@@ -1,0 +1,338 @@
+{{ 'component-image-container.css' | asset_url | stylesheet_tag }}
+
+<section
+  id="ImageContainer-{{ section.id }}"
+  class="
+    image-container
+    page-width
+    color-{{ section.settings.color_scheme }}
+    gradient
+    image-container--align-{{ section.settings.image_alignment }}
+    image-container--hover-{{ section.settings.hover_effect }}
+    {% if section.settings.show_shadow %}image-container--shadow{% endif %}
+    {% unless section.settings.show_on_desktop %}image-container--hide-desktop{% endunless %}
+    {% unless section.settings.show_on_mobile %}image-container--hide-mobile{% endunless %}
+  "
+  style="
+    --image-container-width: {{ section.settings.image_width }}%;
+    --image-container-radius: {{ section.settings.border_radius }}px;
+    --image-container-border-width: {% if section.settings.show_border %}{{ section.settings.border_width }}px{% else %}0px{% endif %};
+    --image-container-border-color: {% if section.settings.border_color_source == 'custom' %}{{ section.settings.border_color }}{% else %}rgba(var(--color-foreground), 0.25){% endif %};
+    --image-container-padding-top: {{ section.settings.padding_top }}px;
+    --image-container-padding-bottom: {{ section.settings.padding_bottom }}px;
+    --image-container-padding-top-mobile: {{ section.settings.mobile_padding_top }}px;
+    --image-container-padding-bottom-mobile: {{ section.settings.mobile_padding_bottom }}px;
+    --image-container-image-margin-top: {{ section.settings.image_margin_top }}px;
+    --image-container-image-margin-bottom: {{ section.settings.image_margin_bottom }}px;
+    --image-container-shadow-opacity: {{ section.settings.shadow_opacity | divided_by: 100.0 }};
+  "
+>
+  <div class="image-container__inner">
+    {% if section.settings.image != blank %}
+      {% assign desktop_image = section.settings.image %}
+      {% assign mobile_image = section.settings.mobile_image | default: desktop_image %}
+
+      {% capture image_markup %}
+        <div class="image-container__media image-container__media--{{ section.settings.aspect_ratio }}">
+          <picture>
+            <source
+              media="(max-width: 749px)"
+              srcset="
+                {{ mobile_image | image_url: width: 500 }} 500w,
+                {{ mobile_image | image_url: width: 750 }} 750w,
+                {{ mobile_image | image_url: width: 1000 }} 1000w
+              "
+            >
+
+            <img
+              src="{{ desktop_image | image_url: width: 1500 }}"
+              srcset="
+                {{ desktop_image | image_url: width: 750 }} 750w,
+                {{ desktop_image | image_url: width: 1100 }} 1100w,
+                {{ desktop_image | image_url: width: 1500 }} 1500w,
+                {{ desktop_image | image_url: width: 2000 }} 2000w
+              "
+              sizes="(min-width: 990px) {{ section.settings.image_width }}vw, calc(100vw - 3rem)"
+              alt="{{ section.settings.alt_text | escape }}"
+              width="{{ desktop_image.width }}"
+              height="{{ desktop_image.height }}"
+              loading="lazy"
+              class="image-container__image image-container__image--fit-{{ section.settings.image_fit }}"
+            >
+          </picture>
+        </div>
+      {% endcapture %}
+
+      {% if section.settings.image_link != blank %}
+        <a href="{{ section.settings.image_link }}" class="image-container__link">
+          {{ image_markup }}
+        </a>
+      {% else %}
+        {{ image_markup }}
+      {% endif %}
+    {% else %}
+      <div class="image-container__placeholder">
+        {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+      </div>
+    {% endif %}
+
+    {% if section.settings.caption != blank %}
+      <div class="image-container__caption rte">
+        {{ section.settings.caption }}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Enhanced Image",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Theme"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_on_desktop",
+      "label": "Show on desktop",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_on_mobile",
+      "label": "Show on mobile",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Desktop image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile image"
+    },
+    {
+      "type": "text",
+      "id": "alt_text",
+      "label": "Alt text",
+      "default": "Image"
+    },
+    {
+      "type": "url",
+      "id": "image_link",
+      "label": "Image link"
+    },
+    {
+      "type": "richtext",
+      "id": "caption",
+      "label": "Caption"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "image_width",
+      "label": "Image width",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "select",
+      "id": "image_alignment",
+      "label": "Image alignment",
+      "default": "center",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "aspect_ratio",
+      "label": "Aspect ratio",
+      "default": "natural",
+      "options": [
+        { "value": "natural", "label": "Natural" },
+        { "value": "square", "label": "Square" },
+        { "value": "landscape", "label": "Landscape" },
+        { "value": "portrait", "label": "Portrait" },
+        { "value": "wide", "label": "Wide banner" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "image_fit",
+      "label": "Image fit",
+      "default": "cover",
+      "options": [
+        { "value": "cover", "label": "Cover" },
+        { "value": "contain", "label": "Contain" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "image_margin_top",
+      "label": "Image margin top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "image_margin_bottom",
+      "label": "Image margin bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "checkbox",
+      "id": "show_border",
+      "label": "Show border",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "border_width",
+      "label": "Border width",
+      "min": 1,
+      "max": 12,
+      "step": 1,
+      "unit": "px",
+      "default": 2
+    },
+    {
+      "type": "select",
+      "id": "border_color_source",
+      "label": "Border color",
+      "default": "theme",
+      "options": [
+        { "value": "theme", "label": "Use theme foreground color" },
+        { "value": "custom", "label": "Custom color" }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Custom border color",
+      "default": "#FB5E33"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_shadow",
+      "label": "Show shadow",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "shadow_opacity",
+      "label": "Shadow opacity",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "%",
+      "default": 16
+    },
+    {
+      "type": "select",
+      "id": "hover_effect",
+      "label": "Hover effect",
+      "default": "none",
+      "options": [
+        { "value": "none", "label": "None" },
+        { "value": "zoom", "label": "Zoom" },
+        { "value": "lift", "label": "Lift" },
+        { "value": "fade", "label": "Fade" }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Section spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Desktop padding top",
+      "min": 0,
+      "max": 180,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Desktop padding bottom",
+      "min": 0,
+      "max": 180,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "label": "Mobile padding top",
+      "min": 0,
+      "max": 140,
+      "step": 4,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "label": "Mobile padding bottom",
+      "min": 0,
+      "max": 140,
+      "step": 4,
+      "unit": "px",
+      "default": 24
+    }
+  ],
+  "presets": [
+    {
+      "name": "Enhanced Image"
+    }
+  ]
+}
+{% endschema %}

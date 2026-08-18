@@ -1,0 +1,321 @@
+{{ 'component-locations.css' | asset_url | stylesheet_tag }}
+
+<section
+  id="Locations-{{ section.id }}"
+  class="locations page-width color-{{ section.settings.color_scheme }} gradient"
+  style="
+    --locations-columns: {{ section.settings.columns }};
+    --locations-card-radius: {{ section.settings.card_radius }}px;
+    --locations-padding-top: {{ section.settings.padding_top }}px;
+    --locations-padding-bottom: {{ section.settings.padding_bottom }}px;
+    --locations-padding-top-mobile: {{ section.settings.mobile_padding_top }}px;
+    --locations-padding-bottom-mobile: {{ section.settings.mobile_padding_bottom }}px;
+  "
+>
+  <div class="locations__inner">
+    {% if section.settings.heading != blank or section.settings.text != blank %}
+      <div class="locations__header {{ section.settings.heading_alignment }}">
+        {% if section.settings.heading != blank %}
+          <h2 class="locations__heading {{ section.settings.heading_size }}">
+            {{ section.settings.heading }}
+          </h2>
+        {% endif %}
+
+        {% if section.settings.text != blank %}
+          <div class="locations__text rte">
+            {{ section.settings.text }}
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="locations__grid locations__grid--{{ section.settings.layout }}">
+      {% for block in section.blocks %}
+        <div class="locations__card" {{ block.shopify_attributes }}>
+          {% if block.settings.map_embed != blank %}
+            <div class="locations__map">
+              {{ block.settings.map_embed }}
+            </div>
+          {% elsif block.settings.image != blank %}
+            <div class="locations__media">
+              <img
+                src="{{ block.settings.image | image_url: width: 1600 }}"
+                srcset="
+                  {{ block.settings.image | image_url: width: 600 }} 600w,
+                  {{ block.settings.image | image_url: width: 900 }} 900w,
+                  {{ block.settings.image | image_url: width: 1200 }} 1200w,
+                  {{ block.settings.image | image_url: width: 1600 }} 1600w,
+                  {{ block.settings.image | image_url: width: 2000 }} 2000w
+                "
+                sizes="(min-width: 750px) 50vw, 100vw"
+                alt="{{ block.settings.image.alt | default: block.settings.title | escape }}"
+                width="{{ block.settings.image.width }}"
+                height="{{ block.settings.image.height }}"
+                loading="lazy"
+                class="locations__image"
+              >
+            </div>
+          {% else %}
+            <div class="locations__media">
+              {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+            </div>
+          {% endif %}
+
+          <div class="locations__content">
+            {% if block.settings.title != blank %}
+              <h3 class="locations__title">{{ block.settings.title }}</h3>
+            {% endif %}
+
+            {% if block.settings.address != blank %}
+              <div class="locations__row">
+                <span class="locations__icon">
+                  {% render 'icon-location' %}
+                </span>
+                <span>{{ block.settings.address | newline_to_br }}</span>
+              </div>
+            {% endif %}
+
+            {% if block.settings.phone != blank %}
+              <div class="locations__row">
+                <span class="locations__icon">
+                  {% render 'icon-phone' %}
+                </span>
+                {% assign phone_href = block.settings.phone
+                  | remove: ' '
+                  | remove: '-'
+                  | remove: '('
+                  | remove: ')'
+                  | remove: '.'
+                %}
+
+                <a href="tel:{{ phone_href }}" class="locations__link">
+                  {{ block.settings.phone }}
+                </a>
+              </div>
+            {% endif %}
+
+            {% if block.settings.hours != blank %}
+              <div class="locations__row">
+                <span class="locations__icon">
+                  {% render 'icon-clock' %}
+                </span>
+                <span>{{ block.settings.hours | newline_to_br }}</span>
+              </div>
+            {% endif %}
+
+            {% if block.settings.button_label != blank and block.settings.button_link != blank %}
+              <a href="{{ block.settings.button_link }}" class="button locations__button">
+                {{ block.settings.button_label }}
+              </a>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Locations",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Our Locations"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Heading size",
+      "default": "h1",
+      "options": [
+        {
+          "value": "h2",
+          "label": "Small"
+        },
+        {
+          "value": "h1",
+          "label": "Medium"
+        },
+        {
+          "value": "h0",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "Heading alignment",
+      "default": "center",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Desktop layout",
+      "default": "inline",
+      "options": [
+        {
+          "value": "grid",
+          "label": "Grid"
+        },
+        {
+          "value": "inline",
+          "label": "Inline cards"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "columns",
+      "label": "Desktop columns",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "label": "Card corner radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Desktop padding top",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Desktop padding bottom",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "label": "Mobile padding top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "label": "Mobile padding bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 28
+    }
+  ],
+  "blocks": [
+    {
+      "type": "location",
+      "name": "Location",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "map_embed",
+          "label": "Google Maps iframe embed"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Fallback image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Location name",
+          "default": "McAllen"
+        },
+        {
+          "type": "textarea",
+          "id": "address",
+          "label": "Address"
+        },
+        {
+          "type": "text",
+          "id": "phone",
+          "label": "Phone"
+        },
+        {
+          "type": "textarea",
+          "id": "hours",
+          "label": "Hours"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label",
+          "default": "Get directions"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Locations",
+      "blocks": [
+        {
+          "type": "location"
+        },
+        {
+          "type": "location"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

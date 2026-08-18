@@ -1,0 +1,146 @@
+.locations {
+    padding-top: var(--locations-padding-top);
+    padding-bottom: var(--locations-padding-bottom);
+}
+
+.locations__inner {
+    width: 100%;
+}
+
+.locations__header {
+    margin-bottom: 3rem;
+}
+
+.locations__header.left {
+    text-align: left;
+}
+
+.locations__header.center {
+    text-align: center;
+}
+
+.locations__header.right {
+    text-align: right;
+}
+
+.locations__heading {
+    margin: 0;
+}
+
+.locations__text {
+    margin-top: 1rem;
+}
+
+.locations__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.4rem;
+}
+
+@media screen and (min-width: 750px) {
+    .locations__grid--grid {
+        grid-template-columns: repeat(var(--locations-columns), minmax(0, 1fr));
+    }
+
+    .locations__grid--inline {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 2.4rem;
+    }
+
+    .locations__grid--inline .locations__card {
+        flex: 1 1 0;
+        min-width: 0;
+    }
+}
+
+.locations__card {
+    overflow: hidden;
+    border-radius: var(--locations-card-radius);
+    background: #ffffff;
+    color: rgb(var(--color-foreground));
+    box-shadow: 0 0.4rem 1.8rem rgba(0, 0, 0, 0.08);
+}
+
+.locations__media,
+.locations__map {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: rgba(var(--color-foreground), 0.04);
+}
+
+.locations__map {
+    line-height: 0;
+}
+
+.locations__map iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+
+.locations__image,
+.locations__media .placeholder-svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.locations__content {
+    padding: 2.4rem;
+}
+
+.locations__title {
+    margin: 0 0 1.4rem;
+    font-size: calc(var(--font-heading-scale) * 2rem);
+}
+
+.locations__row {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.9rem;
+    margin-bottom: 0.9rem;
+    font-size: 1.4rem;
+    line-height: 1.4;
+}
+
+.locations__icon {
+    width: 2rem;
+    height: 2rem;
+    flex-shrink: 0;
+}
+
+.locations__icon svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.locations__button {
+    margin-top: 1.4rem;
+    min-height: auto;
+    min-width: auto;
+    padding: 1rem 1.8rem;
+    background-color: #fb5e33;
+    color: #ffffff;
+}
+
+.locations__button:hover {
+    background-color: #fb5e33;
+    color: #ffffff;
+    filter: brightness(0.95);
+}
+
+@media screen and (max-width: 749px) {
+    .locations {
+        padding-top: var(--locations-padding-top-mobile);
+        padding-bottom: var(--locations-padding-bottom-mobile);
+    }
+
+    .locations__content {
+        padding: 2rem;
+    }
+}

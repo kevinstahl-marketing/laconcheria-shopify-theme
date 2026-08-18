@@ -1,0 +1,115 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "custom_liquid_D4hTdi": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<section class=\"lc-social-proof\">\n  <div class=\"page-width\">\n    <div class=\"lc-social-proof__inner\">\n\n      <a class=\"lc-social-card\" href=\"https://www.instagram.com/laconcheriacafe\" target=\"_blank\" rel=\"noopener\">\n        <div class=\"lc-social-card__icon lc-social-card__icon--instagram\">\n          <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\">\n            <rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"5\"></rect>\n            <circle cx=\"12\" cy=\"12\" r=\"4\"></circle>\n            <circle cx=\"17.5\" cy=\"6.5\" r=\"1.2\"></circle>\n          </svg>\n        </div>\n        <h3>6k Followers</h3>\n        <p>Instagram community</p>\n      </a>\n\n      <a class=\"lc-social-card\" href=\"https://www.facebook.com/profile.php?id=61559961907178\" target=\"_blank\" rel=\"noopener\">\n        <div class=\"lc-social-card__icon lc-social-card__icon--facebook\">\n          <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\">\n            <path d=\"M14 8.5h2V5h-2.6C10.5 5 9 6.7 9 9.4V12H7v3.5h2V21h4v-5.5h2.7L16.2 12H13V9.8c0-.8.3-1.3 1-1.3Z\"></path>\n          </svg>\n        </div>\n        <h3>22k Followers</h3>\n        <p>Facebook community</p>\n      </a>\n\n      <a class=\"lc-social-card\" href=\"https://share.google/7dbjgP7mNGW23qQSo\" target=\"_blank\" rel=\"noopener\">\n        <div class=\"lc-social-card__icon lc-social-card__icon--star\">\n          <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\">\n            <path d=\"M12 2.5 15 8.7l6.8 1-4.9 4.8 1.2 6.8L12 18.1l-6.1 3.2 1.2-6.8-4.9-4.8 6.8-1L12 2.5Z\"></path>\n          </svg>\n        </div>\n        <h3>4.7 Stars</h3>\n        <p>Google reviews</p>\n      </a>\n\n    </div>\n  </div>\n</section>\n\n<style>\n  .lc-social-proof {\n    padding: 38px 0;\n    background: #fff4e4;\n  }\n\n  .lc-social-proof__inner {\n    display: grid;\n    grid-template-columns: repeat(3, 1fr);\n    gap: 32px;\n  }\n\n  .lc-social-card {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n    min-height: 160px;\n    padding: 24px 20px;\n    border-radius: 10px;\n    background: #ffffff;\n    text-align: center;\n    text-decoration: none;\n    color: #111111;\n    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.07);\n    transition: transform 0.2s ease, box-shadow 0.2s ease;\n  }\n\n  .lc-social-card:hover {\n    transform: translateY(-4px);\n    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.1);\n  }\n\n  .lc-social-card__icon {\n    margin-bottom: 12px;\n    color: #ff5aa5;\n  }\n\n  .lc-social-card__icon svg {\n    width: 34px;\n    height: 34px;\n    display: block;\n  }\n\n  .lc-social-card__icon--instagram svg {\n    fill: none;\n    stroke: currentColor;\n    stroke-width: 2;\n  }\n\n  .lc-social-card__icon--facebook svg,\n  .lc-social-card__icon--star svg {\n    fill: currentColor;\n  }\n\n  .lc-social-card__icon--star {\n    color: #f4c542;\n  }\n\n  .lc-social-card h3 {\n    margin: 0;\n    font-family: var(--font-heading-family);\n    font-size: 32px;\n    line-height: 1.1;\n    color: #000000;\n  }\n\n  .lc-social-card p {\n    margin: 10px 0 0;\n    font-size: 15px;\n    line-height: 1.3;\n    color: #111111;\n  }\n\n  @media screen and (max-width: 749px) {\n    .lc-social-proof {\n      padding: 28px 0;\n    }\n\n    .lc-social-proof__inner {\n      grid-template-columns: 1fr;\n      gap: 18px;\n    }\n\n    .lc-social-card {\n      min-height: 130px;\n      padding: 22px 18px;\n    }\n\n    .lc-social-card h3 {\n      font-size: 28px;\n    }\n  }\n</style>",
+        "color_scheme": "scheme-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "image_container_JTPfmn": {
+      "type": "image-container",
+      "name": "Enhanced Image",
+      "settings": {
+        "color_scheme": "",
+        "show_on_desktop": true,
+        "show_on_mobile": true,
+        "image": "shopify://shop_images/Group_Photo.jpg",
+        "mobile_image": "shopify://shop_images/Group_Photo.jpg",
+        "alt_text": "Family Photo",
+        "image_link": "",
+        "caption": "",
+        "image_width": 100,
+        "image_alignment": "center",
+        "aspect_ratio": "landscape",
+        "image_fit": "cover",
+        "image_margin_top": 0,
+        "image_margin_bottom": 0,
+        "border_radius": 16,
+        "show_border": true,
+        "border_width": 2,
+        "border_color_source": "theme",
+        "border_color": "#fb5e33",
+        "show_shadow": true,
+        "shadow_opacity": 16,
+        "hover_effect": "zoom",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "mobile_padding_top": 24,
+        "mobile_padding_bottom": 24
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "custom_liquid_JPTJNW": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<section class=\"journey-story color-{{ section.settings.color_scheme | default: 'scheme-1' }} gradient\">\n\n  <style>\n    .journey-story {\n      padding: 4rem 2rem;\n    }\n\n    .journey-story__inner {\n      max-width: var(--page-width);\n      margin: 0 auto;\n    }\n\n    .journey-story__content {\n      max-width: 76rem;\n      margin: 0 auto;\n      border-bottom: 1px solid rgba(var(--color-foreground), 0.15);\n      padding-bottom: 4rem;\n    }\n\n    .journey-story__heading {\n      margin: 0 0 3rem;\n      text-align: center;\n      font-family: var(--font-heading-family);\n      font-style: var(--font-heading-style);\n      font-weight: var(--font-heading-weight);\n      font-size: clamp(3rem, 5vw, 4.8rem);\n      line-height: 1.1;\n      color: rgb(var(--color-foreground));\n    }\n\n    .journey-story__content p {\n      margin: 0 0 2rem;\n      font-family: var(--font-body-family);\n      font-style: var(--font-body-style);\n      font-weight: var(--font-body-weight);\n      font-size: 1.6rem;\n      line-height: 2;\n      color: rgba(var(--color-foreground), 0.8);\n    }\n\n    .journey-story__highlight {\n      color: #FB58A9;\n    }\n\n    .journey-story__pullquote {\n      margin: 4rem 0;\n      padding: 2rem 0 2rem 2rem;\n      border-left: 2px solid #FB58A9;\n    }\n\n    .journey-story__pullquote p {\n      margin: 0;\n      font-family: var(--font-heading-family);\n      font-style: var(--font-heading-style);\n      font-weight: var(--font-heading-weight);\n      font-size: clamp(2.6rem, 3vw, 3.8rem);\n      line-height: 1.25;\n      color: rgb(var(--color-foreground));\n    }\n\n    @media screen and (max-width: 749px) {\n\n      .journey-story {\n        padding: 3rem 1.5rem;\n      }\n\n      .journey-story__content {\n        max-width: 100%;\n      }\n\n      .journey-story__heading {\n        font-size: 3rem;\n      }\n\n      .journey-story__content p {\n        font-size: 1.5rem;\n        line-height: 1.9;\n      }\n\n      .journey-story__pullquote {\n        padding-left: 1.6rem;\n      }\n\n      .journey-story__pullquote p {\n        font-size: 2.4rem;\n      }\n    }\n  </style>\n\n  <div class=\"journey-story__inner\">\n    <div class=\"journey-story__content\">\n\n      <h2 class=\"journey-story__heading\">\n        Our Journey\n      </h2>\n\n      <p>\n        La Concheria didn't start as a café.\n      </p>\n\n      <p>\n        It started with a family — a dad, a daughter, and a son — loading up cookies and knocking on doors across the Rio Grande Valley. Tortillerías, meat markets, local stores. At their peak, their cookies were sitting on shelves in <span class=\"journey-story__highlight\">80 locations.</span>\n      </p>\n\n      <p>\n        Then came a storefront. Then partners. Then betrayal.\n      </p>\n\n      <p>\n        Profits were stolen. Debt piled up. The business they had built from nothing was gone. They were broke — and starting over wasn't a plan, it was a last resort.\n      </p>\n\n      <blockquote class=\"journey-story__pullquote\">\n        <p>\n          With five maxed-out credit cards and nothing but each other, they opened a small coffee shop in McAllen, Texas and called it La Concheria.\n        </p>\n      </blockquote>\n\n      <p>\n        No investors. No safety net. Just authentic conchas, honest chilaquiles, and a family that refused to quit.\n      </p>\n\n      <p>\n        The Valley showed up — fast. Within two months, the café was turning a profit. Within six months, they opened a second location. What started as a desperate bet had become something real, something growing, something the community claimed as their own.\n      </p>\n\n      <p>\n        Then came the moment that stopped them in their tracks — PBS's Daytripper, hosted by Chet Garner, walked through their doors. He watched the conchas being made by hand, the same way they've always been made, and brought La Concheria's story to audiences across the entire state of Texas.\n      </p>\n\n      <p>\n        Four years. Two states of mind — rock bottom and rising. Eighty store shelves, five credit cards, two locations, and one visit from Daytripper later —\n      </p>\n\n      <blockquote class=\"journey-story__pullquote\">\n        <p>\n          La Concheria is what happens when family refuses to quit.\n        </p>\n      </blockquote>\n\n      <p style=\"text-align: center;\">\n        We're glad you found us.<br>\n        Pull up a chair. The conchas are fresh.\n      </p>\n\n    </div>\n  </div>\n\n</section>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "rich_text_D77P6R": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_cndAmt": {
+          "type": "heading",
+          "settings": {
+            "heading": "Veteran and Woman Operated",
+            "heading_size": "h1"
+          }
+        },
+        "text_8ahiYL": {
+          "type": "text",
+          "settings": {
+            "text": "<p><br/>We are a family business built on three generations of bakers who have always made everything from scratch. Born in McAllen, rooted in tradition, and proud to serve the RGV every concha, every chilaquile, every cup of café de olla is made the way it has always been done. With care, with love, and with family.<br/><br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_cndAmt",
+        "text_8ahiYL"
+      ],
+      "custom_css": [
+        ".rich-text__wrapper,.rich-text:not(.rich-text--full-width) .rich-text__wrapper {width: 100% !important; max-width: 72rem; margin: 0 auto; background: #fff; border-radius: 8px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); padding: 4rem 5rem;}",
+        ".rich-text__blocks {max-width: 58rem;}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-1",
+        "full_width": false,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    }
+  },
+  "order": [
+    "custom_liquid_D4hTdi",
+    "image_container_JTPfmn",
+    "main",
+    "custom_liquid_JPTJNW",
+    "rich_text_D77P6R"
+  ]
+}

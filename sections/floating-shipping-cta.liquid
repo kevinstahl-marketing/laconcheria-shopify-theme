@@ -1,0 +1,420 @@
+{% liquid
+  assign s = section.settings
+%}
+
+<div
+  id="FloatingShippingCTA-{{ section.id }}"
+  class="
+    floating-ship-cta
+    floating-ship-cta--{{ s.position }}
+    floating-ship-cta--{{ s.size }}
+    {% if s.default_open %}is-open{% endif %}
+    {% if s.enable_animation %}floating-ship-cta--animated{% endif %}
+  "
+>
+  <button
+    class="floating-ship-cta__toggle"
+    type="button"
+    aria-label="Open shipping message"
+    onclick="this.closest('.floating-ship-cta').classList.toggle('is-open')"
+  >
+    {% if s.icon_image != blank %}
+      {{ s.icon_image | image_url: width: 160 | image_tag: class: 'floating-ship-cta__toggle-img', loading: 'lazy' }}
+    {% else %}
+      <span class="floating-ship-cta__emoji">{{ s.icon_text }}</span>
+    {% endif %}
+  </button>
+
+  <div class="floating-ship-cta__panel">
+    {% if s.show_close %}
+      <button
+        class="floating-ship-cta__close"
+        type="button"
+        aria-label="Close shipping message"
+        onclick="this.closest('.floating-ship-cta').classList.remove('is-open')"
+      >
+        ×
+      </button>
+    {% endif %}
+
+    <div class="floating-ship-cta__content">
+      {% if s.heading != blank %}
+        <strong>{{ s.heading }}</strong>
+      {% endif %}
+
+      {% if s.description != blank %}
+        <p>{{ s.description }}</p>
+      {% endif %}
+
+      {% if s.button_text != blank and s.button_link != blank %}
+        <a href="{{ s.button_link }}" class="floating-ship-cta__button">
+          {{ s.button_text }}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<style>
+  #FloatingShippingCTA-{{ section.id }} {
+    --ship-bg: {{ s.background_color }};
+    --ship-text: {{ s.text_color }};
+    --ship-accent: {{ s.accent_color }};
+    --ship-button-bg: {{ s.button_background }};
+    --ship-button-text: {{ s.button_text_color }};
+    --ship-radius: {{ s.border_radius }}px;
+    --ship-shadow: 0 10px 32px rgba(0, 0, 0, {{ s.shadow_opacity | divided_by: 100.0 }});
+    --ship-offset-x: {{ s.offset_x }}px;
+    --ship-offset-y: {{ s.offset_y }}px;
+    --ship-max-width: {{ s.card_width }}px;
+    --ship-icon-size: {{ s.icon_size }}px;
+  }
+
+  #FloatingShippingCTA-{{ section.id }}.floating-ship-cta {
+    position: fixed;
+    z-index: {{ s.z_index }};
+    font-family: inherit;
+  }
+
+  #FloatingShippingCTA-{{ section.id }}.floating-ship-cta--bottom-right {
+    right: var(--ship-offset-x);
+    bottom: var(--ship-offset-y);
+  }
+
+  #FloatingShippingCTA-{{ section.id }}.floating-ship-cta--bottom-left {
+    left: var(--ship-offset-x);
+    bottom: var(--ship-offset-y);
+  }
+
+  #FloatingShippingCTA-{{ section.id }} .floating-ship-cta__toggle {
+    width: var(--ship-icon-size);
+    height: var(--ship-icon-size);
+    padding: 0;
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: none;
+  }
+
+  #FloatingShippingCTA-{{ section.id }} .floating-ship-cta__toggle-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  #FloatingShippingCTA-{{ section.id }} .floating-ship-cta__emoji {
+    font-size: calc(var(--ship-icon-size) * 0.75);
+    line-height: 1;
+  }
+
+  #FloatingShippingCTA-{{ section.id }} .floating-ship-cta__panel {
+    display: none;
+    position: relative;
+    width: min(var(--ship-max-width), calc(100vw - 28px));
+    margin-bottom: 10px;
+    padding: 18px;
+    border-radius: var(--ship-radius);
+    background: var(--ship-bg);
+    color: var(--ship-text);
+    box-shadow: var(--ship-shadow);
+  }
+
+  #FloatingShippingCTA-{{ section.id }}.is-open .floating-ship-cta__panel {
+    display: block;
+  }
+
+  #FloatingShippingCTA-{{ section.id }}.is-open .floating-ship-cta__toggle {
+    display: none;
+  }
+
+  #FloatingShippingCTA-{{ section.id }} .floating-ship-cta__close {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    border: 0;
+    background: transparent;
+    color: var(--ship-text);
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  #FloatingShippingCTA-{{ section.id }} .floating-ship-cta__content {
+    display: grid;
+    gap: 6px;
+    padding-right: 18px;
+  }
+
+  #FloatingShippingCTA-{{ section.id }} .floating-ship-cta__content strong {
+    color: var(--ship-accent);
+    font-size: 17px;
+    line-height: 1.15;
+  }
+
+  #FloatingShippingCTA-{{ section.id }} .floating-ship-cta__content p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.35;
+  }
+
+  #FloatingShippingCTA-{{ section.id }} .floating-ship-cta__button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    margin-top: 6px;
+    padding: 10px 14px;
+    border-radius: 999px;
+    background: var(--ship-button-bg);
+    color: var(--ship-button-text);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  #FloatingShippingCTA-{{ section.id }}.floating-ship-cta--small .floating-ship-cta__panel {
+    padding: 14px;
+  }
+
+  #FloatingShippingCTA-{{ section.id }}.floating-ship-cta--small .floating-ship-cta__content strong {
+    font-size: 15px;
+  }
+
+  #FloatingShippingCTA-{{ section.id }}.floating-ship-cta--large .floating-ship-cta__panel {
+    padding: 22px;
+  }
+
+  #FloatingShippingCTA-{{ section.id }}.floating-ship-cta--large .floating-ship-cta__content strong {
+    font-size: 20px;
+  }
+
+  #FloatingShippingCTA-{{ section.id }}.floating-ship-cta--animated .floating-ship-cta__toggle {
+    animation: shipBob-{{ section.id }} 3s ease-in-out infinite;
+  }
+
+  @keyframes shipBob-{{ section.id }} {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+
+  @media screen and (max-width: 749px) {
+    #FloatingShippingCTA-{{ section.id }}.floating-ship-cta {
+      right: var(--ship-offset-x);
+      bottom: var(--ship-offset-y);
+    }
+
+    #FloatingShippingCTA-{{ section.id }}.floating-ship-cta--bottom-left {
+      left: var(--ship-offset-x);
+      right: auto;
+    }
+
+    #FloatingShippingCTA-{{ section.id }} .floating-ship-cta__panel {
+      width: min(260px, calc(100vw - 40px));
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Floating CTA",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "We ship anywhere in the U.S."
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Fresh-baked conchas, packed with love and shipped fast."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Build Your Box →"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon_image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "icon_text",
+      "label": "Fallback emoji/icon",
+      "default": "🥐"
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "label": "Image size",
+      "min": 36,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 64
+    },
+    {
+      "type": "select",
+      "id": "position",
+      "label": "Position",
+      "default": "bottom-right",
+      "options": [
+        {
+          "value": "bottom-right",
+          "label": "Bottom right"
+        },
+        {
+          "value": "bottom-left",
+          "label": "Bottom left"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "size",
+      "label": "Message size",
+      "default": "medium",
+      "options": [
+        {
+          "value": "small",
+          "label": "Small"
+        },
+        {
+          "value": "medium",
+          "label": "Medium"
+        },
+        {
+          "value": "large",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "default_open",
+      "label": "Open by default",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_close",
+      "label": "Show close button",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_animation",
+      "label": "Enable bobbing animation",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "card_width",
+      "label": "Message width",
+      "min": 220,
+      "max": 420,
+      "step": 10,
+      "unit": "px",
+      "default": 300
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Message border radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "offset_x",
+      "label": "Side offset",
+      "min": 8,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "offset_y",
+      "label": "Bottom offset",
+      "min": 8,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "shadow_opacity",
+      "label": "Message shadow opacity",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "%",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "z_index",
+      "label": "Layer priority",
+      "min": 10,
+      "max": 200,
+      "step": 10,
+      "default": 50
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Message background",
+      "default": "#FFF7EF"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Message text",
+      "default": "#3B2A22"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Heading/accent",
+      "default": "#FB5E33"
+    },
+    {
+      "type": "color",
+      "id": "button_background",
+      "label": "Button background",
+      "default": "#FB5E33"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text",
+      "default": "#FFFFFF"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Floating shipping CTA"
+    }
+  ]
+}
+{% endschema %}

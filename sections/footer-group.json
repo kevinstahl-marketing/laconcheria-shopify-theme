@@ -1,53 +1,109 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
+    "floating_shipping_cta_dPgDUC": {
+      "type": "floating-shipping-cta",
+      "name": "Floating CTA",
+      "settings": {
+        "heading": "We ship anywhere in the U.S.",
+        "description": "Fresh-baked conchas, packed with love and shipped fast.",
+        "button_text": "Shop Now",
+        "button_link": "shopify://collections/all",
+        "icon_image": "shopify://shop_images/Png_Concha_pink.png",
+        "icon_text": "📦",
+        "icon_size": 64,
+        "position": "bottom-right",
+        "size": "small",
+        "default_open": false,
+        "show_close": true,
+        "enable_animation": true,
+        "card_width": 420,
+        "border_radius": 16,
+        "offset_x": 14,
+        "offset_y": 8,
+        "shadow_opacity": 16,
+        "z_index": 50,
+        "background_color": "#fff7ef",
+        "text_color": "#3b2a22",
+        "accent_color": "#fb5e33",
+        "button_background": "#fb5e33",
+        "button_text_color": "#ffffff"
+      }
+    },
+    "178141439587343f7e": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "talavera_divider_HMUccN": {
+      "type": "talavera-divider",
+      "name": "Talavera divider",
+      "settings": {
+        "divider_image": "shopify://shop_images/Talavera_Conchas.png",
+        "height": 36,
+        "opacity": 100,
+        "color_scheme": "scheme-2"
+      }
+    },
     "footer": {
       "type": "footer",
       "blocks": {
         "footer-0": {
           "type": "link_list",
           "settings": {
-            "heading": "Quick links",
-            "menu": "footer"
+            "heading": "Order",
+            "menu": "order"
           }
         },
         "footer-1": {
           "type": "link_list",
           "settings": {
-            "heading": "Info",
-            "menu": "footer"
+            "heading": "Visit Us",
+            "menu": "visit-us"
           }
         },
-        "footer-2": {
-          "type": "text",
+        "link_list_n9cVMP": {
+          "type": "link_list",
           "settings": {
-            "heading": "Our mission",
-            "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>"
+            "heading": "Policies",
+            "menu": "policies"
           }
         }
       },
       "block_order": [
         "footer-0",
         "footer-1",
-        "footer-2"
+        "link_list_n9cVMP"
       ],
       "settings": {
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-2",
         "newsletter_enable": true,
-        "newsletter_heading": "Subscribe to our emails",
+        "newsletter_heading": "Subscribe to our emails and receive a welcome discount",
+        "enable_follow_on_shop": false,
         "show_social": true,
         "enable_country_selector": false,
         "enable_language_selector": false,
-        "payment_enable": true,
+        "payment_enable": false,
         "show_policy": false,
-        "margin_top": 48,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "margin_top": 0,
+        "padding_top": 52,
+        "padding_bottom": 48
       }
     }
   },
   "order": [
+    "floating_shipping_cta_dPgDUC",
+    "178141439587343f7e",
+    "talavera_divider_HMUccN",
     "footer"
   ]
 }
