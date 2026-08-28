@@ -1,256 +1,492 @@
 {% style %}
-  /* ================================
-     CONCHA SHOWCASE
-     ================================ */
+                          /* ================================
+                             CONCHA SHOWCASE
+                             ================================ */
 
-  #ConchaShowcase-{{ section.id }} {
-    position: relative;
-    overflow: visible;
-  }
+                          #ConchaShowcase-{{ section.id }} {
+                            position: relative;
+                            overflow: visible;
+                          }
 
-  #ConchaShowcase-{{ section.id }} .concha-showcase__inner {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-  }
-
-
-  /* ================================
-     SECTION INTRO
-     ================================ */
-
-  #ConchaShowcase-{{ section.id }} .concha-showcase__header {
-    max-width: 70rem;
-    margin: 0 auto 8rem;
-    text-align: center;
-  }
-
-  #ConchaShowcase-{{ section.id }} .concha-showcase__header .concha-showcase__eyebrow {
-    margin: 0 0 1rem;
-    font-size: 1.3rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-  }
-
-  #ConchaShowcase-{{ section.id }} .concha-showcase__heading {
-    margin: 0;
-  }
-
-  #ConchaShowcase-{{ section.id }} .concha-showcase__subheading {
-    margin-top: 1.5rem;
-  }
+                          #ConchaShowcase-{{ section.id }} .concha-showcase__inner {
+                            padding-top: 6rem;
+                            padding-bottom: 6rem;
+                          }
 
 
-  /* ================================
-     STICKY TALAVERA
-     ================================ */
+                          /* ================================
+                             SECTION INTRO
+                             ================================ */
 
-  #ConchaShowcase-{{ section.id }} .concha-showcase__sticky-talavera {
+                          #ConchaShowcase-{{ section.id }} .concha-showcase__header {
+                            max-width: 70rem;
+                            margin: 0 auto 8rem;
+                            text-align: center;
+                          }
+
+                          #ConchaShowcase-{{ section.id }} .concha-showcase__header .concha-showcase__eyebrow {
+                            margin: 0 0 1rem;
+                            font-size: 1.3rem;
+                            font-weight: 700;
+                            letter-spacing: 0.12em;
+                            text-transform: uppercase;
+                          }
+
+                          #ConchaShowcase-{{ section.id }} .concha-showcase__heading {
+                            margin: 0;
+                          }
+
+                          #ConchaShowcase-{{ section.id }} .concha-showcase__subheading {
+                            margin-top: 1.5rem;
+                          }
+
+
+
+                          /* ================================
+                             PRODUCT TREADMILL
+                             ================================ */
+
+                          #ConchaShowcase-{{ section.id }} .concha-showcase__products {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 10rem;
+                          }
+
+
+                          /* ================================
+                             PRODUCT ROW
+                             ================================ */
+
+                          #ConchaShowcase-{{ section.id }} .concha-showcase__product {
+                            display: grid;
+                            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+                            align-items: center;
+                            gap: 6rem;
+                            min-height: 55rem;
+                          }
+
+                          #ConchaShowcase-{{ section.id }}
+                            .concha-showcase__product--reverse
+                            .concha-showcase__media {
+                            order: 2;
+                          }
+
+                          #ConchaShowcase-{{ section.id }}
+                            .concha-showcase__product--reverse
+                            .concha-showcase__content {
+                            order: 1;
+                          }
+
+
+                          /* ================================
+                             PRODUCT MEDIA
+                             ================================ */
+
+                          #ConchaShowcase-{{ section.id }} .concha-showcase__media {
+                            position: relative;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            min-width: 0;
+                          }
+
+                          #ConchaShowcase-{{ section.id }} .concha-showcase__media::before {
+                            content: "";
+                            position: absolute;
+                            width: 75%;
+                            aspect-ratio: 1;
+                            border-radius: 50%;
+                            background: var(--concha-accent);
+                            opacity: 0.35;
+                            filter: blur(40px);
+                          }
+
+                          #ConchaShowcase-{{ section.id }} .concha-showcase__image {
+                            position: relative;
+                            z-index: 1;
+                            display: block;
+                            width: 100%;
+                            max-width: 55rem;
+                            height: auto;
+                            object-fit: contain;
+                          }
+
+                          #ConchaShowcase-{{ section.id }} .concha-showcase__placeholder {
+                            position: relative;
+                            z-index: 1;
+                            width: 100%;
+                            max-width: 50rem;
+                          }
+
+
+                          /* ================================
+                             PRODUCT CONTENT
+                             ================================ */
+
+                          #ConchaShowcase-{{ section.id }} .concha-showcase__content {
+                            max-width: 52rem;
+                          }
+
+                          #ConchaShowcase-{{ section.id }} .concha-showcase__content .concha-showcase__eyebrow {
+                            margin: 0 0 1rem;
+                            font-size: 1.3rem;
+                            font-weight: 700;
+                            letter-spacing: 0.12em;
+                            text-transform: uppercase;
+                          }
+
+                          #ConchaShowcase-{{ section.id }} .concha-showcase__title {
+                            margin: 0;
+                            font-size: clamp(3.6rem, 5vw, 7rem);
+                            line-height: 0.95;
+                          }
+
+                          #ConchaShowcase-{{ section.id }} .concha-showcase__description {
+                            margin-top: 2rem;
+                            font-size: 1.7rem;
+                            line-height: 1.6;
+                          }
+
+                          #ConchaShowcase-{{ section.id }} .concha-showcase__description > * {
+                            margin-top: 0;
+                            margin-bottom: 0;
+                          }
+
+                          #ConchaShowcase-{{ section.id }} .concha-showcase__price {
+                            margin-top: 2rem;
+                          }
+
+                          #ConchaShowcase-{{ section.id }} .concha-showcase__actions {
+                            display: flex;
+                            align-items: center;
+                            gap: 2rem;
+                            margin-top: 3rem;
+                          }
+
+                          #ConchaShowcase-{{ section.id }} .concha-showcase__learn-more {
+                            color: rgb(var(--color-foreground));
+                            font-weight: 600;
+                            text-decoration: none;
+                          }
+
+
+                          /* ================================
+                             MOBILE
+                             ================================ */
+
+                          @media screen and (max-width: 749px) {
+                            #ConchaShowcase-{{ section.id }} .concha-showcase__inner {
+                              padding-top: 4rem;
+                              padding-bottom: 4rem;
+                            }
+
+                            #ConchaShowcase-{{ section.id }} .concha-showcase__header {
+                              margin-bottom: 5rem;
+                            }
+
+                            #ConchaShowcase-{{ section.id }} .concha-showcase__products {
+                              gap: 8rem;
+                            }
+
+                            #ConchaShowcase-{{ section.id }} .concha-showcase__product {
+                              display: flex;
+                              flex-direction: column;
+                              gap: 3rem;
+                              min-height: 0;
+                            }
+
+                            #ConchaShowcase-{{ section.id }}
+                              .concha-showcase__product--reverse
+                              .concha-showcase__media,
+                            #ConchaShowcase-{{ section.id }}
+                              .concha-showcase__product--reverse
+                              .concha-showcase__content {
+                              order: initial;
+                            }
+
+                            #ConchaShowcase-{{ section.id }} .concha-showcase__media {
+                              width: 100%;
+                            }
+
+                            #ConchaShowcase-{{ section.id }} .concha-showcase__image {
+                              max-width: 90vw;
+                            }
+
+                            #ConchaShowcase-{{ section.id }} .concha-showcase__content {
+                              width: 100%;
+                              text-align: center;
+                            }
+
+                            #ConchaShowcase-{{ section.id }} .concha-showcase__actions {
+                              justify-content: center;
+                              flex-wrap: wrap;
+                            }
+                          }
+                      /* ================================
+                         STICKY BAKERY DISPLAY CASE
+                         ================================ */
+
+       #ConchaShowcase-{{ section.id }} .concha-showcase__sticky-case {
     position: sticky;
-    top: 0;
-    z-index: 10;
+    top: var(--concha-header-offset, 0px);
+    z-index: 2;
+
+    transition: top 0.15s ease;
   }
 
+                      /* ================================
+                         CASE
+                         ================================ */
 
-  /* ================================
-     PRODUCT TREADMILL
-     ================================ */
-
-  #ConchaShowcase-{{ section.id }} .concha-showcase__products {
-    display: flex;
-    flex-direction: column;
-    gap: 10rem;
-  }
+                      #ConchaShowcase-{{ section.id }} .bakery-case {
+                        position: relative;
+                        width: 100%;
+                      }
 
 
-  /* ================================
-     PRODUCT ROW
-     ================================ */
+                      /* ================================
+                         GLASS
+                         ================================ */
 
-  #ConchaShowcase-{{ section.id }} .concha-showcase__product {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    align-items: center;
-    gap: 6rem;
-    min-height: 55rem;
-  }
+                    #ConchaShowcase-{{ section.id }} .bakery-case__glass {
+                    position: relative;
 
-  #ConchaShowcase-{{ section.id }}
-    .concha-showcase__product--reverse
-    .concha-showcase__media {
-    order: 2;
-  }
+                    height: var(--case-glass-height);
 
-  #ConchaShowcase-{{ section.id }}
-    .concha-showcase__product--reverse
-    .concha-showcase__content {
-    order: 1;
-  }
+                    background: color-mix(
+                      in srgb,
+                      var(--case-glass-tint) calc(var(--case-glass-opacity) * 100%),
+                      transparent
+                    );
 
+                    backdrop-filter: blur(var(--case-glass-blur));
+                    -webkit-backdrop-filter: blur(var(--case-glass-blur));
 
-  /* ================================
-     PRODUCT MEDIA
-     ================================ */
+                    border-top: 1px solid rgba(255, 255, 255, 0.8);
 
-  #ConchaShowcase-{{ section.id }} .concha-showcase__media {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 0;
-  }
-
-  #ConchaShowcase-{{ section.id }} .concha-showcase__media::before {
-    content: "";
-    position: absolute;
-    width: 75%;
-    aspect-ratio: 1;
-    border-radius: 50%;
-    background: var(--concha-accent);
-    opacity: 0.35;
-    filter: blur(40px);
-  }
-
-  #ConchaShowcase-{{ section.id }} .concha-showcase__image {
-    position: relative;
-    z-index: 1;
-    display: block;
-    width: 100%;
-    max-width: 55rem;
-    height: auto;
-    object-fit: contain;
-  }
-
-  #ConchaShowcase-{{ section.id }} .concha-showcase__placeholder {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    max-width: 50rem;
-  }
+                    overflow: hidden;
+                  }
 
 
-  /* ================================
-     PRODUCT CONTENT
-     ================================ */
+                      /* ================================
+                         GLASS REFLECTIONS
+                         ================================ */
 
-  #ConchaShowcase-{{ section.id }} .concha-showcase__content {
-    max-width: 52rem;
-  }
+                      #ConchaShowcase-{{ section.id }} .bakery-case__reflection {
+                        position: absolute;
+                        pointer-events: none;
+                      }
 
-  #ConchaShowcase-{{ section.id }} .concha-showcase__content .concha-showcase__eyebrow {
-    margin: 0 0 1rem;
-    font-size: 1.3rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-  }
+                      #ConchaShowcase-{{ section.id }} .bakery-case__reflection--primary {
+                  top: 14px;
+                  left: 6%;
 
-  #ConchaShowcase-{{ section.id }} .concha-showcase__title {
-    margin: 0;
-    font-size: clamp(3.6rem, 5vw, 7rem);
-    line-height: 0.95;
-  }
+                  width: 38%;
+                  height: 1px;
 
-  #ConchaShowcase-{{ section.id }} .concha-showcase__description {
-    margin-top: 2rem;
-    font-size: 1.7rem;
-    line-height: 1.6;
-  }
+                  background: rgb(
+                    255 255 255 /
+                    var(--case-reflection-opacity)
+                  );
+                }
 
-  #ConchaShowcase-{{ section.id }} .concha-showcase__description > * {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
+                #ConchaShowcase-{{ section.id }} .bakery-case__reflection--secondary {
+                  top: -30px;
+                  left: 18%;
 
-  #ConchaShowcase-{{ section.id }} .concha-showcase__price {
-    margin-top: 2rem;
-  }
+                  width: 18%;
+                  height: 180px;
 
-  #ConchaShowcase-{{ section.id }} .concha-showcase__actions {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    margin-top: 3rem;
-  }
+                  background: rgb(
+                    255 255 255 /
+                    calc(var(--case-reflection-opacity) * 0.2)
+                  );
 
-  #ConchaShowcase-{{ section.id }} .concha-showcase__learn-more {
-    color: rgb(var(--color-foreground));
-    font-weight: 600;
-    text-decoration: none;
-  }
+                  transform: rotate(20deg);
+                }
 
+                      /* ================================
+                         BRANDING
+                         ================================ */
+    /* ================================
+       BRANDING
+       ================================ */
 
-  /* ================================
-     MOBILE
-     ================================ */
+    #ConchaShowcase-{{ section.id }} .bakery-case__branding {
+      position: absolute;
+      inset: 0;
 
-  @media screen and (max-width: 749px) {
-    #ConchaShowcase-{{ section.id }} .concha-showcase__inner {
-      padding-top: 4rem;
-      padding-bottom: 4rem;
-    }
-
-    #ConchaShowcase-{{ section.id }} .concha-showcase__header {
-      margin-bottom: 5rem;
-    }
-
-    #ConchaShowcase-{{ section.id }} .concha-showcase__products {
-      gap: 8rem;
-    }
-
-    #ConchaShowcase-{{ section.id }} .concha-showcase__product {
       display: flex;
-      flex-direction: column;
-      gap: 3rem;
-      min-height: 0;
+      align-items: center;
+
+      overflow: hidden;
+      white-space: nowrap;
+
+      pointer-events: none;
     }
 
-    #ConchaShowcase-{{ section.id }}
-      .concha-showcase__product--reverse
-      .concha-showcase__media,
-    #ConchaShowcase-{{ section.id }}
-      .concha-showcase__product--reverse
-      .concha-showcase__content {
-      order: initial;
-    }
 
-    #ConchaShowcase-{{ section.id }} .concha-showcase__media {
-      width: 100%;
-    }
+    /* STATIC */
 
-    #ConchaShowcase-{{ section.id }} .concha-showcase__image {
-      max-width: 90vw;
-    }
-
-    #ConchaShowcase-{{ section.id }} .concha-showcase__content {
-      width: 100%;
-      text-align: center;
-    }
-
-    #ConchaShowcase-{{ section.id }} .concha-showcase__actions {
+    #ConchaShowcase-{{ section.id }} .bakery-case__branding--static {
       justify-content: center;
-      flex-wrap: wrap;
+      padding: 0 2rem;
     }
-  }
-{% endstyle %}
 
+
+    /* TEXT */
+
+    #ConchaShowcase-{{ section.id }} .bakery-case__branding-text {
+      flex-shrink: 0;
+
+      font-size: 1.1rem;
+      font-weight: 700;
+
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+
+      color: var(--case-branding-color);
+      opacity: var(--case-branding-opacity);
+    }
+
+
+    /* SCROLLING TRACK */
+
+    #ConchaShowcase-{{ section.id }} .bakery-case__branding--scroll {
+      justify-content: flex-start;
+      padding: 0;
+    }
+
+    #ConchaShowcase-{{ section.id }} .bakery-case__branding-track {
+      display: flex;
+      width: max-content;
+
+      animation:
+        concha-case-branding-scroll
+        var(--case-scroll-speed)
+        linear
+        infinite;
+
+      will-change: transform;
+    }
+
+
+    /* IDENTICAL REPEATING GROUPS */
+
+    #ConchaShowcase-{{ section.id }} .bakery-case__branding-group {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+
+    /* SEPARATOR */
+
+    #ConchaShowcase-{{ section.id }} .bakery-case__separator {
+      flex-shrink: 0;
+
+      margin: 0 3rem;
+
+      color: var(--case-branding-color);
+      opacity: var(--case-branding-opacity);
+    }
+
+
+    /* ANIMATION */
+
+    @keyframes concha-case-branding-scroll {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+
+    /* ACCESSIBILITY */
+
+    @media (prefers-reduced-motion: reduce) {
+      #ConchaShowcase-{{ section.id }} .bakery-case__branding-track {
+        animation: none;
+      }
+    }
+
+
+        /* ================================
+         DISPLAY CASE BASE
+         ================================ */
+
+      #ConchaShowcase-{{ section.id }} .bakery-case__trim {
+        display: block;
+        position: relative;
+        z-index: 2;
+
+        width: 100%;
+        height: var(--case-trim-height);
+        background: var(--case-trim-color);
+      }
+
+
+      /* Main physical shelf */
+
+      #ConchaShowcase-{{ section.id }} .bakery-case__counter {
+        display: block;
+        position: relative;
+        z-index: 20;
+
+        width: 100%;
+        min-height: var(--case-counter-height);
+        height: var(--case-counter-height);
+
+        background: var(--case-counter-color);
+
+        border-top: 1px solid rgba(255, 255, 255, 0.65);
+        border-bottom: 1px solid rgba(60, 40, 20, 0.25);
+
+        box-shadow:
+          inset 0 2px 2px rgba(255, 255, 255, 0.45),
+          0 4px 8px rgba(40, 25, 10, 0.18);
+      }
+
+
+      /* Underside depth */
+
+      #ConchaShowcase-{{ section.id }} .bakery-case__shadow {
+        display: block;
+        position: relative;
+        z-index: 19;
+
+        width: 100%;
+        height: 12px;
+
+        background: linear-gradient(
+          to bottom,
+          rgb(30 20 10 / var(--case-shadow-opacity)),
+          transparent
+        );
+
+        pointer-events: none;
+      }
+{% endstyle %}
 
 <section
   id="ConchaShowcase-{{ section.id }}"
   class="concha-showcase color-{{ section.settings.color_scheme }} gradient"
 >
-  <div class="concha-showcase__inner page-width">
-
-    <!-- ============================
-         SECTION INTRO
-         ============================ -->
+  <div class="concha-showcase__inner">
+    <!--
+      ============================
+      SECTION INTRO
+      ============================
+    -->
 
     {% if section.settings.eyebrow != blank
       or section.settings.heading != blank
       or section.settings.subheading != blank
     %}
       <header class="concha-showcase__header">
-
         {% if section.settings.eyebrow != blank %}
           <p class="concha-showcase__eyebrow">
             {{ section.settings.eyebrow }}
@@ -268,34 +504,96 @@
             {{ section.settings.subheading }}
           </div>
         {% endif %}
-
       </header>
     {% endif %}
 
+    <!--
+      ============================
+      STICKY FROSTED GLASS
+      ============================
+    -->
 
-    <!-- ============================
-         STICKY TALAVERA BAND
-         ============================ -->
+    <!-- STICKY BAKERY DISPLAY CASE -->
+    <div
+      class="concha-showcase__sticky-case"
+      style="
+          --case-glass-height: {{ section.settings.case_glass_height }}px;
+          --case-glass-tint: {{ section.settings.case_glass_tint }};
+          --case-glass-opacity: {{ section.settings.case_glass_opacity | divided_by: 100.0 }};
+          --case-glass-blur: {{ section.settings.case_glass_blur }}px;
+          --case-reflection-opacity: {{ section.settings.case_reflection_intensity | divided_by: 100.0 }};
+          --case-counter-height: {{ section.settings.case_counter_height }}px;
+          --case-counter-color: {{ section.settings.case_counter_color }};
+          --case-trim-color: {{ section.settings.case_trim_color }};
+          --case-shadow-opacity: {{ section.settings.case_shadow_intensity | divided_by: 100.0 }};
+          --case-branding-color: {{ section.settings.case_branding_color }};
+          --case-branding-opacity: {{ section.settings.case_branding_opacity | divided_by: 100.0 }};
+          --case-scroll-speed: {{ section.settings.case_scroll_speed }}s;
+        --case-trim-height: {{ section.settings.case_trim_height }}px;
+      "
+    >
+      <div class="bakery-case">
+        <!-- GLASS -->
+        <div class="bakery-case__glass">
+          <!-- Glass reflections -->
+          <div class="bakery-case__reflection bakery-case__reflection--primary"></div>
+          <div class="bakery-case__reflection bakery-case__reflection--secondary"></div>
 
-    <div class="concha-showcase__sticky-talavera">
+          <!-- Branding -->
+          {% if section.settings.case_show_branding %}
+            <div
+              class="bakery-case__branding bakery-case__branding--{{ section.settings.case_branding_behavior }}"
+            >
+              {% if section.settings.case_branding_behavior == 'scroll' %}
+                <div class="bakery-case__branding-track">
+                  <div class="bakery-case__branding-group">
+                    {% for i in (1..4) %}
+                      <span class="bakery-case__branding-text">
+                        {{ section.settings.case_branding_text | escape }}
+                      </span>
 
-      {% render 'kevin-talavera-divider',
-        image: section.settings.talavera_image,
-        height: section.settings.talavera_height,
-        opacity: 1
-      %}
+                      <span class="bakery-case__separator" aria-hidden="true"> ✦ </span>
+                    {% endfor %}
+                  </div>
 
+                  <div class="bakery-case__branding-group" aria-hidden="true">
+                    {% for i in (1..4) %}
+                      <span class="bakery-case__branding-text">
+                        {{ section.settings.case_branding_text | escape }}
+                      </span>
+
+                      <span class="bakery-case__separator" aria-hidden="true"> ✦ </span>
+                    {% endfor %}
+                  </div>
+                </div>
+
+              {% else %}
+                <span class="bakery-case__branding-text">
+                  {{ section.settings.case_branding_text | escape }}
+                </span>
+              {% endif %}
+            </div>
+          {% endif %}
+        </div>
+
+        <!-- THIN METAL / FRAME EDGE -->
+        <div class="bakery-case__trim"></div>
+
+        <!-- COUNTER / SHELF -->
+        <div class="bakery-case__counter"></div>
+
+        <!-- DEPTH UNDER COUNTER -->
+        <div class="bakery-case__shadow"></div>
+      </div>
     </div>
-
-
-    <!-- ============================
-         PRODUCT TREADMILL
-         ============================ -->
+    <!--
+      ============================
+      PRODUCT TREADMILL
+      ============================
+    -->
 
     <div class="concha-showcase__products">
-
       {% for block in section.blocks %}
-
         {% liquid
           assign product = block.settings.product
           assign showcase_image = block.settings.image
@@ -306,19 +604,15 @@
           endif
         %}
 
-
         <article
           class="concha-showcase__product{% if row_modulo == 1 %} concha-showcase__product--reverse{% endif %}"
           style="--concha-accent: {{ block.settings.accent_color }};"
           {{ block.shopify_attributes }}
         >
-
           <!-- PRODUCT IMAGE -->
 
           <div class="concha-showcase__media">
-
             {% if showcase_image != blank %}
-
               {{
                 showcase_image
                 | image_url: width: 1200
@@ -330,62 +624,40 @@
               }}
 
             {% else %}
-
-              {{
-                'product-1'
-                | placeholder_svg_tag:
-                  'concha-showcase__placeholder placeholder-svg'
-              }}
-
+              {{ 'product-1' | placeholder_svg_tag: 'concha-showcase__placeholder placeholder-svg' }}
             {% endif %}
-
           </div>
-
 
           <!-- PRODUCT INFORMATION -->
 
           <div class="concha-showcase__content">
-
             {% if product != blank %}
-
               {% if block.settings.eyebrow != blank %}
                 <p class="concha-showcase__eyebrow">
                   {{ block.settings.eyebrow | escape }}
                 </p>
               {% endif %}
 
-
               <h3 class="concha-showcase__title">
                 {{ product.title | escape }}
               </h3>
 
-
               {% if block.settings.description != blank %}
-
                 <div class="concha-showcase__description">
                   {{ block.settings.description }}
                 </div>
 
               {% elsif product.description != blank %}
-
                 <div class="concha-showcase__description">
                   {{ product.description | strip_html | truncatewords: 25 }}
                 </div>
-
               {% endif %}
 
-
               <div class="concha-showcase__price">
-                {% render 'price',
-                  product: product,
-                  use_variant: true,
-                  show_badges: false
-                %}
+                {% render 'price', product: product, use_variant: true, show_badges: false %}
               </div>
 
-
               <div class="concha-showcase__actions">
-
                 <button
                   type="button"
                   class="button concha-showcase__add"
@@ -401,37 +673,54 @@
                   Learn more
                   <span aria-hidden="true">→</span>
                 </a>
-
               </div>
 
-
             {% else %}
+              <p class="concha-showcase__eyebrow">Featured</p>
 
-              <p class="concha-showcase__eyebrow">
-                Featured
-              </p>
-
-              <h3 class="concha-showcase__title">
-                Choose a product
-              </h3>
+              <h3 class="concha-showcase__title">Choose a product</h3>
 
               <p class="concha-showcase__description">
                 Select a product in the theme editor to preview this showcase item.
               </p>
-
             {% endif %}
-
           </div>
-
         </article>
-
       {% endfor %}
-
     </div>
-
   </div>
 </section>
+<script>
+  (() => {
+    const section = document.getElementById('ConchaShowcase-{{ section.id }}');
+    if (!section) return;
 
+    const stickyCase = section.querySelector('.concha-showcase__sticky-case');
+    const header = document.querySelector('.section-header');
+
+    if (!stickyCase || !header) return;
+
+    const updateCaseOffset = () => {
+      const isSticky = header.classList.contains('shopify-section-header-sticky');
+      const isHidden = header.classList.contains('shopify-section-header-hidden');
+
+      const shouldMakeRoom = isSticky && !isHidden;
+
+      stickyCase.style.setProperty('--concha-header-offset', shouldMakeRoom ? `${header.offsetHeight}px` : '0px');
+    };
+
+    updateCaseOffset();
+
+    const observer = new MutationObserver(updateCaseOffset);
+
+    observer.observe(header, {
+      attributes: true,
+      attributeFilter: ['class'],
+    });
+
+    window.addEventListener('resize', updateCaseOffset);
+  })();
+</script>
 
 {% schema %}
 {
@@ -481,27 +770,6 @@
       ],
       "default": "h1"
     },
-
-    {
-      "type": "header",
-      "content": "Talavera band"
-    },
-    {
-      "type": "image_picker",
-      "id": "talavera_image",
-      "label": "Talavera image"
-    },
-    {
-      "type": "range",
-      "id": "talavera_height",
-      "label": "Talavera height",
-      "min": 40,
-      "max": 200,
-      "step": 4,
-      "default": 96,
-      "unit": "px"
-    },
-
     {
       "type": "header",
       "content": "Colors"
@@ -511,6 +779,174 @@
       "id": "color_scheme",
       "label": "Color scheme",
       "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Display case"
+    },
+    {
+      "type": "header",
+      "content": "Glass"
+    },
+    {
+      "type": "range",
+      "id": "case_glass_height",
+      "label": "Glass height",
+      "min": 50,
+      "max": 160,
+      "step": 5,
+      "default": 100,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "case_glass_tint",
+      "label": "Glass tint",
+      "default": "#F5FAFA"
+    },
+    {
+      "type": "range",
+      "id": "case_glass_opacity",
+      "label": "Glass opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 40,
+      "unit": "%"
+    },
+    {
+      "type": "range",
+      "id": "case_glass_blur",
+      "label": "Glass blur",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "default": 10,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "case_reflection_intensity",
+      "label": "Reflection intensity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 60,
+      "unit": "%"
+    },
+    {
+      "type": "header",
+      "content": "Counter"
+    },
+    {
+      "type": "range",
+      "id": "case_counter_height",
+      "label": "Counter height",
+      "min": 8,
+      "max": 50,
+      "step": 2,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "case_counter_color",
+      "label": "Counter color",
+      "default": "#FFF7EC"
+    },
+    {
+      "type": "color",
+      "id": "case_trim_color",
+      "label": "Trim color",
+      "default": "#C9A455"
+    },
+    {
+      "type": "range",
+      "id": "case_trim_height",
+      "label": "Trim height",
+      "min": 1,
+      "max": 16,
+      "step": 1,
+      "default": 4,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "case_shadow_intensity",
+      "label": "Shadow intensity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 25,
+      "unit": "%"
+    },
+    {
+      "type": "header",
+      "content": "Branding"
+    },
+    {
+      "type": "checkbox",
+      "id": "case_show_branding",
+      "label": "Show branding",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "case_branding_text",
+      "label": "Branding text",
+      "default": "FRESH DAILY ✦ LA CONCHERIA ✦ HECHO CON AMOR"
+    },
+    {
+      "type": "color",
+      "id": "case_branding_color",
+      "label": "Branding color",
+      "default": "#172B4D"
+    },
+    {
+      "type": "range",
+      "id": "case_branding_opacity",
+      "label": "Branding opacity",
+      "min": 10,
+      "max": 100,
+      "step": 5,
+      "default": 50,
+      "unit": "%"
+    },
+    {
+      "type": "select",
+      "id": "case_branding_behavior",
+      "label": "Branding behavior",
+      "options": [
+        {
+          "value": "static",
+          "label": "Static"
+        },
+        {
+          "value": "scroll",
+          "label": "Scrolling"
+        }
+      ],
+      "default": "static"
+    },
+    {
+      "type": "range",
+      "id": "case_scroll_speed",
+      "label": "Scroll Duration",
+      "min": 5,
+      "max": 40,
+      "step": 1,
+      "default": 18,
+      "unit": "s"
+    },
+    {
+      "type": "header",
+      "content": "Effects"
+    },
+    {
+      "type": "checkbox",
+      "id": "case_react_to_product",
+      "label": "React to product color",
+      "default": true
     }
   ],
 
