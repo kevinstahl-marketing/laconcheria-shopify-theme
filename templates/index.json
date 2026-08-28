@@ -104,6 +104,54 @@
         "accessibility_info": "Slideshow about La Concheria Cafe"
       }
     },
+    "kevin_concha_showcase_9VwDqg": {
+      "type": "kevin-concha-showcase",
+      "blocks": {
+        "product_kiif8K": {
+          "type": "product",
+          "settings": {
+            "product": "rosca-de-reyes-concha",
+            "image": "shopify://shop_images/3.png",
+            "eyebrow": "Rosca De Reyes",
+            "description": "<p>The Best Conchas</p>",
+            "accent_color": "#f8d9e8"
+          }
+        },
+        "product_BgNkTY": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "eyebrow": "",
+            "description": "",
+            "accent_color": "#f8d9e8"
+          }
+        },
+        "product_Bj97rw": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "eyebrow": "",
+            "description": "",
+            "accent_color": "#f8d9e8"
+          }
+        }
+      },
+      "block_order": [
+        "product_kiif8K",
+        "product_BgNkTY",
+        "product_Bj97rw"
+      ],
+      "name": "Concha showcase",
+      "settings": {
+        "eyebrow": "Our Conchas",
+        "heading": "Meet the conchas",
+        "subheading": "<p>New and returning flavors drop every Monday. Try them before they’re gone!</p>",
+        "heading_size": "h1",
+        "talavera_image": "shopify://shop_images/Talavera_1.jpg",
+        "talavera_height": 56,
+        "color_scheme": ""
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
       "custom_css": [],
@@ -219,6 +267,7 @@
   },
   "order": [
     "la_concheria_slideshow_f9YViH",
+    "kevin_concha_showcase_9VwDqg",
     "featured_collection",
     "talavera_divider_CpfYqp",
     "featured_blog_4B47iP",
