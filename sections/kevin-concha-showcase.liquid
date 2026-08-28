@@ -1,0 +1,573 @@
+{% style %}
+  /* ================================
+     CONCHA SHOWCASE
+     ================================ */
+
+  #ConchaShowcase-{{ section.id }} {
+    position: relative;
+    overflow: visible;
+  }
+
+  #ConchaShowcase-{{ section.id }} .concha-showcase__inner {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+
+  /* ================================
+     SECTION INTRO
+     ================================ */
+
+  #ConchaShowcase-{{ section.id }} .concha-showcase__header {
+    max-width: 70rem;
+    margin: 0 auto 8rem;
+    text-align: center;
+  }
+
+  #ConchaShowcase-{{ section.id }} .concha-showcase__header .concha-showcase__eyebrow {
+    margin: 0 0 1rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  #ConchaShowcase-{{ section.id }} .concha-showcase__heading {
+    margin: 0;
+  }
+
+  #ConchaShowcase-{{ section.id }} .concha-showcase__subheading {
+    margin-top: 1.5rem;
+  }
+
+
+  /* ================================
+     STICKY TALAVERA
+     ================================ */
+
+  #ConchaShowcase-{{ section.id }} .concha-showcase__sticky-talavera {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+
+  /* ================================
+     PRODUCT TREADMILL
+     ================================ */
+
+  #ConchaShowcase-{{ section.id }} .concha-showcase__products {
+    display: flex;
+    flex-direction: column;
+    gap: 10rem;
+  }
+
+
+  /* ================================
+     PRODUCT ROW
+     ================================ */
+
+  #ConchaShowcase-{{ section.id }} .concha-showcase__product {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 6rem;
+    min-height: 55rem;
+  }
+
+  #ConchaShowcase-{{ section.id }}
+    .concha-showcase__product--reverse
+    .concha-showcase__media {
+    order: 2;
+  }
+
+  #ConchaShowcase-{{ section.id }}
+    .concha-showcase__product--reverse
+    .concha-showcase__content {
+    order: 1;
+  }
+
+
+  /* ================================
+     PRODUCT MEDIA
+     ================================ */
+
+  #ConchaShowcase-{{ section.id }} .concha-showcase__media {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+  }
+
+  #ConchaShowcase-{{ section.id }} .concha-showcase__media::before {
+    content: "";
+    position: absolute;
+    width: 75%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: var(--concha-accent);
+    opacity: 0.35;
+    filter: blur(40px);
+  }
+
+  #ConchaShowcase-{{ section.id }} .concha-showcase__image {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    max-width: 55rem;
+    height: auto;
+    object-fit: contain;
+  }
+
+  #ConchaShowcase-{{ section.id }} .concha-showcase__placeholder {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 50rem;
+  }
+
+
+  /* ================================
+     PRODUCT CONTENT
+     ================================ */
+
+  #ConchaShowcase-{{ section.id }} .concha-showcase__content {
+    max-width: 52rem;
+  }
+
+  #ConchaShowcase-{{ section.id }} .concha-showcase__content .concha-showcase__eyebrow {
+    margin: 0 0 1rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  #ConchaShowcase-{{ section.id }} .concha-showcase__title {
+    margin: 0;
+    font-size: clamp(3.6rem, 5vw, 7rem);
+    line-height: 0.95;
+  }
+
+  #ConchaShowcase-{{ section.id }} .concha-showcase__description {
+    margin-top: 2rem;
+    font-size: 1.7rem;
+    line-height: 1.6;
+  }
+
+  #ConchaShowcase-{{ section.id }} .concha-showcase__description > * {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  #ConchaShowcase-{{ section.id }} .concha-showcase__price {
+    margin-top: 2rem;
+  }
+
+  #ConchaShowcase-{{ section.id }} .concha-showcase__actions {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  #ConchaShowcase-{{ section.id }} .concha-showcase__learn-more {
+    color: rgb(var(--color-foreground));
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+
+  /* ================================
+     MOBILE
+     ================================ */
+
+  @media screen and (max-width: 749px) {
+    #ConchaShowcase-{{ section.id }} .concha-showcase__inner {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+
+    #ConchaShowcase-{{ section.id }} .concha-showcase__header {
+      margin-bottom: 5rem;
+    }
+
+    #ConchaShowcase-{{ section.id }} .concha-showcase__products {
+      gap: 8rem;
+    }
+
+    #ConchaShowcase-{{ section.id }} .concha-showcase__product {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      min-height: 0;
+    }
+
+    #ConchaShowcase-{{ section.id }}
+      .concha-showcase__product--reverse
+      .concha-showcase__media,
+    #ConchaShowcase-{{ section.id }}
+      .concha-showcase__product--reverse
+      .concha-showcase__content {
+      order: initial;
+    }
+
+    #ConchaShowcase-{{ section.id }} .concha-showcase__media {
+      width: 100%;
+    }
+
+    #ConchaShowcase-{{ section.id }} .concha-showcase__image {
+      max-width: 90vw;
+    }
+
+    #ConchaShowcase-{{ section.id }} .concha-showcase__content {
+      width: 100%;
+      text-align: center;
+    }
+
+    #ConchaShowcase-{{ section.id }} .concha-showcase__actions {
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  }
+{% endstyle %}
+
+
+<section
+  id="ConchaShowcase-{{ section.id }}"
+  class="concha-showcase color-{{ section.settings.color_scheme }} gradient"
+>
+  <div class="concha-showcase__inner page-width">
+
+    <!-- ============================
+         SECTION INTRO
+         ============================ -->
+
+    {% if section.settings.eyebrow != blank
+      or section.settings.heading != blank
+      or section.settings.subheading != blank
+    %}
+      <header class="concha-showcase__header">
+
+        {% if section.settings.eyebrow != blank %}
+          <p class="concha-showcase__eyebrow">
+            {{ section.settings.eyebrow }}
+          </p>
+        {% endif %}
+
+        {% if section.settings.heading != blank %}
+          <h2 class="concha-showcase__heading {{ section.settings.heading_size }}">
+            {{ section.settings.heading }}
+          </h2>
+        {% endif %}
+
+        {% if section.settings.subheading != blank %}
+          <div class="concha-showcase__subheading rte">
+            {{ section.settings.subheading }}
+          </div>
+        {% endif %}
+
+      </header>
+    {% endif %}
+
+
+    <!-- ============================
+         STICKY TALAVERA BAND
+         ============================ -->
+
+    <div class="concha-showcase__sticky-talavera">
+
+      {% render 'kevin-talavera-divider',
+        image: section.settings.talavera_image,
+        height: section.settings.talavera_height,
+        opacity: 1
+      %}
+
+    </div>
+
+
+    <!-- ============================
+         PRODUCT TREADMILL
+         ============================ -->
+
+    <div class="concha-showcase__products">
+
+      {% for block in section.blocks %}
+
+        {% liquid
+          assign product = block.settings.product
+          assign showcase_image = block.settings.image
+          assign row_modulo = forloop.index0 | modulo: 2
+
+          if showcase_image == blank and product != blank
+            assign showcase_image = product.featured_image
+          endif
+        %}
+
+
+        <article
+          class="concha-showcase__product{% if row_modulo == 1 %} concha-showcase__product--reverse{% endif %}"
+          style="--concha-accent: {{ block.settings.accent_color }};"
+          {{ block.shopify_attributes }}
+        >
+
+          <!-- PRODUCT IMAGE -->
+
+          <div class="concha-showcase__media">
+
+            {% if showcase_image != blank %}
+
+              {{
+                showcase_image
+                | image_url: width: 1200
+                | image_tag:
+                  loading: 'lazy',
+                  widths: '375, 550, 750, 900, 1100, 1200',
+                  sizes: '(min-width: 750px) 50vw, 90vw',
+                  class: 'concha-showcase__image'
+              }}
+
+            {% else %}
+
+              {{
+                'product-1'
+                | placeholder_svg_tag:
+                  'concha-showcase__placeholder placeholder-svg'
+              }}
+
+            {% endif %}
+
+          </div>
+
+
+          <!-- PRODUCT INFORMATION -->
+
+          <div class="concha-showcase__content">
+
+            {% if product != blank %}
+
+              {% if block.settings.eyebrow != blank %}
+                <p class="concha-showcase__eyebrow">
+                  {{ block.settings.eyebrow | escape }}
+                </p>
+              {% endif %}
+
+
+              <h3 class="concha-showcase__title">
+                {{ product.title | escape }}
+              </h3>
+
+
+              {% if block.settings.description != blank %}
+
+                <div class="concha-showcase__description">
+                  {{ block.settings.description }}
+                </div>
+
+              {% elsif product.description != blank %}
+
+                <div class="concha-showcase__description">
+                  {{ product.description | strip_html | truncatewords: 25 }}
+                </div>
+
+              {% endif %}
+
+
+              <div class="concha-showcase__price">
+                {% render 'price',
+                  product: product,
+                  use_variant: true,
+                  show_badges: false
+                %}
+              </div>
+
+
+              <div class="concha-showcase__actions">
+
+                <button
+                  type="button"
+                  class="button concha-showcase__add"
+                  disabled
+                >
+                  Add to cart
+                </button>
+
+                <a
+                  href="{{ product.url }}"
+                  class="concha-showcase__learn-more"
+                >
+                  Learn more
+                  <span aria-hidden="true">→</span>
+                </a>
+
+              </div>
+
+
+            {% else %}
+
+              <p class="concha-showcase__eyebrow">
+                Featured
+              </p>
+
+              <h3 class="concha-showcase__title">
+                Choose a product
+              </h3>
+
+              <p class="concha-showcase__description">
+                Select a product in the theme editor to preview this showcase item.
+              </p>
+
+            {% endif %}
+
+          </div>
+
+        </article>
+
+      {% endfor %}
+
+    </div>
+
+  </div>
+</section>
+
+
+{% schema %}
+{
+  "name": "Concha showcase",
+  "tag": "section",
+  "class": "section",
+
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Our Conchas"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Meet the conchas"
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Heading size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "Small"
+        },
+        {
+          "value": "h1",
+          "label": "Medium"
+        },
+        {
+          "value": "h0",
+          "label": "Large"
+        }
+      ],
+      "default": "h1"
+    },
+
+    {
+      "type": "header",
+      "content": "Talavera band"
+    },
+    {
+      "type": "image_picker",
+      "id": "talavera_image",
+      "label": "Talavera image"
+    },
+    {
+      "type": "range",
+      "id": "talavera_height",
+      "label": "Talavera height",
+      "min": 40,
+      "max": 200,
+      "step": 4,
+      "default": 96,
+      "unit": "px"
+    },
+
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    }
+  ],
+
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Concha",
+
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Showcase image",
+          "info": "Optional. Uses the product featured image if left blank."
+        },
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Eyebrow text",
+          "placeholder": "Fan favorite"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Short description",
+          "info": "Optional. Uses a shortened product description if left blank."
+        },
+        {
+          "type": "color",
+          "id": "accent_color",
+          "label": "Accent color",
+          "default": "#F8D9E8"
+        }
+      ]
+    }
+  ],
+
+  "presets": [
+    {
+      "name": "Concha showcase",
+      "blocks": [
+        {
+          "type": "product"
+        },
+        {
+          "type": "product"
+        },
+        {
+          "type": "product"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
