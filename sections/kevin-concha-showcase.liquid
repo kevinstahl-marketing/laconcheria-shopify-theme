@@ -1,512 +1,9 @@
-{% style %}
-                          /* ================================
-                             CONCHA SHOWCASE
-                             ================================ */
-
-                          #ConchaShowcase-{{ section.id }} {
-                            position: relative;
-                            overflow: visible;
-                          }
-
-                          #ConchaShowcase-{{ section.id }} .concha-showcase__inner {
-                            padding-top: 6rem;
-                            padding-bottom: 6rem;
-                          }
-
-
-                          /* ================================
-                             SECTION INTRO
-                             ================================ */
-
-                          #ConchaShowcase-{{ section.id }} .concha-showcase__header {
-                            max-width: 70rem;
-                            margin: 0 auto 8rem;
-                            text-align: center;
-                          }
-
-                          #ConchaShowcase-{{ section.id }} .concha-showcase__header .concha-showcase__eyebrow {
-                            margin: 0 0 1rem;
-                            font-size: 1.3rem;
-                            font-weight: 700;
-                            letter-spacing: 0.12em;
-                            text-transform: uppercase;
-                          }
-
-                          #ConchaShowcase-{{ section.id }} .concha-showcase__heading {
-                            margin: 0;
-                          }
-
-                          #ConchaShowcase-{{ section.id }} .concha-showcase__subheading {
-                            margin-top: 1.5rem;
-                          }
-
-
-
-                          /* ================================
-                             PRODUCT TREADMILL
-                             ================================ */
-
-                          #ConchaShowcase-{{ section.id }} .concha-showcase__products {
-                            display: flex;
-                            flex-direction: column;
-                            gap: 10rem;
-                          }
-
-
-                          /* ================================
-                             PRODUCT ROW
-                             ================================ */
-
-                          #ConchaShowcase-{{ section.id }} .concha-showcase__product {
-                            display: grid;
-                            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-                            align-items: center;
-                            gap: 6rem;
-                            min-height: 55rem;
-                          }
-
-                          #ConchaShowcase-{{ section.id }}
-                            .concha-showcase__product--reverse
-                            .concha-showcase__media {
-                            order: 2;
-                          }
-
-                          #ConchaShowcase-{{ section.id }}
-                            .concha-showcase__product--reverse
-                            .concha-showcase__content {
-                            order: 1;
-                          }
-
-
-                          /* ================================
-                             PRODUCT MEDIA
-                             ================================ */
-
-                          #ConchaShowcase-{{ section.id }} .concha-showcase__media {
-                            position: relative;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            min-width: 0;
-                          }
-
-                          #ConchaShowcase-{{ section.id }} .concha-showcase__media::before {
-                            content: "";
-                            position: absolute;
-                            width: 75%;
-                            aspect-ratio: 1;
-                            border-radius: 50%;
-                            background: var(--concha-accent);
-                            opacity: 0.35;
-                            filter: blur(40px);
-                          }
-
-                          #ConchaShowcase-{{ section.id }} .concha-showcase__image {
-                            position: relative;
-                            z-index: 1;
-                            display: block;
-                            width: 100%;
-                            max-width: 55rem;
-                            height: auto;
-                            object-fit: contain;
-                          }
-
-                          #ConchaShowcase-{{ section.id }} .concha-showcase__placeholder {
-                            position: relative;
-                            z-index: 1;
-                            width: 100%;
-                            max-width: 50rem;
-                          }
-
-
-                          /* ================================
-                             PRODUCT CONTENT
-                             ================================ */
-
-                          #ConchaShowcase-{{ section.id }} .concha-showcase__content {
-                            max-width: 52rem;
-                          }
-
-                          #ConchaShowcase-{{ section.id }} .concha-showcase__content .concha-showcase__eyebrow {
-                            margin: 0 0 1rem;
-                            font-size: 1.3rem;
-                            font-weight: 700;
-                            letter-spacing: 0.12em;
-                            text-transform: uppercase;
-                          }
-
-                          #ConchaShowcase-{{ section.id }} .concha-showcase__title {
-                            margin: 0;
-                            font-size: clamp(3.6rem, 5vw, 7rem);
-                            line-height: 0.95;
-                          }
-
-                          #ConchaShowcase-{{ section.id }} .concha-showcase__description {
-                            margin-top: 2rem;
-                            font-size: 1.7rem;
-                            line-height: 1.6;
-                          }
-
-                          #ConchaShowcase-{{ section.id }} .concha-showcase__description > * {
-                            margin-top: 0;
-                            margin-bottom: 0;
-                          }
-
-                          #ConchaShowcase-{{ section.id }} .concha-showcase__price {
-                            margin-top: 2rem;
-                          }
-
-                          #ConchaShowcase-{{ section.id }} .concha-showcase__actions {
-                            display: flex;
-                            align-items: center;
-                            gap: 2rem;
-                            margin-top: 3rem;
-                          }
-
-                          #ConchaShowcase-{{ section.id }} .concha-showcase__learn-more {
-                            color: rgb(var(--color-foreground));
-                            font-weight: 600;
-                            text-decoration: none;
-                          }
-
-
-                          /* ================================
-                             MOBILE
-                             ================================ */
-
-                          @media screen and (max-width: 749px) {
-                            #ConchaShowcase-{{ section.id }} .concha-showcase__inner {
-                              padding-top: 4rem;
-                              padding-bottom: 4rem;
-                            }
-
-                            #ConchaShowcase-{{ section.id }} .concha-showcase__header {
-                              margin-bottom: 5rem;
-                            }
-
-                            #ConchaShowcase-{{ section.id }} .concha-showcase__products {
-                              gap: 8rem;
-                            }
-
-                            #ConchaShowcase-{{ section.id }} .concha-showcase__product {
-                              display: flex;
-                              flex-direction: column;
-                              gap: 3rem;
-                              min-height: 0;
-                            }
-
-                            #ConchaShowcase-{{ section.id }}
-                              .concha-showcase__product--reverse
-                              .concha-showcase__media,
-                            #ConchaShowcase-{{ section.id }}
-                              .concha-showcase__product--reverse
-                              .concha-showcase__content {
-                              order: initial;
-                            }
-
-                            #ConchaShowcase-{{ section.id }} .concha-showcase__media {
-                              width: 100%;
-                            }
-
-                            #ConchaShowcase-{{ section.id }} .concha-showcase__image {
-                              max-width: 90vw;
-                            }
-
-                            #ConchaShowcase-{{ section.id }} .concha-showcase__content {
-                              width: 100%;
-                              text-align: center;
-                            }
-
-                            #ConchaShowcase-{{ section.id }} .concha-showcase__actions {
-                              justify-content: center;
-                              flex-wrap: wrap;
-                            }
-                          }
-                      /* ================================
-                         STICKY BAKERY DISPLAY CASE
-                         ================================ */
-
-       #ConchaShowcase-{{ section.id }} .concha-showcase__sticky-case {
-    position: sticky;
-    top: var(--concha-header-offset, 0px);
-    z-index: 2;
-
-    transition: top 0.15s ease;
-  }
-
-                      /* ================================
-                         CASE
-                         ================================ */
-
-                      #ConchaShowcase-{{ section.id }} .bakery-case {
-                        position: relative;
-                        width: 100%;
-                      }
-
-
-                      /* ================================
-                         GLASS
-                         ================================ */
-
-                    #ConchaShowcase-{{ section.id }} .bakery-case__glass {
-                    position: relative;
-
-                    height: var(--case-glass-height);
-
-                    background: color-mix(
-                      in srgb,
-                      var(--case-glass-tint) calc(var(--case-glass-opacity) * 100%),
-                      transparent
-                    );
-
-                    backdrop-filter: blur(var(--case-glass-blur));
-                    -webkit-backdrop-filter: blur(var(--case-glass-blur));
-
-                    border-top: 1px solid rgba(255, 255, 255, 0.8);
-
-                    overflow: hidden;
-                  }
-
-
-                      /* ================================
-                         GLASS REFLECTIONS
-                         ================================ */
-
-                      #ConchaShowcase-{{ section.id }} .bakery-case__reflection {
-                        position: absolute;
-                        pointer-events: none;
-                      }
-
-                      #ConchaShowcase-{{ section.id }} .bakery-case__reflection--primary {
-                  top: 14px;
-                  left: 6%;
-
-                  width: 38%;
-                  height: 1px;
-
-                  background: rgb(
-                    255 255 255 /
-                    var(--case-reflection-opacity)
-                  );
-                }
-
-                #ConchaShowcase-{{ section.id }} .bakery-case__reflection--secondary {
-                  top: -30px;
-                  left: 18%;
-
-                  width: 18%;
-                  height: 180px;
-
-                  background: rgb(
-                    255 255 255 /
-                    calc(var(--case-reflection-opacity) * 0.2)
-                  );
-
-                  transform: rotate(20deg);
-                }
-
-                      /* ================================
-                         BRANDING
-                         ================================ */
-    /* ================================
-       BRANDING
-       ================================ */
-
-    #ConchaShowcase-{{ section.id }} .bakery-case__branding {
-      position: absolute;
-      inset: 0;
-
-      display: flex;
-      align-items: center;
-
-      overflow: hidden;
-      white-space: nowrap;
-
-      pointer-events: none;
-    }
-
-
-    /* STATIC */
-
-    #ConchaShowcase-{{ section.id }} .bakery-case__branding--static {
-      justify-content: center;
-      padding: 0 2rem;
-    }
-
-
-    /* TEXT */
-
-    #ConchaShowcase-{{ section.id }} .bakery-case__branding-text {
-      flex-shrink: 0;
-
-      font-size: 1.1rem;
-      font-weight: 700;
-
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-
-      color: var(--case-branding-color);
-      opacity: var(--case-branding-opacity);
-    }
-
-
-    /* SCROLLING TRACK */
-
-    #ConchaShowcase-{{ section.id }} .bakery-case__branding--scroll {
-      justify-content: flex-start;
-      padding: 0;
-    }
-
-    #ConchaShowcase-{{ section.id }} .bakery-case__branding-track {
-      display: flex;
-      width: max-content;
-
-      animation:
-        concha-case-branding-scroll
-        var(--case-scroll-speed)
-        linear
-        infinite;
-
-      will-change: transform;
-    }
-
-
-    /* IDENTICAL REPEATING GROUPS */
-
-    #ConchaShowcase-{{ section.id }} .bakery-case__branding-group {
-      display: flex;
-      align-items: center;
-      flex-shrink: 0;
-    }
-
-
-    /* SEPARATOR */
-
-    #ConchaShowcase-{{ section.id }} .bakery-case__separator {
-      flex-shrink: 0;
-
-      margin: 0 3rem;
-
-      color: var(--case-branding-color);
-      opacity: var(--case-branding-opacity);
-    }
-
-
-    /* ANIMATION */
-
-    @keyframes concha-case-branding-scroll {
-      from {
-        transform: translateX(0);
-      }
-
-      to {
-        transform: translateX(-50%);
-      }
-    }
-
-
-    /* ACCESSIBILITY */
-
-    @media (prefers-reduced-motion: reduce) {
-      #ConchaShowcase-{{ section.id }} .bakery-case__branding-track {
-        animation: none;
-      }
-    }
-
-
-        /* ================================
-         DISPLAY CASE BASE
-         ================================ */
-
-      #ConchaShowcase-{{ section.id }} .bakery-case__trim {
-        display: block;
-        position: relative;
-        z-index: 2;
-
-        width: 100%;
-        height: var(--case-trim-height);
-        background: var(--case-trim-color);
-      }
-
-
-      /* Main physical shelf */
-
-      #ConchaShowcase-{{ section.id }} .bakery-case__counter {
-        display: block;
-        position: relative;
-        z-index: 20;
-
-        width: 100%;
-        min-height: var(--case-counter-height);
-        height: var(--case-counter-height);
-
-        background: var(--case-counter-color);
-
-        border-top: 1px solid rgba(255, 255, 255, 0.65);
-        border-bottom: 1px solid rgba(60, 40, 20, 0.25);
-
-        box-shadow:
-          inset 0 2px 2px rgba(255, 255, 255, 0.45),
-          0 4px 8px rgba(40, 25, 10, 0.18);
-      }
-
-
-      /* Underside depth */
-
-      #ConchaShowcase-{{ section.id }} .bakery-case__shadow {
-        display: block;
-        position: relative;
-        z-index: 19;
-
-        width: 100%;
-        height: 12px;
-
-        background: linear-gradient(
-          to bottom,
-          rgb(30 20 10 / var(--case-shadow-opacity)),
-          transparent
-        );
-
-        pointer-events: none;
-      }
-{% endstyle %}
-
+{{ 'kevin-concha-showcase.css' | asset_url | stylesheet_tag }}
 <section
   id="ConchaShowcase-{{ section.id }}"
   class="concha-showcase color-{{ section.settings.color_scheme }} gradient"
 >
   <div class="concha-showcase__inner">
-    <!--
-      ============================
-      SECTION INTRO
-      ============================
-    -->
-
-    {% if section.settings.eyebrow != blank
-      or section.settings.heading != blank
-      or section.settings.subheading != blank
-    %}
-      <header class="concha-showcase__header">
-        {% if section.settings.eyebrow != blank %}
-          <p class="concha-showcase__eyebrow">
-            {{ section.settings.eyebrow }}
-          </p>
-        {% endif %}
-
-        {% if section.settings.heading != blank %}
-          <h2 class="concha-showcase__heading {{ section.settings.heading_size }}">
-            {{ section.settings.heading }}
-          </h2>
-        {% endif %}
-
-        {% if section.settings.subheading != blank %}
-          <div class="concha-showcase__subheading rte">
-            {{ section.settings.subheading }}
-          </div>
-        {% endif %}
-      </header>
-    {% endif %}
-
     <!--
       ============================
       STICKY FROSTED GLASS
@@ -517,24 +14,43 @@
     <div
       class="concha-showcase__sticky-case"
       style="
-          --case-glass-height: {{ section.settings.case_glass_height }}px;
-          --case-glass-tint: {{ section.settings.case_glass_tint }};
-          --case-glass-opacity: {{ section.settings.case_glass_opacity | divided_by: 100.0 }};
-          --case-glass-blur: {{ section.settings.case_glass_blur }}px;
-          --case-reflection-opacity: {{ section.settings.case_reflection_intensity | divided_by: 100.0 }};
-          --case-counter-height: {{ section.settings.case_counter_height }}px;
-          --case-counter-color: {{ section.settings.case_counter_color }};
-          --case-trim-color: {{ section.settings.case_trim_color }};
-          --case-shadow-opacity: {{ section.settings.case_shadow_intensity | divided_by: 100.0 }};
-          --case-branding-color: {{ section.settings.case_branding_color }};
-          --case-branding-opacity: {{ section.settings.case_branding_opacity | divided_by: 100.0 }};
-          --case-scroll-speed: {{ section.settings.case_scroll_speed }}s;
-        --case-trim-height: {{ section.settings.case_trim_height }}px;
+                  --case-glass-height: {{ section.settings.case_glass_height }}px;
+                  --case-glass-tint: {{ section.settings.case_glass_tint }};
+                  --case-glass-opacity: {{ section.settings.case_glass_opacity | divided_by: 100.0 }};
+                  --case-glass-blur: {{ section.settings.case_glass_blur }}px;
+                  --case-led-color: {{ section.settings.case_led_color }};
+        --case-led-intensity: {{ section.settings.case_led_intensity | divided_by: 100.0 }};
+        --case-light-intensity: {{ section.settings.case_light_intensity | divided_by: 100.0 }};
+        --case-light-position: {{ section.settings.case_light_position }}%;
+        --case-depth-opacity: {{ section.settings.case_depth_intensity | divided_by: 100.0 }};
+        --case-bounce-intensity: {{ section.settings.case_bounce_intensity | divided_by: 100.0 }};
+                  --case-reflection-opacity: {{ section.settings.case_reflection_intensity | divided_by: 100.0 }};
+                  --case-counter-height: {{ section.settings.case_counter_height }}px;
+                  --case-counter-color: {{ section.settings.case_counter_color }};
+                  --case-trim-color: {{ section.settings.case_trim_color }};
+                  --case-shadow-opacity: {{ section.settings.case_shadow_intensity | divided_by: 100.0 }};
+                  --case-branding-color: {{ section.settings.case_branding_color }};
+                  --case-branding-opacity: {{ section.settings.case_branding_opacity | divided_by: 100.0 }};
+                  --case-scroll-speed: {{ section.settings.case_scroll_speed }}s;
+                --case-trim-height: {{ section.settings.case_trim_height }}px;
       "
     >
       <div class="bakery-case">
         <!-- GLASS -->
         <div class="bakery-case__glass">
+          <!-- Interior depth / lighting -->
+          <div class="bakery-case__interior-depth"></div>
+
+          {% if section.settings.case_show_led %}
+            <div class="bakery-case__led" aria-hidden="true">
+              <div class="bakery-case__led-source"></div>
+              <div class="bakery-case__led-glow"></div>
+            </div>
+          {% endif %}
+
+          <div class="bakery-case__ambient-light" aria-hidden="true"></div>
+          <div class="bakery-case__counter-bounce" aria-hidden="true"></div>
+
           <!-- Glass reflections -->
           <div class="bakery-case__reflection bakery-case__reflection--primary"></div>
           <div class="bakery-case__reflection bakery-case__reflection--secondary"></div>
@@ -591,102 +107,137 @@
       PRODUCT TREADMILL
       ============================
     -->
+    <!--
+      ============================
+      SECTION INTRO
+      ============================
+    -->
+    <div
+      class="concha-showcase__content-width"
+      style="
+        --showcase-content-width: {{ section.settings.header_max_width }}rem;
 
-    <div class="concha-showcase__products">
-      {% for block in section.blocks %}
-        {% liquid
-          assign product = block.settings.product
-          assign showcase_image = block.settings.image
-          assign row_modulo = forloop.index0 | modulo: 2
+        --showcase-row-gap: {{ section.settings.product_row_gap }}px;
+        --showcase-row-gap-mobile: {{ section.settings.product_row_gap_mobile }}px;
 
-          if showcase_image == blank and product != blank
-            assign showcase_image = product.featured_image
-          endif
-        %}
+        --showcase-column-gap: {{ section.settings.product_column_gap }}px;
+        --showcase-column-gap-mobile: {{ section.settings.product_column_gap_mobile }}px;
 
-        <article
-          class="concha-showcase__product{% if row_modulo == 1 %} concha-showcase__product--reverse{% endif %}"
-          style="--concha-accent: {{ block.settings.accent_color }};"
-          {{ block.shopify_attributes }}
+        --showcase-image-size: {{ section.settings.product_image_size }}px;
+        --showcase-image-size-mobile: {{ section.settings.product_image_size_mobile }}px;
+
+        --showcase-row-min-height: {{ section.settings.product_row_min_height }}px;
+        --showcase-mobile-side-margin: {{ section.settings.product_mobile_side_margin }}px;
+      "
+    >
+      {% if section.settings.eyebrow != blank
+        or section.settings.heading != blank
+        or section.settings.subheading != blank
+        or section.settings.header_link_label != blank
+        or section.settings.header_decoration != blank
+      %}
+        <header
+          class="
+            concha-showcase__header
+            concha-showcase__header--{{ section.settings.header_alignment }}
+          "
+          style="
+            --showcase-eyebrow-size: {{ section.settings.header_eyebrow_size }}px;
+            --showcase-heading-size: {{ section.settings.header_heading_size }}px;
+            --showcase-heading-size-mobile: {{ section.settings.header_heading_size_mobile }}px;
+            --showcase-subheading-size: {{ section.settings.header_subheading_size }}px;
+            --showcase-heading-line-height: {{ section.settings.header_heading_line_height | divided_by: 100.0 }};
+
+            --showcase-header-padding-top: {{ section.settings.header_padding_top }}px;
+            --showcase-header-padding-bottom: {{ section.settings.header_padding_bottom }}px;
+            --showcase-eyebrow-gap: {{ section.settings.header_eyebrow_gap }}px;
+            --showcase-subheading-gap: {{ section.settings.header_subheading_gap }}px;
+            --showcase-decoration-gap: {{ section.settings.header_decoration_gap }}px;
+
+            --showcase-decoration-width: {{ section.settings.header_decoration_width }}px;
+            --showcase-decoration-rotation: {{ section.settings.header_decoration_rotation }}deg;
+            --showcase-decoration-opacity: {{ section.settings.header_decoration_opacity | divided_by: 100.0 }};
+          "
         >
-          <!-- PRODUCT IMAGE -->
+          {% if section.settings.eyebrow != blank %}
+            <p class="concha-showcase__eyebrow">
+              {{ section.settings.eyebrow }}
+            </p>
+          {% endif %}
 
-          <div class="concha-showcase__media">
-            {% if showcase_image != blank %}
+          {% if section.settings.heading != blank %}
+            <h2 class="concha-showcase__heading">
+              {{ section.settings.heading }}
+            </h2>
+          {% endif %}
+
+          {% if section.settings.subheading != blank %}
+            <div class="concha-showcase__subheading rte">
+              {{ section.settings.subheading }}
+            </div>
+          {% endif %}
+
+          {% if section.settings.header_link_label != blank and section.settings.header_link != blank %}
+            <div class="concha-showcase__header-link-wrap">
+              <a
+                href="{{ section.settings.header_link }}"
+                class="concha-showcase__header-link"
+              >
+                {{ section.settings.header_link_label | escape }}
+
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          {% endif %}
+
+          {% if section.settings.header_show_decoration and section.settings.header_decoration != blank %}
+            <div
+              class="
+                concha-showcase__decoration
+                concha-showcase__decoration--{{ section.settings.header_decoration_position }}
+              "
+              aria-hidden="true"
+            >
               {{
-                showcase_image
-                | image_url: width: 1200
+                section.settings.header_decoration
+                | image_url: width: 400
                 | image_tag:
                   loading: 'lazy',
-                  widths: '375, 550, 750, 900, 1100, 1200',
-                  sizes: '(min-width: 750px) 50vw, 90vw',
-                  class: 'concha-showcase__image'
+                  widths: '60, 90, 120, 180, 240, 320, 400',
+                  class: 'concha-showcase__decoration-image'
               }}
+            </div>
+          {% endif %}
+        </header>
+      {% endif %}
 
-            {% else %}
-              {{ 'product-1' | placeholder_svg_tag: 'concha-showcase__placeholder placeholder-svg' }}
-            {% endif %}
-          </div>
+      <div class="concha-showcase__products">
+        {% for block in section.blocks %}
+          {% liquid
+            assign product = block.settings.product
+            assign showcase_image = block.settings.image
 
-          <!-- PRODUCT INFORMATION -->
+            if showcase_image == blank and product != blank
+              assign showcase_image = product.featured_image
+            endif
 
-          <div class="concha-showcase__content">
-            {% if product != blank %}
-              {% if block.settings.eyebrow != blank %}
-                <p class="concha-showcase__eyebrow">
-                  {{ block.settings.eyebrow | escape }}
-                </p>
-              {% endif %}
+            assign row_modulo = forloop.index0 | modulo: 2
 
-              <h3 class="concha-showcase__title">
-                {{ product.title | escape }}
-              </h3>
+            if row_modulo == 1
+              assign reverse = true
+            else
+              assign reverse = false
+            endif
+          %}
 
-              {% if block.settings.description != blank %}
-                <div class="concha-showcase__description">
-                  {{ block.settings.description }}
-                </div>
-
-              {% elsif product.description != blank %}
-                <div class="concha-showcase__description">
-                  {{ product.description | strip_html | truncatewords: 25 }}
-                </div>
-              {% endif %}
-
-              <div class="concha-showcase__price">
-                {% render 'price', product: product, use_variant: true, show_badges: false %}
-              </div>
-
-              <div class="concha-showcase__actions">
-                <button
-                  type="button"
-                  class="button concha-showcase__add"
-                  disabled
-                >
-                  Add to cart
-                </button>
-
-                <a
-                  href="{{ product.url }}"
-                  class="concha-showcase__learn-more"
-                >
-                  Learn more
-                  <span aria-hidden="true">→</span>
-                </a>
-              </div>
-
-            {% else %}
-              <p class="concha-showcase__eyebrow">Featured</p>
-
-              <h3 class="concha-showcase__title">Choose a product</h3>
-
-              <p class="concha-showcase__description">
-                Select a product in the theme editor to preview this showcase item.
-              </p>
-            {% endif %}
-          </div>
-        </article>
-      {% endfor %}
+          {% render 'kevin-concha-showcase-item',
+            block: block,
+            product: product,
+            showcase_image: showcase_image,
+            reverse: reverse
+          %}
+        {% endfor %}
+      </div>
     </div>
   </div>
 </section>
@@ -734,45 +285,332 @@
 
   "settings": [
     {
+      "type": "header",
+      "content": "Showcase header"
+    },
+    {
       "type": "text",
       "id": "eyebrow",
       "label": "Eyebrow",
-      "default": "Our Conchas"
+      "default": "IN THE CASE TODAY"
     },
     {
       "type": "inline_richtext",
       "id": "heading",
       "label": "Heading",
-      "default": "Meet the conchas"
+      "default": "Meet the Conchas"
     },
     {
       "type": "richtext",
       "id": "subheading",
-      "label": "Subheading"
+      "label": "Subheading",
+      "default": "<p>Freshly baked, filled with flavor, and waiting for you at La Concheria.</p>"
+    },
+    {
+      "type": "text",
+      "id": "header_link_label",
+      "label": "Link label",
+      "default": "Find a Location"
+    },
+    {
+      "type": "url",
+      "id": "header_link",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Header layout"
     },
     {
       "type": "select",
-      "id": "heading_size",
-      "label": "Heading size",
+      "id": "header_alignment",
+      "label": "Text alignment",
       "options": [
         {
-          "value": "h2",
-          "label": "Small"
+          "value": "left",
+          "label": "Left"
         },
         {
-          "value": "h1",
-          "label": "Medium"
+          "value": "center",
+          "label": "Center"
         },
         {
-          "value": "h0",
-          "label": "Large"
+          "value": "right",
+          "label": "Right"
         }
       ],
-      "default": "h1"
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "header_max_width",
+      "label": "Content width",
+      "min": 40,
+      "max": 180,
+      "step": 5,
+      "default": 70,
+      "unit": "rem"
+    },
+    {
+      "type": "header",
+      "content": "Header typography"
+    },
+    {
+      "type": "range",
+      "id": "header_eyebrow_size",
+      "label": "Eyebrow size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "default": 13,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "header_heading_size",
+      "label": "Heading size — desktop",
+      "min": 32,
+      "max": 96,
+      "step": 2,
+      "default": 64,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "header_heading_size_mobile",
+      "label": "Heading size — mobile",
+      "min": 26,
+      "max": 60,
+      "step": 2,
+      "default": 42,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "header_subheading_size",
+      "label": "Subheading size",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "default": 17,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "header_heading_line_height",
+      "label": "Heading line height",
+      "min": 85,
+      "max": 140,
+      "step": 5,
+      "default": 100,
+      "unit": "%"
+    },
+    {
+      "type": "header",
+      "content": "Header spacing"
+    },
+    {
+      "type": "range",
+      "id": "header_padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 24,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "header_padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "default": 80,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "header_eyebrow_gap",
+      "label": "Eyebrow to heading",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "default": 12,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "header_subheading_gap",
+      "label": "Heading to subheading",
+      "min": 0,
+      "max": 48,
+      "step": 2,
+      "default": 18,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Bakery decoration"
+    },
+    {
+      "type": "checkbox",
+      "id": "header_show_decoration",
+      "label": "Show decoration",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "header_decoration",
+      "label": "Decoration image"
+    },
+    {
+      "type": "select",
+      "id": "header_decoration_position",
+      "label": "Decoration position",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "header_decoration_width",
+      "label": "Decoration width",
+      "min": 24,
+      "max": 180,
+      "step": 4,
+      "default": 64,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "header_decoration_rotation",
+      "label": "Decoration rotation",
+      "min": -30,
+      "max": 30,
+      "step": 1,
+      "default": -6,
+      "unit": "deg"
+    },
+    {
+      "type": "range",
+      "id": "header_decoration_opacity",
+      "label": "Decoration opacity",
+      "min": 10,
+      "max": 100,
+      "step": 5,
+      "default": 100,
+      "unit": "%"
+    },
+    {
+      "type": "range",
+      "id": "header_decoration_gap",
+      "label": "Space above decoration",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "default": 24,
+      "unit": "px"
     },
     {
       "type": "header",
       "content": "Colors"
+    },
+    {
+      "type": "header",
+      "content": "Product layout"
+    },
+    {
+      "type": "range",
+      "id": "product_row_gap",
+      "label": "Space between products — desktop",
+      "min": 40,
+      "max": 200,
+      "step": 5,
+      "default": 100,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "product_mobile_side_margin",
+      "label": "Mobile side margin",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "product_row_gap_mobile",
+      "label": "Space between products — mobile",
+      "min": 20,
+      "max": 120,
+      "step": 5,
+      "default": 70,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "product_column_gap",
+      "label": "Image / text gap — desktop",
+      "min": 10,
+      "max": 100,
+      "step": 5,
+      "default": 60,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "product_column_gap_mobile",
+      "label": "Image / text gap — mobile",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "product_image_size",
+      "label": "Product image size — desktop",
+      "min": 300,
+      "max": 700,
+      "step": 10,
+      "default": 580,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "product_image_size_mobile",
+      "label": "Product image size — mobile",
+      "min": 180,
+      "max": 400,
+      "step": 10,
+      "default": 320,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "product_row_min_height",
+      "label": "Minimum product row height",
+      "min": 300,
+      "max": 700,
+      "step": 10,
+      "default": 480,
+      "unit": "px"
     },
     {
       "type": "color_scheme",
@@ -837,6 +675,72 @@
     {
       "type": "header",
       "content": "Counter"
+    },
+    {
+      "type": "header",
+      "content": "Case lighting"
+    },
+    {
+      "type": "checkbox",
+      "id": "case_show_led",
+      "label": "Show interior LED",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "case_led_color",
+      "label": "LED color",
+      "default": "#FFF1D6"
+    },
+    {
+      "type": "range",
+      "id": "case_led_intensity",
+      "label": "LED intensity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 55,
+      "unit": "%"
+    },
+    {
+      "type": "range",
+      "id": "case_light_intensity",
+      "label": "Ambient light intensity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 20,
+      "unit": "%"
+    },
+    {
+      "type": "range",
+      "id": "case_light_position",
+      "label": "Light source position",
+      "min": 10,
+      "max": 90,
+      "step": 5,
+      "default": 35,
+      "unit": "%"
+    },
+    {
+      "type": "range",
+      "id": "case_depth_intensity",
+      "label": "Interior depth",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "default": 10,
+      "unit": "%"
+    },
+    {
+      "type": "range",
+      "id": "case_bounce_intensity",
+      "label": "Counter bounce light",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "default": 12,
+      "unit": "%"
     },
     {
       "type": "range",
@@ -962,6 +866,35 @@
           "label": "Product"
         },
         {
+          "type": "header",
+          "content": "Manual product details"
+        },
+        {
+          "type": "text",
+          "id": "manual_title",
+          "label": "Name",
+          "info": "Used when no accessible Shopify product is selected."
+        },
+        {
+          "type": "textarea",
+          "id": "manual_description",
+          "label": "Description",
+          "info": "Used when no accessible Shopify product is selected."
+        },
+        {
+          "type": "text",
+          "id": "manual_price",
+          "label": "Price",
+          "placeholder": "$4.50",
+          "info": "Optional manual price."
+        },
+        {
+          "type": "url",
+          "id": "manual_link",
+          "label": "Link",
+          "info": "Optional manual details link."
+        },
+        {
           "type": "image_picker",
           "id": "image",
           "label": "Showcase image",
@@ -974,16 +907,106 @@
           "placeholder": "Fan favorite"
         },
         {
-          "type": "richtext",
-          "id": "description",
-          "label": "Short description",
-          "info": "Optional. Uses a shortened product description if left blank."
+          "type": "checkbox",
+          "id": "show_price",
+          "label": "Show price",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "show_learn_more",
+          "label": "Show details link",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "link_label",
+          "label": "Details link label",
+          "default": "See details"
+        },
+        {
+          "type": "header",
+          "content": "Product styling"
+        },
+        {
+          "type": "range",
+          "id": "image_scale",
+          "label": "Image size",
+          "min": 70,
+          "max": 130,
+          "step": 5,
+          "default": 100,
+          "unit": "%"
+        },
+        {
+          "type": "range",
+          "id": "image_rotation",
+          "label": "Image rotation",
+          "min": -12,
+          "max": 12,
+          "step": 1,
+          "default": 0,
+          "unit": "deg"
+        },
+        {
+          "type": "range",
+          "id": "image_hover_rotation",
+          "label": "Hover rotation",
+          "min": -15,
+          "max": 15,
+          "step": 1,
+          "default": 3,
+          "unit": "deg"
+        },
+        {
+          "type": "range",
+          "id": "image_offset_y",
+          "label": "Vertical position",
+          "min": -80,
+          "max": 80,
+          "step": 5,
+          "default": 0,
+          "unit": "px"
+        },
+        {
+          "type": "range",
+          "id": "image_offset_x",
+          "label": "Horizontal position",
+          "min": -150,
+          "max": 150,
+          "step": 5,
+          "default": 0,
+          "unit": "px"
+        },
+        {
+          "type": "header",
+          "content": "Color glow"
         },
         {
           "type": "color",
           "id": "accent_color",
           "label": "Accent color",
           "default": "#F8D9E8"
+        },
+        {
+          "type": "range",
+          "id": "accent_size",
+          "label": "Color size",
+          "min": 50,
+          "max": 120,
+          "step": 5,
+          "default": 80,
+          "unit": "%"
+        },
+        {
+          "type": "range",
+          "id": "accent_opacity",
+          "label": "Color intensity",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "default": 35,
+          "unit": "%"
         }
       ]
     }
