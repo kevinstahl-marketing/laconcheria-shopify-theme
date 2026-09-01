@@ -251,17 +251,54 @@
 
     if (!stickyCase || !header) return;
 
+    const mobileQuery = window.matchMedia('(max-width: 749px)');
+
+    let currentOffset = null;
+
     const updateCaseOffset = () => {
+      /*
+       * MOBILE
+       * -------
+       * Do NOT chase Dawn's disappearing header.
+       *
+       * The display case remains at a stable sticky position,
+       * eliminating layout changes during touch scrolling.
+       */
+      if (mobileQuery.matches) {
+        if (currentOffset !== 0) {
+          currentOffset = 0;
+          stickyCase.style.setProperty('--concha-header-offset', '0px');
+        }
+
+        return;
+      }
+
+      /*
+       * DESKTOP / TABLET
+       * ----------------
+       * Preserve the existing Dawn-aware behavior.
+       */
       const isSticky = header.classList.contains('shopify-section-header-sticky');
+
       const isHidden = header.classList.contains('shopify-section-header-hidden');
 
-      const shouldMakeRoom = isSticky && !isHidden;
+      const nextOffset = isSticky && !isHidden ? header.offsetHeight : 0;
 
-      stickyCase.style.setProperty('--concha-header-offset', shouldMakeRoom ? `${header.offsetHeight}px` : '0px');
+      if (nextOffset === currentOffset) return;
+
+      currentOffset = nextOffset;
+
+      stickyCase.style.setProperty('--concha-header-offset', `${nextOffset}px`);
     };
 
     updateCaseOffset();
 
+    /*
+     * Dawn header observer.
+     *
+     * It may fire on mobile, but updateCaseOffset()
+     * immediately takes the cheap mobile path.
+     */
     const observer = new MutationObserver(updateCaseOffset);
 
     observer.observe(header, {
@@ -269,10 +306,18 @@
       attributeFilter: ['class'],
     });
 
-    window.addEventListener('resize', updateCaseOffset);
+    /*
+     * Re-evaluate when crossing mobile/desktop.
+     */
+    if (mobileQuery.addEventListener) {
+      mobileQuery.addEventListener('change', updateCaseOffset);
+    } else {
+      mobileQuery.addListener(updateCaseOffset);
+    }
+
+    window.addEventListener('resize', updateCaseOffset, { passive: true });
   })();
 </script>
-
 {% schema %}
 {
   "name": "Concha showcase",
