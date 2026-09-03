@@ -1,0 +1,957 @@
+.concha-showcase {
+    position: relative;
+    overflow: visible;
+}
+
+.concha-showcase .concha-showcase__inner {
+    padding-top: 0;
+    padding-bottom: 6rem;
+}
+
+.concha-showcase__content-width {
+    width: calc(100% - 4rem);
+    max-width: var(--showcase-content-width);
+    margin-inline: auto;
+}
+
+.concha-showcase .concha-showcase__header {
+    width: 100%;
+
+    padding-top: var(--showcase-header-padding-top);
+    padding-bottom: var(--showcase-header-padding-bottom);
+
+    text-align: var(--showcase-header-align);
+}
+
+/* Alignment */
+
+.concha-showcase .concha-showcase__header--left {
+    --showcase-header-align: left;
+}
+
+.concha-showcase .concha-showcase__header--center {
+    --showcase-header-align: center;
+}
+
+.concha-showcase .concha-showcase__header--right {
+    --showcase-header-align: right;
+}
+
+
+/* Eyebrow */
+
+.concha-showcase .concha-showcase__header .concha-showcase__eyebrow {
+    margin: 0 0 var(--showcase-eyebrow-gap);
+
+    font-size: var(--showcase-eyebrow-size);
+    font-weight: 700;
+    line-height: 1.2;
+
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+
+/* Heading */
+
+.concha-showcase .concha-showcase__heading {
+    margin: 0;
+
+    font-size: var(--showcase-heading-size);
+    line-height: var(--showcase-heading-line-height);
+}
+
+
+/* Subheading */
+
+.concha-showcase .concha-showcase__subheading {
+    margin-top: var(--showcase-subheading-gap);
+
+    font-size: var(--showcase-subheading-size);
+    line-height: 1.6;
+}
+
+.concha-showcase .concha-showcase__subheading>* {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+
+/* Optional header link */
+
+.concha-showcase .concha-showcase__header-link-wrap {
+    margin-top: 1.8rem;
+}
+
+.concha-showcase .concha-showcase__header-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+
+    color: inherit;
+    font-weight: 700;
+    text-decoration: none;
+
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 0.2rem;
+
+    transition:
+        gap 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.concha-showcase .concha-showcase__header-link:hover {
+    gap: 1rem;
+    opacity: 0.72;
+}
+
+
+.concha-showcase .concha-showcase__decoration {
+    display: flex;
+
+    margin-top: var(--showcase-decoration-gap);
+
+    pointer-events: none;
+}
+
+.concha-showcase .concha-showcase__decoration--left {
+    justify-content: flex-start;
+}
+
+.concha-showcase .concha-showcase__decoration--center {
+    justify-content: center;
+}
+
+.concha-showcase .concha-showcase__decoration--right {
+    justify-content: flex-end;
+}
+
+.concha-showcase .concha-showcase__decoration-image {
+    display: block;
+
+    width: var(--showcase-decoration-width);
+    max-width: 100%;
+    height: auto;
+
+    opacity: var(--showcase-decoration-opacity);
+
+    transform: rotate(var(--showcase-decoration-rotation));
+    transform-origin: center;
+
+    object-fit: contain;
+}
+
+
+/* Mobile heading sizing */
+
+@media screen and (max-width: 749px) {
+    .concha-showcase .concha-showcase__heading {
+        font-size: var(--showcase-heading-size-mobile);
+    }
+}
+
+/* ================================
+   PRODUCT TREADMILL
+   ================================ */
+
+.concha-showcase .concha-showcase__products {
+    display: flex;
+    flex-direction: column;
+    gap: var(--showcase-row-gap);
+}
+
+/* ================================
+   PRODUCT ROW
+   ================================ */
+
+.concha-showcase .concha-showcase__product {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+
+    width: 100%;
+    min-width: 0;
+    min-height: var(--showcase-row-min-height);
+
+    gap: var(--showcase-column-gap);
+}
+
+.concha-showcase .concha-showcase__product>* {
+    min-width: 0;
+}
+
+.concha-showcase .concha-showcase__product--reverse .concha-showcase__media {
+    order: 2;
+}
+
+.concha-showcase .concha-showcase__product--reverse .concha-showcase__content {
+    order: 1;
+}
+
+/* ================================
+   PRODUCT MEDIA
+   ================================ */
+
+.concha-showcase .concha-showcase__media {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    width: 100%;
+    min-width: 0;
+}
+
+.concha-showcase .concha-showcase__product--reverse .concha-showcase__media {
+    justify-content: flex-end;
+}
+
+.concha-showcase .concha-showcase__media::before {
+    content: "";
+    position: absolute;
+
+    width: var(--concha-accent-size);
+    max-width: 52rem;
+    aspect-ratio: 1;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            color-mix(in srgb,
+                var(--concha-accent) 90%,
+                white) 0%,
+            var(--concha-accent) 45%,
+            transparent 72%);
+
+    opacity: var(--concha-accent-opacity);
+
+    filter: blur(28px);
+
+    transform: scale(0.92);
+
+    transition:
+        transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+        opacity 0.35s ease,
+        filter 0.45s ease;
+
+    pointer-events: none;
+}
+
+.concha-showcase .concha-showcase__image {
+    position: relative;
+    z-index: 1;
+
+    display: block;
+    width: min(100%, var(--showcase-image-size));
+    max-width: 100%;
+    height: auto;
+
+    object-fit: contain;
+    transform:
+        translate(var(--concha-image-offset-x),
+            var(--concha-image-offset-y)) rotate(var(--concha-image-rotation)) scale(var(--concha-image-scale));
+    transform-origin: center;
+
+    transition:
+        transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+        filter 0.4s ease;
+}
+
+.concha-showcase .concha-showcase__placeholder {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 50rem;
+}
+
+/* ================================
+   PRODUCT HOVER
+   ================================ */
+
+@media (hover: hover) and (pointer: fine) {
+    .concha-showcase .concha-showcase__product:hover .concha-showcase__image {
+        transform:
+            translate(var(--concha-image-offset-x),
+                calc(var(--concha-image-offset-y) - 8px)) rotate(var(--concha-image-hover-rotation)) scale(calc(var(--concha-image-scale) * 1.055));
+
+        filter:
+            drop-shadow(0 22px 22px rgb(0 0 0 / 0.12)) drop-shadow(0 7px 8px rgb(0 0 0 / 0.07));
+    }
+
+    .concha-showcase .concha-showcase__product:hover .concha-showcase__media::before {
+        transform: scale(1.12);
+        opacity: min(1, calc(var(--concha-accent-opacity) + 0.18));
+        filter: blur(34px);
+    }
+}
+
+/* ================================
+   PRODUCT CONTENT
+   ================================ */
+
+.concha-showcase .concha-showcase__content {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+}
+
+.concha-showcase .concha-showcase__product:not(.concha-showcase__product--reverse) .concha-showcase__content {
+    justify-self: start;
+}
+
+.concha-showcase .concha-showcase__product--reverse .concha-showcase__content {
+    justify-self: end;
+}
+
+.concha-showcase .concha-showcase__content .concha-showcase__eyebrow {
+    margin: 0 0 1rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.concha-showcase .concha-showcase__title {
+    margin: 0;
+    font-size: clamp(3.6rem, 5vw, 7rem);
+    line-height: 0.95;
+    overflow-wrap: break-word;
+}
+
+.concha-showcase .concha-showcase__description {
+    margin-top: 2rem;
+    font-size: 1.7rem;
+    line-height: 1.6;
+    overflow-wrap: break-word;
+}
+
+.concha-showcase .concha-showcase__description>* {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.concha-showcase .concha-showcase__price {
+    margin-top: 2rem;
+}
+
+.concha-showcase .concha-showcase__actions {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+}
+
+/* Keep every primary action the same size */
+.concha-showcase .concha-showcase__actions product-form,
+.concha-showcase .concha-showcase__add-to-cart {
+    width: 19rem;
+    flex: 0 0 19rem;
+}
+
+.concha-showcase .concha-showcase__actions product-form form {
+    width: 100%;
+}
+
+.concha-showcase .concha-showcase__actions .quick-add__submit,
+.concha-showcase .concha-showcase__add-to-cart {
+    width: 100%;
+    min-width: 0;
+    min-height: 4.8rem;
+    box-sizing: border-box;
+}
+
+/* Choose Options link gets same physical dimensions */
+.concha-showcase .concha-showcase__add-to-cart {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.concha-showcase .concha-showcase__learn-more {
+    flex: 0 0 auto;
+    color: rgb(var(--color-foreground));
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* ================================
+   TABLET / COMPACT
+   ================================ */
+
+@media screen and (max-width: 989px) {
+
+    .concha-showcase .concha-showcase__product:not(.concha-showcase__product--reverse) .concha-showcase__content {
+        padding-left: 1.5rem;
+    }
+
+    .concha-showcase .concha-showcase__product--reverse .concha-showcase__content {
+        padding-right: 1.5rem;
+    }
+
+    .concha-showcase .concha-showcase__media {
+        width: calc(100% + 5rem);
+        transform: translateX(-5rem);
+    }
+
+    .concha-showcase .concha-showcase__product--reverse .concha-showcase__media {
+        transform: translateX(5rem);
+    }
+
+    .concha-showcase .concha-showcase__image {
+        width: var(--showcase-image-size);
+        max-width: none;
+    }
+
+    .concha-showcase .concha-showcase__product {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: var(--showcase-column-gap-mobile);
+        min-height: 38rem;
+    }
+
+
+    .concha-showcase .concha-showcase__title {
+        font-size: clamp(3.2rem, 6vw, 5rem);
+    }
+
+    .concha-showcase .concha-showcase__description {
+        font-size: 1.5rem;
+    }
+}
+
+
+/* ================================
+   MOBILE — LEFT / RIGHT + BLEED
+   ================================ */
+
+@media screen and (max-width: 749px) {
+    .concha-showcase {
+        overflow-x: clip;
+    }
+
+    .concha-showcase .concha-showcase__product:not(.concha-showcase__product--reverse) .concha-showcase__content {
+        padding-left: 3rem;
+    }
+
+    .concha-showcase .concha-showcase__product--reverse .concha-showcase__content {
+        padding-right: 3rem;
+    }
+
+    .concha-showcase__content-width {
+        width: calc(100% - 4rem);
+        max-width: var(--showcase-content-width);
+        margin-inline: auto;
+    }
+
+    .concha-showcase .concha-showcase__inner {
+        padding-bottom: 4rem;
+    }
+
+
+    .concha-showcase .concha-showcase__products {
+        gap: var(--showcase-row-gap-mobile);
+    }
+
+    .concha-showcase .concha-showcase__product {
+        grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+        gap: var(--showcase-column-gap-mobile);
+        min-height: 30rem;
+    }
+
+    /*
+      Let the media escape its grid column.
+
+      Normal rows bleed left.
+      Reverse rows bleed right.
+    */
+
+    .concha-showcase .concha-showcase__media {
+        width: calc(100% + 5rem);
+        transform: translateX(-5rem);
+    }
+
+    .concha-showcase .concha-showcase__product--reverse .concha-showcase__media {
+        transform: translateX(5rem);
+    }
+
+    .concha-showcase .concha-showcase__image {
+        width: calc(var(--showcase-image-size-mobile) + (var(--showcase-image-size) - var(--showcase-image-size-mobile)) * 0.45);
+        max-width: none;
+    }
+
+    .concha-showcase .concha-showcase__title {
+        font-size: clamp(2.8rem, 7vw, 4rem);
+    }
+
+    .concha-showcase .concha-showcase__description {
+        margin-top: 1.4rem;
+        font-size: 1.4rem;
+    }
+
+    .concha-showcase .concha-showcase__actions {
+        margin-top: 2rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+    }
+
+    .concha-showcase .concha-showcase__actions product-form,
+    .concha-showcase .concha-showcase__add-to-cart {
+        width: 100%;
+        flex: 0 0 auto;
+    }
+
+    .concha-showcase .concha-showcase__learn-more {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.concha-showcase__learn-more {
+    font-size: 1.3rem;
+}
+
+.concha-showcase__in-store-only {
+    font-size: 1.2rem;
+}
+
+/* ================================
+   SMALL MOBILE — MORE BLEED
+   ================================ */
+
+@media screen and (max-width: 549px) {
+    .concha-showcase .concha-showcase__image {
+        width: var(--showcase-image-size-mobile);
+    }
+
+    .concha-showcase .concha-showcase__product {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 1rem;
+        min-height: 27rem;
+    }
+
+    .concha-showcase .concha-showcase__media {
+        width: calc(100% + 7rem);
+        transform: translateX(-7rem);
+    }
+
+    .concha-showcase .concha-showcase__product--reverse .concha-showcase__media {
+        transform: translateX(7rem);
+    }
+
+    .concha-showcase .concha-showcase__title {
+        font-size: clamp(2.5rem, 8vw, 3.5rem);
+    }
+
+    .concha-showcase .concha-showcase__description {
+        font-size: 1.3rem;
+        line-height: 1.5;
+    }
+}
+
+/* ================================
+STICKY BAKERY DISPLAY CASE
+ ================================ */
+.concha-showcase .concha-showcase__sticky-case {
+    position: sticky;
+    top: -2px;
+    z-index: 2;
+
+    transition: top 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.shopify-section-header-sticky:not(.shopify-section-header-hidden)~main .concha-showcase .concha-showcase__sticky-case {
+    top: 64px;
+}
+
+/* ================================
+                                               CASE
+                                               ================================ */
+
+.concha-showcase .bakery-case {
+    position: relative;
+    width: 100%;
+}
+
+
+/* ================================
+                                               GLASS
+                                               ================================ */
+
+.concha-showcase .bakery-case__glass {
+    position: relative;
+
+    height: var(--case-glass-height);
+
+    background: color-mix(in srgb,
+            var(--case-glass-tint) calc(var(--case-glass-opacity) * 100%),
+            transparent);
+
+    backdrop-filter: blur(var(--case-glass-blur));
+    -webkit-backdrop-filter: blur(var(--case-glass-blur));
+
+    overflow: hidden;
+}
+
+/* ================================
+                         CASE INTERIOR LIGHTING
+                         ================================ */
+
+/* Rear/interior depth.
+                         Darkens the lower and outer portions of the case very slightly,
+                         giving the glass an apparent volume rather than a flat overlay. */
+
+.concha-showcase .bakery-case__interior-depth {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+
+    background:
+        linear-gradient(to bottom,
+            rgba(255, 255, 255, 0.03) 0%,
+            transparent 38%,
+            rgba(35, 25, 18, var(--case-depth-opacity)) 100%),
+        linear-gradient(90deg,
+            rgba(25, 18, 12, calc(var(--case-depth-opacity) * 0.45)),
+            transparent 16%,
+            transparent 84%,
+            rgba(25, 18, 12, calc(var(--case-depth-opacity) * 0.35)));
+}
+
+
+/* ================================
+                         LED STRIP
+                         ================================ */
+
+.concha-showcase .bakery-case__led {
+    position: absolute;
+    z-index: 2;
+
+    top: 2px;
+    left: 5%;
+    right: 5%;
+
+    height: 4px;
+
+    pointer-events: none;
+}
+
+.concha-showcase .bakery-case__interior-depth,
+.concha-showcase .bakery-case__led,
+.concha-showcase .bakery-case__led-source,
+.concha-showcase .bakery-case__led-glow,
+.concha-showcase .bakery-case__ambient-light,
+.concha-showcase .bakery-case__counter-bounce {
+    display: block !important;
+}
+
+
+/* The physical LED source */
+
+.concha-showcase .bakery-case__led-source {
+    position: absolute;
+    inset: 0;
+    border-radius: 0 0 999px 999px;
+
+    background:
+        linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.8) 8%,
+            var(--case-led-color) 22%,
+            var(--case-led-color) 78%,
+            rgba(255, 255, 255, 0.8) 92%,
+            transparent);
+
+    opacity: var(--case-led-intensity);
+
+    box-shadow:
+        0 1px 3px rgba(255, 255, 255, 0.7),
+        0 2px 8px var(--case-led-color);
+}
+
+
+/* Light projected downward from LED */
+
+.concha-showcase .bakery-case__led-glow {
+    position: absolute;
+
+    top: 0;
+    left: -4%;
+    width: 108%;
+
+    height: calc(var(--case-glass-height) * 0.72);
+
+    background:
+        linear-gradient(to bottom,
+            color-mix(in srgb,
+                var(--case-led-color) calc(var(--case-led-intensity) * 28%),
+                transparent),
+            transparent 85%);
+
+    filter: blur(12px);
+
+    opacity: 0.9;
+}
+
+
+/* ================================
+                         AMBIENT LIGHT SOURCE
+                         ================================ */
+
+.concha-showcase .bakery-case__ambient-light {
+    position: absolute;
+
+    z-index: 1;
+
+    top: -35%;
+    left: var(--case-light-position);
+
+    width: 65%;
+    height: 130%;
+
+    transform: translateX(-50%);
+
+    background:
+        radial-gradient(ellipse at center,
+            rgba(255, 255, 255, var(--case-light-intensity)) 0%,
+            rgba(255, 248, 225, calc(var(--case-light-intensity) * 0.55)) 30%,
+            transparent 72%);
+
+    filter: blur(22px);
+
+    pointer-events: none;
+}
+
+
+/* ================================
+                         COUNTER BOUNCE LIGHT
+                         ================================ */
+
+.concha-showcase .bakery-case__counter-bounce {
+    position: absolute;
+
+    z-index: 1;
+
+    left: 4%;
+    right: 4%;
+    bottom: -2px;
+
+    height: 45%;
+
+    background:
+        linear-gradient(to top,
+            rgba(255, 244, 220, var(--case-bounce-intensity)),
+            transparent 78%);
+
+    filter: blur(10px);
+
+    pointer-events: none;
+}
+
+/* ================================
+                                               GLASS REFLECTIONS
+                                               ================================ */
+
+.concha-showcase .bakery-case__reflection {
+    position: absolute;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.concha-showcase .bakery-case__reflection--primary {
+    top: 14px;
+    left: 6%;
+
+    width: 38%;
+    height: 1px;
+
+    background: rgb(255 255 255 / var(--case-reflection-opacity));
+}
+
+.concha-showcase .bakery-case__reflection--secondary {
+    top: -30px;
+    left: 18%;
+
+    width: 18%;
+    height: 180px;
+
+    background: rgb(255 255 255 / calc(var(--case-reflection-opacity) * 0.2));
+
+    transform: rotate(20deg);
+}
+
+/* ================================
+                                               BRANDING
+                                               ================================ */
+/* ================================
+                             BRANDING
+                             ================================ */
+
+.concha-showcase .bakery-case__branding {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+    white-space: nowrap;
+
+    pointer-events: none;
+    z-index: 6;
+}
+
+
+/* STATIC */
+
+.concha-showcase .bakery-case__branding--static {
+    justify-content: center;
+    padding: 0 2rem;
+}
+
+
+/* TEXT */
+
+.concha-showcase .bakery-case__branding-text {
+    flex-shrink: 0;
+
+    font-size: 1.1rem;
+    font-weight: 700;
+
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+
+    color: var(--case-branding-color);
+    opacity: var(--case-branding-opacity);
+}
+
+
+/* SCROLLING TRACK */
+
+.concha-showcase .bakery-case__branding--scroll {
+    justify-content: flex-start;
+    padding: 0;
+}
+
+.concha-showcase .bakery-case__branding-track {
+    display: flex;
+    width: max-content;
+
+    animation:
+        concha-case-branding-scroll var(--case-scroll-speed) linear infinite;
+
+    will-change: transform;
+}
+
+
+/* IDENTICAL REPEATING GROUPS */
+
+.concha-showcase .bakery-case__branding-group {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+
+/* SEPARATOR */
+
+.concha-showcase .bakery-case__separator {
+    flex-shrink: 0;
+
+    margin: 0 3rem;
+
+    color: var(--case-branding-color);
+    opacity: var(--case-branding-opacity);
+}
+
+
+/* ANIMATION */
+
+@keyframes concha-case-branding-scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+    .concha-showcase .bakery-case__branding-track {
+        animation: none;
+    }
+}
+
+
+/* ================================
+                               DISPLAY CASE BASE
+                               ================================ */
+
+.concha-showcase .bakery-case__trim {
+    display: block;
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    height: var(--case-trim-height);
+    background: var(--case-trim-color);
+}
+
+
+/* Main physical shelf */
+
+.concha-showcase .bakery-case__counter {
+    display: block;
+    position: relative;
+    z-index: 20;
+
+    width: 100%;
+    min-height: var(--case-counter-height);
+    height: var(--case-counter-height);
+
+    background: var(--case-counter-color);
+
+    border-bottom: 1px solid rgba(60, 40, 20, 0.25);
+
+    box-shadow:
+        inset 0 2px 2px rgba(255, 255, 255, 0.45),
+        0 4px 8px rgba(40, 25, 10, 0.18);
+}
+
+
+/* Underside depth */
+
+.concha-showcase .bakery-case__shadow {
+    display: block;
+    position: relative;
+    z-index: 19;
+
+    width: 100%;
+    height: 12px;
+
+    background: linear-gradient(to bottom,
+            rgb(30 20 10 / var(--case-shadow-opacity)),
+            transparent);
+
+    pointer-events: none;
+}
+
+@media screen and (min-width: 750px) {
+    .concha-showcase .concha-showcase__product:not(.concha-showcase__product--reverse) .concha-showcase__content {
+        max-width: 48rem;
+        margin-right: auto;
+    }
+
+    .concha-showcase .concha-showcase__product--reverse .concha-showcase__content {
+        max-width: 48rem;
+        margin-left: auto;
+    }
+}

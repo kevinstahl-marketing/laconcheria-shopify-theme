@@ -1,0 +1,20 @@
+<div
+  class="talavera-divider"
+  style="
+    --talavera-height: {{ height | default: 72 }}px;
+    --talavera-opacity: {{ opacity | default: 1 }};
+  "
+>
+  {% if image != blank %}
+    <div
+      class="talavera-divider__image"
+      style="background-image: url('{{ image | image_url: width: 2400 }}');"
+    >
+      <span class="visually-hidden">Decorative divider</span>
+    </div>
+  {% else %}
+    <div class="talavera-divider__placeholder">
+      Add a divider image
+    </div>
+  {% endif %}
+</div>

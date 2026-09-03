@@ -1,0 +1,1001 @@
+{{ 'kevin-concha-showcase.css' | asset_url | stylesheet_tag }}
+<section
+  id="ConchaShowcase-{{ section.id }}"
+  class="concha-showcase color-{{ section.settings.color_scheme }} gradient"
+>
+  <div class="concha-showcase__inner">
+    <!--
+      ============================
+      STICKY FROSTED GLASS
+      ============================
+    -->
+
+    <!-- STICKY BAKERY DISPLAY CASE -->
+    <div
+      class="concha-showcase__sticky-case"
+      style="
+                  --case-glass-height: {{ section.settings.case_glass_height }}px;
+                  --case-glass-tint: {{ section.settings.case_glass_tint }};
+                  --case-glass-opacity: {{ section.settings.case_glass_opacity | divided_by: 100.0 }};
+                  --case-glass-blur: {{ section.settings.case_glass_blur }}px;
+                  --case-led-color: {{ section.settings.case_led_color }};
+        --case-led-intensity: {{ section.settings.case_led_intensity | divided_by: 100.0 }};
+        --case-light-intensity: {{ section.settings.case_light_intensity | divided_by: 100.0 }};
+        --case-light-position: {{ section.settings.case_light_position }}%;
+        --case-depth-opacity: {{ section.settings.case_depth_intensity | divided_by: 100.0 }};
+        --case-bounce-intensity: {{ section.settings.case_bounce_intensity | divided_by: 100.0 }};
+                  --case-reflection-opacity: {{ section.settings.case_reflection_intensity | divided_by: 100.0 }};
+                  --case-counter-height: {{ section.settings.case_counter_height }}px;
+                  --case-counter-color: {{ section.settings.case_counter_color }};
+                  --case-trim-color: {{ section.settings.case_trim_color }};
+                  --case-shadow-opacity: {{ section.settings.case_shadow_intensity | divided_by: 100.0 }};
+                  --case-branding-color: {{ section.settings.case_branding_color }};
+                  --case-branding-opacity: {{ section.settings.case_branding_opacity | divided_by: 100.0 }};
+                  --case-scroll-speed: {{ section.settings.case_scroll_speed }}s;
+                --case-trim-height: {{ section.settings.case_trim_height }}px;
+      "
+    >
+      <div class="bakery-case">
+        <!-- GLASS -->
+        <div class="bakery-case__glass">
+          <!-- Interior depth / lighting -->
+          <div class="bakery-case__interior-depth"></div>
+
+          {% if section.settings.case_show_led %}
+            <div class="bakery-case__led" aria-hidden="true">
+              <div class="bakery-case__led-source"></div>
+              <div class="bakery-case__led-glow"></div>
+            </div>
+          {% endif %}
+
+          <div class="bakery-case__ambient-light" aria-hidden="true"></div>
+          <div class="bakery-case__counter-bounce" aria-hidden="true"></div>
+
+          <!-- Glass reflections -->
+          <div class="bakery-case__reflection bakery-case__reflection--primary"></div>
+          <div class="bakery-case__reflection bakery-case__reflection--secondary"></div>
+
+          <!-- Branding -->
+          {% if section.settings.case_show_branding %}
+            <div
+              class="bakery-case__branding bakery-case__branding--{{ section.settings.case_branding_behavior }}"
+            >
+              {% if section.settings.case_branding_behavior == 'scroll' %}
+                <div class="bakery-case__branding-track">
+                  <div class="bakery-case__branding-group">
+                    {% for i in (1..4) %}
+                      <span class="bakery-case__branding-text">
+                        {{ section.settings.case_branding_text | escape }}
+                      </span>
+
+                      <span class="bakery-case__separator" aria-hidden="true">✦</span>
+                    {% endfor %}
+                  </div>
+
+                  <div class="bakery-case__branding-group" aria-hidden="true">
+                    {% for i in (1..4) %}
+                      <span class="bakery-case__branding-text">
+                        {{ section.settings.case_branding_text | escape }}
+                      </span>
+
+                      <span class="bakery-case__separator" aria-hidden="true">✦</span>
+                    {% endfor %}
+                  </div>
+                </div>
+
+              {% else %}
+                <span class="bakery-case__branding-text">
+                  {{ section.settings.case_branding_text | escape }}
+                </span>
+              {% endif %}
+            </div>
+          {% endif %}
+        </div>
+
+        <!-- THIN METAL / FRAME EDGE -->
+        <div class="bakery-case__trim"></div>
+
+        <!-- COUNTER / SHELF -->
+        <div class="bakery-case__counter"></div>
+
+        <!-- DEPTH UNDER COUNTER -->
+        <div class="bakery-case__shadow"></div>
+      </div>
+    </div>
+    <!--
+      ============================
+      PRODUCT TREADMILL
+      ============================
+    -->
+    <!--
+      ============================
+      SECTION INTRO
+      ============================
+    -->
+    <div
+      class="concha-showcase__content-width"
+      style="
+        --showcase-content-width: {{ section.settings.header_max_width }}rem;
+
+        --showcase-row-gap: {{ section.settings.product_row_gap }}px;
+        --showcase-row-gap-mobile: {{ section.settings.product_row_gap_mobile }}px;
+
+        --showcase-column-gap: {{ section.settings.product_column_gap }}px;
+        --showcase-column-gap-mobile: {{ section.settings.product_column_gap_mobile }}px;
+
+        --showcase-image-size: {{ section.settings.product_image_size }}px;
+        --showcase-image-size-mobile: {{ section.settings.product_image_size_mobile }}px;
+
+        --showcase-row-min-height: {{ section.settings.product_row_min_height }}px;
+        --showcase-mobile-side-margin: {{ section.settings.product_mobile_side_margin }}px;
+      "
+    >
+      {% if section.settings.eyebrow != blank
+        or section.settings.heading != blank
+        or section.settings.subheading != blank
+        or section.settings.header_link_label != blank
+        or section.settings.header_decoration != blank
+      %}
+        <header
+          class="
+            concha-showcase__header
+            concha-showcase__header--{{ section.settings.header_alignment }}
+          "
+          style="
+            --showcase-eyebrow-size: {{ section.settings.header_eyebrow_size }}px;
+            --showcase-heading-size: {{ section.settings.header_heading_size }}px;
+            --showcase-heading-size-mobile: {{ section.settings.header_heading_size_mobile }}px;
+            --showcase-subheading-size: {{ section.settings.header_subheading_size }}px;
+            --showcase-heading-line-height: {{ section.settings.header_heading_line_height | divided_by: 100.0 }};
+
+            --showcase-header-padding-top: {{ section.settings.header_padding_top }}px;
+            --showcase-header-padding-bottom: {{ section.settings.header_padding_bottom }}px;
+            --showcase-eyebrow-gap: {{ section.settings.header_eyebrow_gap }}px;
+            --showcase-subheading-gap: {{ section.settings.header_subheading_gap }}px;
+            --showcase-decoration-gap: {{ section.settings.header_decoration_gap }}px;
+
+            --showcase-decoration-width: {{ section.settings.header_decoration_width }}px;
+            --showcase-decoration-rotation: {{ section.settings.header_decoration_rotation }}deg;
+            --showcase-decoration-opacity: {{ section.settings.header_decoration_opacity | divided_by: 100.0 }};
+          "
+        >
+          {% if section.settings.eyebrow != blank %}
+            <p class="concha-showcase__eyebrow">
+              {{ section.settings.eyebrow }}
+            </p>
+          {% endif %}
+
+          {% if section.settings.heading != blank %}
+            <h2 class="concha-showcase__heading">
+              {{ section.settings.heading }}
+            </h2>
+          {% endif %}
+
+          {% if section.settings.subheading != blank %}
+            <div class="concha-showcase__subheading rte">
+              {{ section.settings.subheading }}
+            </div>
+          {% endif %}
+
+          {% if section.settings.header_link_label != blank and section.settings.header_link != blank %}
+            <div class="concha-showcase__header-link-wrap">
+              <a
+                href="{{ section.settings.header_link }}"
+                class="concha-showcase__header-link"
+              >
+                {{ section.settings.header_link_label | escape }}
+
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          {% endif %}
+
+          {% if section.settings.header_show_decoration and section.settings.header_decoration != blank %}
+            <div
+              class="
+                concha-showcase__decoration
+                concha-showcase__decoration--{{ section.settings.header_decoration_position }}
+              "
+              aria-hidden="true"
+            >
+              {{
+                section.settings.header_decoration
+                | image_url: width: 400
+                | image_tag:
+                  loading: 'lazy',
+                  widths: '60, 90, 120, 180, 240, 320, 400',
+                  class: 'concha-showcase__decoration-image'
+              }}
+            </div>
+          {% endif %}
+        </header>
+      {% endif %}
+
+      <div class="concha-showcase__products">
+        {% for block in section.blocks %}
+          {% liquid
+            assign product = block.settings.product
+            assign showcase_image = block.settings.image
+
+            if showcase_image == blank and product != blank
+              assign showcase_image = product.featured_image
+            endif
+
+            assign row_modulo = forloop.index0 | modulo: 2
+
+            if row_modulo == 1
+              assign reverse = true
+            else
+              assign reverse = false
+            endif
+          %}
+
+          {% render 'kevin-concha-showcase-item',
+            block: block,
+            product: product,
+            showcase_image: showcase_image,
+            reverse: reverse
+          %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Concha showcase",
+  "tag": "section",
+  "class": "section",
+
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+
+  "settings": [
+    {
+      "type": "header",
+      "content": "Showcase header"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "IN THE CASE TODAY"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Meet the Conchas"
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "<p>Freshly baked, filled with flavor, and waiting for you at La Concheria.</p>"
+    },
+    {
+      "type": "text",
+      "id": "header_link_label",
+      "label": "Link label",
+      "default": "Find a Location"
+    },
+    {
+      "type": "url",
+      "id": "header_link",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Header layout"
+    },
+    {
+      "type": "select",
+      "id": "header_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "header_max_width",
+      "label": "Content width",
+      "min": 40,
+      "max": 180,
+      "step": 5,
+      "default": 70,
+      "unit": "rem"
+    },
+    {
+      "type": "header",
+      "content": "Header typography"
+    },
+    {
+      "type": "range",
+      "id": "header_eyebrow_size",
+      "label": "Eyebrow size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "default": 13,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "header_heading_size",
+      "label": "Heading size — desktop",
+      "min": 32,
+      "max": 96,
+      "step": 2,
+      "default": 64,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "header_heading_size_mobile",
+      "label": "Heading size — mobile",
+      "min": 26,
+      "max": 60,
+      "step": 2,
+      "default": 42,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "header_subheading_size",
+      "label": "Subheading size",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "default": 17,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "header_heading_line_height",
+      "label": "Heading line height",
+      "min": 85,
+      "max": 140,
+      "step": 5,
+      "default": 100,
+      "unit": "%"
+    },
+    {
+      "type": "header",
+      "content": "Header spacing"
+    },
+    {
+      "type": "range",
+      "id": "header_padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 24,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "header_padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "default": 80,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "header_eyebrow_gap",
+      "label": "Eyebrow to heading",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "default": 12,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "header_subheading_gap",
+      "label": "Heading to subheading",
+      "min": 0,
+      "max": 48,
+      "step": 2,
+      "default": 18,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Bakery decoration"
+    },
+    {
+      "type": "checkbox",
+      "id": "header_show_decoration",
+      "label": "Show decoration",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "header_decoration",
+      "label": "Decoration image"
+    },
+    {
+      "type": "select",
+      "id": "header_decoration_position",
+      "label": "Decoration position",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "header_decoration_width",
+      "label": "Decoration width",
+      "min": 24,
+      "max": 180,
+      "step": 4,
+      "default": 64,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "header_decoration_rotation",
+      "label": "Decoration rotation",
+      "min": -30,
+      "max": 30,
+      "step": 1,
+      "default": -6,
+      "unit": "deg"
+    },
+    {
+      "type": "range",
+      "id": "header_decoration_opacity",
+      "label": "Decoration opacity",
+      "min": 10,
+      "max": 100,
+      "step": 5,
+      "default": 100,
+      "unit": "%"
+    },
+    {
+      "type": "range",
+      "id": "header_decoration_gap",
+      "label": "Space above decoration",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "default": 24,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "header",
+      "content": "Product layout"
+    },
+    {
+      "type": "range",
+      "id": "product_row_gap",
+      "label": "Space between products — desktop",
+      "min": 40,
+      "max": 200,
+      "step": 5,
+      "default": 100,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "product_mobile_side_margin",
+      "label": "Mobile side margin",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "product_row_gap_mobile",
+      "label": "Space between products — mobile",
+      "min": 20,
+      "max": 120,
+      "step": 5,
+      "default": 70,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "product_column_gap",
+      "label": "Image / text gap — desktop",
+      "min": 10,
+      "max": 100,
+      "step": 5,
+      "default": 60,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "product_column_gap_mobile",
+      "label": "Image / text gap — mobile",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "product_image_size",
+      "label": "Product image size — desktop",
+      "min": 300,
+      "max": 700,
+      "step": 10,
+      "default": 580,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "product_image_size_mobile",
+      "label": "Product image size — mobile",
+      "min": 180,
+      "max": 400,
+      "step": 10,
+      "default": 320,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "product_row_min_height",
+      "label": "Minimum product row height",
+      "min": 300,
+      "max": 700,
+      "step": 10,
+      "default": 480,
+      "unit": "px"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Display case"
+    },
+    {
+      "type": "header",
+      "content": "Glass"
+    },
+    {
+      "type": "range",
+      "id": "case_glass_height",
+      "label": "Glass height",
+      "min": 50,
+      "max": 160,
+      "step": 5,
+      "default": 100,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "case_glass_tint",
+      "label": "Glass tint",
+      "default": "#F5FAFA"
+    },
+    {
+      "type": "range",
+      "id": "case_glass_opacity",
+      "label": "Glass opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 40,
+      "unit": "%"
+    },
+    {
+      "type": "range",
+      "id": "case_glass_blur",
+      "label": "Glass blur",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "default": 10,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "case_reflection_intensity",
+      "label": "Reflection intensity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 60,
+      "unit": "%"
+    },
+    {
+      "type": "header",
+      "content": "Counter"
+    },
+    {
+      "type": "header",
+      "content": "Case lighting"
+    },
+    {
+      "type": "checkbox",
+      "id": "case_show_led",
+      "label": "Show interior LED",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "case_led_color",
+      "label": "LED color",
+      "default": "#FFF1D6"
+    },
+    {
+      "type": "range",
+      "id": "case_led_intensity",
+      "label": "LED intensity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 55,
+      "unit": "%"
+    },
+    {
+      "type": "range",
+      "id": "case_light_intensity",
+      "label": "Ambient light intensity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 20,
+      "unit": "%"
+    },
+    {
+      "type": "range",
+      "id": "case_light_position",
+      "label": "Light source position",
+      "min": 10,
+      "max": 90,
+      "step": 5,
+      "default": 35,
+      "unit": "%"
+    },
+    {
+      "type": "range",
+      "id": "case_depth_intensity",
+      "label": "Interior depth",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "default": 10,
+      "unit": "%"
+    },
+    {
+      "type": "range",
+      "id": "case_bounce_intensity",
+      "label": "Counter bounce light",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "default": 12,
+      "unit": "%"
+    },
+    {
+      "type": "range",
+      "id": "case_counter_height",
+      "label": "Counter height",
+      "min": 8,
+      "max": 50,
+      "step": 2,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "case_counter_color",
+      "label": "Counter color",
+      "default": "#FFF7EC"
+    },
+    {
+      "type": "color",
+      "id": "case_trim_color",
+      "label": "Trim color",
+      "default": "#C9A455"
+    },
+    {
+      "type": "range",
+      "id": "case_trim_height",
+      "label": "Trim height",
+      "min": 1,
+      "max": 16,
+      "step": 1,
+      "default": 4,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "case_shadow_intensity",
+      "label": "Shadow intensity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 25,
+      "unit": "%"
+    },
+    {
+      "type": "header",
+      "content": "Branding"
+    },
+    {
+      "type": "checkbox",
+      "id": "case_show_branding",
+      "label": "Show branding",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "case_branding_text",
+      "label": "Branding text",
+      "default": "FRESH DAILY ✦ LA CONCHERIA ✦ HECHO CON AMOR"
+    },
+    {
+      "type": "color",
+      "id": "case_branding_color",
+      "label": "Branding color",
+      "default": "#172B4D"
+    },
+    {
+      "type": "range",
+      "id": "case_branding_opacity",
+      "label": "Branding opacity",
+      "min": 10,
+      "max": 100,
+      "step": 5,
+      "default": 50,
+      "unit": "%"
+    },
+    {
+      "type": "select",
+      "id": "case_branding_behavior",
+      "label": "Branding behavior",
+      "options": [
+        {
+          "value": "static",
+          "label": "Static"
+        },
+        {
+          "value": "scroll",
+          "label": "Scrolling"
+        }
+      ],
+      "default": "static"
+    },
+    {
+      "type": "range",
+      "id": "case_scroll_speed",
+      "label": "Scroll Duration",
+      "min": 5,
+      "max": 40,
+      "step": 1,
+      "default": 18,
+      "unit": "s"
+    },
+    {
+      "type": "header",
+      "content": "Effects"
+    },
+    {
+      "type": "checkbox",
+      "id": "case_react_to_product",
+      "label": "React to product color",
+      "default": true
+    }
+  ],
+
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Concha",
+
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "header",
+          "content": "Manual product details"
+        },
+        {
+          "type": "text",
+          "id": "manual_title",
+          "label": "Name",
+          "info": "Used when no accessible Shopify product is selected."
+        },
+        {
+          "type": "textarea",
+          "id": "manual_description",
+          "label": "Description",
+          "info": "Used when no accessible Shopify product is selected."
+        },
+        {
+          "type": "text",
+          "id": "manual_price",
+          "label": "Price",
+          "placeholder": "$4.50",
+          "info": "Optional manual price."
+        },
+        {
+          "type": "url",
+          "id": "manual_link",
+          "label": "Link",
+          "info": "Optional manual details link."
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Showcase image",
+          "info": "Optional. Uses the product featured image if left blank."
+        },
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Eyebrow text",
+          "placeholder": "Fan favorite"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_price",
+          "label": "Show price",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "show_learn_more",
+          "label": "Show details link",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "link_label",
+          "label": "Details link label",
+          "default": "See details"
+        },
+        {
+          "type": "header",
+          "content": "Product styling"
+        },
+        {
+          "type": "range",
+          "id": "image_scale",
+          "label": "Image size",
+          "min": 70,
+          "max": 130,
+          "step": 5,
+          "default": 100,
+          "unit": "%"
+        },
+        {
+          "type": "range",
+          "id": "image_rotation",
+          "label": "Image rotation",
+          "min": -12,
+          "max": 12,
+          "step": 1,
+          "default": 0,
+          "unit": "deg"
+        },
+        {
+          "type": "range",
+          "id": "image_hover_rotation",
+          "label": "Hover rotation",
+          "min": -15,
+          "max": 15,
+          "step": 1,
+          "default": 3,
+          "unit": "deg"
+        },
+        {
+          "type": "range",
+          "id": "image_offset_y",
+          "label": "Vertical position",
+          "min": -80,
+          "max": 80,
+          "step": 5,
+          "default": 0,
+          "unit": "px"
+        },
+        {
+          "type": "range",
+          "id": "image_offset_x",
+          "label": "Horizontal position",
+          "min": -150,
+          "max": 150,
+          "step": 5,
+          "default": 0,
+          "unit": "px"
+        },
+        {
+          "type": "header",
+          "content": "Color glow"
+        },
+        {
+          "type": "color",
+          "id": "accent_color",
+          "label": "Accent color",
+          "default": "#F8D9E8"
+        },
+        {
+          "type": "range",
+          "id": "accent_size",
+          "label": "Color size",
+          "min": 50,
+          "max": 120,
+          "step": 5,
+          "default": 80,
+          "unit": "%"
+        },
+        {
+          "type": "range",
+          "id": "accent_opacity",
+          "label": "Color intensity",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "default": 35,
+          "unit": "%"
+        }
+      ]
+    }
+  ],
+
+  "presets": [
+    {
+      "name": "Concha showcase",
+      "blocks": [
+        {
+          "type": "product"
+        },
+        {
+          "type": "product"
+        },
+        {
+          "type": "product"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
