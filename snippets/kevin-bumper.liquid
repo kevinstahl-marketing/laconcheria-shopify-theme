@@ -1,0 +1,19 @@
+{{ 'kevin-bumper.css' | asset_url | stylesheet_tag }}
+
+<div
+  id="LaConcheriaBumper"
+  class="lc-bumper"
+  aria-hidden="true"
+>
+  <div class="lc-bumper__inner">
+    <div class="lc-bumper__brand">
+      <span class="lc-bumper__eyebrow"> BIENVENIDOS A </span>
+
+      <div class="lc-bumper__name">LA CONCHERIA</div>
+
+      <span class="lc-bumper__tagline"> PAN · CAFÉ · AMOR </span>
+    </div>
+  </div>
+</div>
+
+<script src="{{ 'kevin-bumper.js' | asset_url }}" defer="defer"></script>

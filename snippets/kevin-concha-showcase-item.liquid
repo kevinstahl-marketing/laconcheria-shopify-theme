@@ -1,0 +1,209 @@
+{% comment %}
+  La Concheria — In-Person Concha Showcase Item
+
+  Expected:
+  - block
+  - product
+  - showcase_image
+  - reverse
+{% endcomment %}
+
+<article
+  class="
+    concha-showcase__product
+    {% if reverse %}concha-showcase__product--reverse{% endif %}
+  "
+  style="
+    --concha-accent: {{ block.settings.accent_color }};
+    --concha-accent-opacity: {{ block.settings.accent_opacity | divided_by: 100.0 }};
+    --concha-accent-size: {{ block.settings.accent_size }}%;
+
+    --concha-image-scale: {{ block.settings.image_scale | divided_by: 100.0 }};
+    --concha-image-rotation: {{ block.settings.image_rotation }}deg;
+    --concha-image-hover-rotation: {{ block.settings.image_hover_rotation }}deg;
+    --concha-image-offset-y: {{ block.settings.image_offset_y }}px;
+    --concha-image-offset-x: {{ block.settings.image_offset_x }}px;
+  "
+  {{ block.shopify_attributes }}
+>
+  <!-- PRODUCT IMAGE -->
+
+  <div class="concha-showcase__media">
+    {% if showcase_image != blank %}
+      {{
+        showcase_image
+        | image_url: width: 1200
+        | image_tag:
+          loading: 'lazy',
+          widths: '375, 550, 750, 900, 1100, 1200',
+          sizes: '(min-width: 750px) 50vw, 90vw',
+          class: 'concha-showcase__image'
+      }}
+
+    {% else %}
+      {{ 'product-1' | placeholder_svg_tag: 'concha-showcase__placeholder placeholder-svg' }}
+    {% endif %}
+  </div>
+
+  <!-- PRODUCT INFORMATION -->
+
+  <div class="concha-showcase__content">
+    {% comment %}
+      Each manual field overrides its Shopify product equivalent.
+      If the manual field is blank, use product data instead.
+    {% endcomment %}
+
+    {% if block.settings.eyebrow != blank %}
+      <p class="concha-showcase__eyebrow">
+        {{ block.settings.eyebrow | escape }}
+      </p>
+    {% endif %}
+
+    {% comment %} TITLE {% endcomment %}
+
+    {% if block.settings.manual_title != blank %}
+      <h3 class="concha-showcase__title">
+        {{ block.settings.manual_title | escape }}
+      </h3>
+
+    {% elsif product != blank %}
+      <h3 class="concha-showcase__title">
+        {{ product.title | escape }}
+      </h3>
+    {% endif %}
+
+    {% comment %} DESCRIPTION {% endcomment %}
+
+    {% if block.settings.manual_description != blank %}
+      <div class="concha-showcase__description">
+        {{ block.settings.manual_description | escape }}
+      </div>
+
+    {% elsif product != blank and product.description != blank %}
+      <div class="concha-showcase__description">
+        {{ product.description | strip_html | truncatewords: 25 }}
+      </div>
+    {% endif %}
+
+    {% comment %} PRICE {% endcomment %}
+
+    {% if block.settings.show_price %}
+      {% if block.settings.manual_price != blank %}
+        <div class="concha-showcase__price">
+          {{ block.settings.manual_price | escape }}
+        </div>
+
+      {% elsif product != blank %}
+        <div class="concha-showcase__price">
+          {% render 'price', product: product, use_variant: true, show_badges: false %}
+        </div>
+      {% endif %}
+    {% endif %}
+
+    {% comment %} DETAILS LINK {% endcomment %}
+
+    {% comment %} ACTIONS {% endcomment %}
+
+    {% assign is_in_store_only = false %}
+
+    {% if product != blank and product.metafields.custom.in_store_only.value == true %}
+      {% assign is_in_store_only = true %}
+    {% endif %}
+
+    <div class="concha-showcase__actions">
+      {% comment %}
+        PRODUCT ACTION
+        - In-store product: show status
+        - Normal single-variant product: add directly to cart
+        - Multi-variant product: send customer to choose options
+      {% endcomment %}
+
+      {% if product != blank %}
+        {% if is_in_store_only %}
+        {% elsif product.has_only_default_variant %}
+          {% assign concha_form_id = 'quick-add-concha-' | append: block.id | append: '-' | append: product.id %}
+
+          <product-form data-section-id="{{ section.id }}">
+            {%- form 'product',
+              product,
+              id: concha_form_id,
+              class: 'form',
+              novalidate: 'novalidate',
+              data-type: 'add-to-cart-form'
+            -%}
+              <input
+                type="hidden"
+                name="id"
+                value="{{ product.selected_or_first_available_variant.id }}"
+                class="product-variant-id"
+                {% if product.selected_or_first_available_variant.available == false %}
+                  disabled
+                {% endif %}
+              >
+
+              <button
+                id="{{ concha_form_id }}-submit"
+                type="submit"
+                name="add"
+                class="quick-add__submit button button--full-width {% if settings.card_button_secondary %}button--secondary{% else %}button--primary{% endif %}"
+                aria-live="polite"
+                data-sold-out-message="true"
+                {% if product.selected_or_first_available_variant.available == false %}
+                  disabled
+                {% endif %}
+              >
+                <span>
+                  {% if product.selected_or_first_available_variant.available %}
+                    {{ 'products.product.add_to_cart' | t }}
+                  {% else %}
+                    {{ 'products.product.sold_out' | t }}
+                  {% endif %}
+                </span>
+
+                <span class="sold-out-message hidden">
+                  {{ 'products.product.sold_out' | t }}
+                </span>
+
+                {% render 'loading-spinner' %}
+              </button>
+            {%- endform -%}
+          </product-form>
+
+        {% else %}
+          <a
+            href="{{ product.url }}"
+            class="concha-showcase__add-to-cart"
+          >
+            Choose Options
+          </a>
+        {% endif %}
+      {% endif %}
+
+      {% comment %}
+        DETAILS LINK
+        Manual link overrides the Shopify product URL.
+      {% endcomment %}
+
+      {% if block.settings.show_learn_more %}
+        {% if block.settings.manual_link != blank %}
+          <a
+            href="{{ block.settings.manual_link }}"
+            class="concha-showcase__learn-more"
+          >
+            {{ block.settings.link_label | default: 'See details' | escape }}
+            <span aria-hidden="true">→</span>
+          </a>
+
+        {% elsif product != blank %}
+          <a
+            href="{{ product.url }}"
+            class="concha-showcase__learn-more"
+          >
+            {{ block.settings.link_label | default: 'See details' | escape }}
+            <span aria-hidden="true">→</span>
+          </a>
+        {% endif %}
+      {% endif %}
+    </div>
+  </div>
+</article>
