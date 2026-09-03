@@ -68,7 +68,7 @@
                         {{ section.settings.case_branding_text | escape }}
                       </span>
 
-                      <span class="bakery-case__separator" aria-hidden="true">✦</span>
+                      <span class="bakery-case__separator" aria-hidden="true"> ✦ </span>
                     {% endfor %}
                   </div>
 
@@ -78,7 +78,7 @@
                         {{ section.settings.case_branding_text | escape }}
                       </span>
 
-                      <span class="bakery-case__separator" aria-hidden="true">✦</span>
+                      <span class="bakery-case__separator" aria-hidden="true"> ✦ </span>
                     {% endfor %}
                   </div>
                 </div>
@@ -241,6 +241,37 @@
     </div>
   </div>
 </section>
+<script>
+  (() => {
+    const section = document.getElementById('ConchaShowcase-{{ section.id }}');
+    if (!section) return;
+
+    const stickyCase = section.querySelector('.concha-showcase__sticky-case');
+    const header = document.querySelector('.section-header');
+
+    if (!stickyCase || !header) return;
+
+    const updateCaseOffset = () => {
+      const isSticky = header.classList.contains('shopify-section-header-sticky');
+      const isHidden = header.classList.contains('shopify-section-header-hidden');
+
+      const shouldMakeRoom = isSticky && !isHidden;
+
+      stickyCase.style.setProperty('--concha-header-offset', shouldMakeRoom ? `${header.offsetHeight}px` : '0px');
+    };
+
+    updateCaseOffset();
+
+    const observer = new MutationObserver(updateCaseOffset);
+
+    observer.observe(header, {
+      attributes: true,
+      attributeFilter: ['class'],
+    });
+
+    window.addEventListener('resize', updateCaseOffset);
+  })();
+</script>
 
 {% schema %}
 {

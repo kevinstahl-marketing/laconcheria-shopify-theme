@@ -341,38 +341,9 @@
     align-items: center;
     gap: 2rem;
     margin-top: 3rem;
-    flex-wrap: wrap;
-}
-
-/* Keep every primary action the same size */
-.concha-showcase .concha-showcase__actions product-form,
-.concha-showcase .concha-showcase__add-to-cart {
-    width: 19rem;
-    flex: 0 0 19rem;
-}
-
-.concha-showcase .concha-showcase__actions product-form form {
-    width: 100%;
-}
-
-.concha-showcase .concha-showcase__actions .quick-add__submit,
-.concha-showcase .concha-showcase__add-to-cart {
-    width: 100%;
-    min-width: 0;
-    min-height: 4.8rem;
-    box-sizing: border-box;
-}
-
-/* Choose Options link gets same physical dimensions */
-.concha-showcase .concha-showcase__add-to-cart {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
 }
 
 .concha-showcase .concha-showcase__learn-more {
-    flex: 0 0 auto;
     color: rgb(var(--color-foreground));
     font-weight: 600;
     text-decoration: none;
@@ -493,20 +464,6 @@
 
     .concha-showcase .concha-showcase__actions {
         margin-top: 2rem;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.8rem;
-    }
-
-    .concha-showcase .concha-showcase__actions product-form,
-    .concha-showcase .concha-showcase__add-to-cart {
-        width: 100%;
-        flex: 0 0 auto;
-    }
-
-    .concha-showcase .concha-showcase__learn-more {
-        width: 100%;
-        text-align: center;
     }
 }
 
@@ -555,16 +512,13 @@
 /* ================================
 STICKY BAKERY DISPLAY CASE
  ================================ */
+
 .concha-showcase .concha-showcase__sticky-case {
     position: sticky;
-    top: -2px;
+    top: var(--concha-header-offset, 0px);
     z-index: 2;
 
-    transition: top 0.28s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.shopify-section-header-sticky:not(.shopify-section-header-hidden)~main .concha-showcase .concha-showcase__sticky-case {
-    top: 64px;
+    transition: top 0.15s ease;
 }
 
 /* ================================
@@ -592,6 +546,8 @@ STICKY BAKERY DISPLAY CASE
 
     backdrop-filter: blur(var(--case-glass-blur));
     -webkit-backdrop-filter: blur(var(--case-glass-blur));
+
+    border-top: 1px solid rgba(255, 255, 255, 0.8);
 
     overflow: hidden;
 }
@@ -919,6 +875,7 @@ STICKY BAKERY DISPLAY CASE
 
     background: var(--case-counter-color);
 
+    border-top: 1px solid rgba(255, 255, 255, 0.65);
     border-bottom: 1px solid rgba(60, 40, 20, 0.25);
 
     box-shadow:
@@ -942,16 +899,4 @@ STICKY BAKERY DISPLAY CASE
             transparent);
 
     pointer-events: none;
-}
-
-@media screen and (min-width: 750px) {
-    .concha-showcase .concha-showcase__product:not(.concha-showcase__product--reverse) .concha-showcase__content {
-        max-width: 48rem;
-        margin-right: auto;
-    }
-
-    .concha-showcase .concha-showcase__product--reverse .concha-showcase__content {
-        max-width: 48rem;
-        margin-left: auto;
-    }
 }
