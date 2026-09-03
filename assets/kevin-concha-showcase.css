@@ -555,13 +555,16 @@
 /* ================================
 STICKY BAKERY DISPLAY CASE
  ================================ */
-
 .concha-showcase .concha-showcase__sticky-case {
     position: sticky;
-    top: calc(var(--concha-header-offset, 0px) - 2px);
+    top: -2px;
     z-index: 2;
 
-    transition: top 0.20s ease;
+    transition: top 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.shopify-section-header-sticky:not(.shopify-section-header-hidden)~main .concha-showcase .concha-showcase__sticky-case {
+    top: 64px;
 }
 
 /* ================================
