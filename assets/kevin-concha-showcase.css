@@ -37,7 +37,6 @@
     --showcase-header-align: right;
 }
 
-
 /* Eyebrow */
 
 .concha-showcase .concha-showcase__header .concha-showcase__eyebrow {
@@ -51,7 +50,6 @@
     text-transform: uppercase;
 }
 
-
 /* Heading */
 
 .concha-showcase .concha-showcase__heading {
@@ -60,7 +58,6 @@
     font-size: var(--showcase-heading-size);
     line-height: var(--showcase-heading-line-height);
 }
-
 
 /* Subheading */
 
@@ -75,7 +72,6 @@
     margin-top: 0;
     margin-bottom: 0;
 }
-
 
 /* Optional header link */
 
@@ -104,7 +100,6 @@
     gap: 1rem;
     opacity: 0.72;
 }
-
 
 .concha-showcase .concha-showcase__decoration {
     display: flex;
@@ -140,7 +135,6 @@
 
     object-fit: contain;
 }
-
 
 /* Mobile heading sizing */
 
@@ -412,7 +406,6 @@
         min-height: 38rem;
     }
 
-
     .concha-showcase .concha-showcase__title {
         font-size: clamp(3.2rem, 6vw, 5rem);
     }
@@ -421,7 +414,6 @@
         font-size: 1.5rem;
     }
 }
-
 
 /* ================================
    MOBILE — LEFT / RIGHT + BLEED
@@ -449,7 +441,6 @@
     .concha-showcase .concha-showcase__inner {
         padding-bottom: 4rem;
     }
-
 
     .concha-showcase .concha-showcase__products {
         gap: var(--showcase-row-gap-mobile);
@@ -576,7 +567,6 @@ STICKY BAKERY DISPLAY CASE
     width: 100%;
 }
 
-
 /* ================================
                                                GLASS
                                                ================================ */
@@ -622,7 +612,6 @@ STICKY BAKERY DISPLAY CASE
             rgba(25, 18, 12, calc(var(--case-depth-opacity) * 0.35)));
 }
 
-
 /* ================================
                          LED STRIP
                          ================================ */
@@ -649,7 +638,6 @@ STICKY BAKERY DISPLAY CASE
     display: block !important;
 }
 
-
 /* The physical LED source */
 
 .concha-showcase .bakery-case__led-source {
@@ -673,7 +661,6 @@ STICKY BAKERY DISPLAY CASE
         0 2px 8px var(--case-led-color);
 }
 
-
 /* Light projected downward from LED */
 
 .concha-showcase .bakery-case__led-glow {
@@ -696,7 +683,6 @@ STICKY BAKERY DISPLAY CASE
 
     opacity: 0.9;
 }
-
 
 /* ================================
                          AMBIENT LIGHT SOURCE
@@ -725,7 +711,6 @@ STICKY BAKERY DISPLAY CASE
 
     pointer-events: none;
 }
-
 
 /* ================================
                          COUNTER BOUNCE LIGHT
@@ -805,14 +790,12 @@ STICKY BAKERY DISPLAY CASE
     z-index: 6;
 }
 
-
 /* STATIC */
 
 .concha-showcase .bakery-case__branding--static {
     justify-content: center;
     padding: 0 2rem;
 }
-
 
 /* TEXT */
 
@@ -828,7 +811,6 @@ STICKY BAKERY DISPLAY CASE
     color: var(--case-branding-color);
     opacity: var(--case-branding-opacity);
 }
-
 
 /* SCROLLING TRACK */
 
@@ -847,7 +829,6 @@ STICKY BAKERY DISPLAY CASE
     will-change: transform;
 }
 
-
 /* IDENTICAL REPEATING GROUPS */
 
 .concha-showcase .bakery-case__branding-group {
@@ -855,7 +836,6 @@ STICKY BAKERY DISPLAY CASE
     align-items: center;
     flex-shrink: 0;
 }
-
 
 /* SEPARATOR */
 
@@ -867,7 +847,6 @@ STICKY BAKERY DISPLAY CASE
     color: var(--case-branding-color);
     opacity: var(--case-branding-opacity);
 }
-
 
 /* ANIMATION */
 
@@ -881,7 +860,6 @@ STICKY BAKERY DISPLAY CASE
     }
 }
 
-
 /* ACCESSIBILITY */
 
 @media (prefers-reduced-motion: reduce) {
@@ -889,7 +867,6 @@ STICKY BAKERY DISPLAY CASE
         animation: none;
     }
 }
-
 
 /* ================================
                                DISPLAY CASE BASE
@@ -904,7 +881,6 @@ STICKY BAKERY DISPLAY CASE
     height: var(--case-trim-height);
     background: var(--case-trim-color);
 }
-
 
 /* Main physical shelf */
 
@@ -925,7 +901,6 @@ STICKY BAKERY DISPLAY CASE
         inset 0 2px 2px rgba(255, 255, 255, 0.45),
         0 4px 8px rgba(40, 25, 10, 0.18);
 }
-
 
 /* Underside depth */
 
@@ -954,4 +929,46 @@ STICKY BAKERY DISPLAY CASE
         max-width: 48rem;
         margin-left: auto;
     }
+}
+
+/* ================================
+   BREAKPOINT IMAGE FINE TUNING
+   Size and X/Y only. Existing layout, hover, bleed, and display-case behavior remain unchanged.
+   Horizontal offsets are image-relative: negative = left, positive = right on every row.
+   ================================ */
+
+@media screen and (min-width: 1200px) {
+  .concha-showcase .concha-showcase__image {
+    width: calc(var(--showcase-image-size-large) + var(--concha-item-size-adjust-large));
+    max-width: none;
+    --concha-image-offset-x: calc(var(--concha-image-base-offset-x) + var(--showcase-image-offset-x-large) + var(--concha-item-offset-x-large));
+    --concha-image-offset-y: calc(var(--concha-image-base-offset-y) + var(--showcase-image-offset-y-large) + var(--concha-item-offset-y-large));
+  }
+}
+
+@media screen and (min-width: 990px) and (max-width: 1199px) {
+  .concha-showcase .concha-showcase__image {
+    width: calc(var(--showcase-image-size-desktop) + var(--concha-item-size-adjust-desktop));
+    max-width: none;
+    --concha-image-offset-x: calc(var(--concha-image-base-offset-x) + var(--showcase-image-offset-x-desktop) + var(--concha-item-offset-x-desktop));
+    --concha-image-offset-y: calc(var(--concha-image-base-offset-y) + var(--showcase-image-offset-y-desktop) + var(--concha-item-offset-y-desktop));
+  }
+}
+
+@media screen and (min-width: 750px) and (max-width: 989px) {
+  .concha-showcase .concha-showcase__image {
+    width: calc(var(--showcase-image-size-tablet) + var(--concha-item-size-adjust-tablet));
+    max-width: none;
+    --concha-image-offset-x: calc(var(--concha-image-base-offset-x) + var(--showcase-image-offset-x-tablet) + var(--concha-item-offset-x-tablet));
+    --concha-image-offset-y: calc(var(--concha-image-base-offset-y) + var(--showcase-image-offset-y-tablet) + var(--concha-item-offset-y-tablet));
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .concha-showcase .concha-showcase__image {
+    width: calc(var(--showcase-image-size-phone) + var(--concha-item-size-adjust-phone));
+    max-width: none;
+    --concha-image-offset-x: calc(var(--concha-image-base-offset-x) + var(--showcase-image-offset-x-phone) + var(--concha-item-offset-x-phone));
+    --concha-image-offset-y: calc(var(--concha-image-base-offset-y) + var(--showcase-image-offset-y-phone) + var(--concha-item-offset-y-phone));
+  }
 }
