@@ -34,7 +34,7 @@
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": false,
+            "show_dynamic_checkout": true,
             "show_gift_card_recipient": true
           }
         },
@@ -81,8 +81,9 @@
       "custom_css": [
         ".product__title h1 {font-size: 3.8rem; line-height: 1.05; margin-bottom: 0.75rem;}",
         ".price-item--regular {font-size: 3rem !important; font-weight: 700; color: #fb5e33;}",
-        ".product__description {font-size: 1.6rem; line-height: 1.8; color: rgba(28, 28, 28, 0.75);}",
-        ".product-form__submit {border-radius: 999px; min-height: 5.6rem; font-size: 1.7rem; font-weight: 600;}"
+        ".product__description {font-size: 1.6rem; line-height: 1.8; color: #1c1c1cbf;}",
+        ".product-form__submit {background: #fb5e33 !important; color: white !important; border: 0 !important; border-radius: 999px; min-height: 5.6rem; font-size: 1.7rem; font-weight: 600;}",
+        ".product-form__submit:after {box-shadow: none !important;}"
       ],
       "settings": {
         "enable_sticky_info": true,
@@ -90,12 +91,12 @@
         "media_size": "small",
         "constrain_to_viewport": true,
         "media_fit": "contain",
-        "gallery_layout": "thumbnail_slider",
-        "mobile_thumbnails": "hide",
+        "gallery_layout": "thumbnail",
+        "mobile_thumbnails": "show",
         "media_position": "left",
         "image_zoom": "none",
         "hide_variants": true,
-        "enable_video_looping": false,
+        "enable_video_looping": true,
         "padding_top": 36,
         "padding_bottom": 76
       }
@@ -117,7 +118,7 @@
           "type": "column",
           "settings": {
             "title": "Shipping",
-            "text": "<p><br/>At La Concheria Cafe, we work hard to ensure every order arrives fresh and in excellent condition. Most orders are processed and shipped within 1–2 business days, and customers will receive a confirmation email with tracking information once their package is on its way. To help prevent products from sitting in transit over the weekend, we generally ship Monday through Wednesday, with limited Thursday shipping for Texas destinations. While we carefully coordinate our shipping schedule, delivery times are ultimately determined by the carrier, and occasional delays may occur.<br/><br/></p>",
+            "text": "<p>At La Concheria Cafe, we work hard to ensure every order arrives fresh and in excellent condition. To maintain the quality and freshness of our baked goods, <strong>we ship orders exclusively on Mondays, Tuesdays, and Saturdays.</strong> Orders placed outside these shipping days will be scheduled for the next available shipping day. Customers will receive a confirmation email with tracking information once their package is on its way.</p><p><strong>We do not accommodate requests for specific shipping or delivery dates.</strong> While we carefully coordinate our shipping schedule to ensure freshness, delivery times are ultimately determined by the shipping carrier and cannot be guaranteed. Occasional carrier delays may occur.</p>",
             "link_label": "",
             "link": ""
           }

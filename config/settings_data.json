@@ -145,14 +145,79 @@
     "blocks": {
       "15683396631634586217": {
         "type": "shopify://apps/inbox/blocks/chat/841fc607-4181-4ad1-842d-e24d7f8bad6b",
-        "disabled": true,
+        "disabled": false,
         "settings": {
           "greeting_message": "Got questions? Send us a message and we'll get back to you as soon as possible!",
+          "show_featured_products": true,
+          "featured_products": [
+            "la-concheria-cafe-bundle",
+            "mini-conchitas-9-pack-9-oz",
+            "rosca-de-reyes-concha"
+          ],
+          "background_color": "#fff4e4",
+          "font_color": "#1c1c1c",
+          "agent_invert_activator_colors": true,
           "button_color": "#fb5e33",
-          "button_icon": "no_icon",
-          "button_text": "no_text",
+          "button_icon": "chat_bubble",
+          "button_text": "help",
           "button_horizontal_position": "bottom_left",
-          "button_vertical_position": "lowest"
+          "button_vertical_position": "lowest",
+          "agent_inherit_fonts": true,
+          "agent_font": "system_ui_n4",
+          "agent_font_size": 14,
+          "agent_activator_font_size": 16,
+          "agent_border_radius": 16
+        }
+      },
+      "13768625480086291342": {
+        "type": "shopify://apps/forms/blocks/forms/8744a304-fcb1-4347-b211-bb6b4759a76a",
+        "disabled": false,
+        "settings": {}
+      },
+      "11089864892113081655": {
+        "type": "shopify://apps/tinyseo-seo-speed/blocks/website-json-ld-embed/0605268f-f7c4-4e95-b560-e43df7d59ae4",
+        "disabled": false,
+        "settings": {}
+      },
+      "1360768219604461044": {
+        "type": "shopify://apps/tinyseo-seo-speed/blocks/store-json-ld-embed/0605268f-f7c4-4e95-b560-e43df7d59ae4",
+        "disabled": false,
+        "settings": {}
+      },
+      "14971748854670876780": {
+        "type": "shopify://apps/tinyseo-seo-speed/blocks/product-json-ld-embed/0605268f-f7c4-4e95-b560-e43df7d59ae4",
+        "disabled": false,
+        "settings": {
+          "include_metafields": true,
+          "hide_price": false,
+          "hide_full_price": false,
+          "hide_reviews": false,
+          "excluded_tags": ""
+        }
+      },
+      "1369284949797581044": {
+        "type": "shopify://apps/tinyseo-seo-speed/blocks/collection-json-ld-embed/0605268f-f7c4-4e95-b560-e43df7d59ae4",
+        "disabled": false,
+        "settings": {}
+      },
+      "15154131639906026026": {
+        "type": "shopify://apps/tinyseo-seo-speed/blocks/broken-link-embed/0605268f-f7c4-4e95-b560-e43df7d59ae4",
+        "disabled": false,
+        "settings": {}
+      },
+      "2353461558643755616": {
+        "type": "shopify://apps/tinyseo-seo-speed/blocks/breadcrumbs-json-ld-embed/0605268f-f7c4-4e95-b560-e43df7d59ae4",
+        "disabled": false,
+        "settings": {
+          "include_first_collection": false
+        }
+      },
+      "11104565113590962351": {
+        "type": "shopify://apps/tinyseo-seo-speed/blocks/article-json-ld-embed/0605268f-f7c4-4e95-b560-e43df7d59ae4",
+        "disabled": false,
+        "settings": {
+          "author_name": "",
+          "author_url": ""
         }
       }
     },
@@ -467,6 +532,14 @@
     }
   },
   "platform_customizations": {
-    "custom_css": []
+    "custom_css": [
+      ".concha-showcase {overflow-x: clip !important; overflow-y: visible !important; display: flow-root;}",
+      ".concha-showcase__inner {padding-bottom: 0 !important; display: flow-root;}",
+      ".concha-showcase__content-width {padding-bottom: 6rem;}",
+      ".concha-showcase__sticky-case {position: sticky !important; top: -2px; z-index: 2;}",
+      "@media (max-width: 749px) {.concha-showcase__content-width {padding-bottom: 4rem; } .concha-showcase .concha-showcase__product {grid-template-columns: repeat(2, minmax(0, 1fr)); } .concha-showcase__content, .concha-showcase__actions {min-width: 0; max-width: 100%; box-sizing: border-box; } .concha-showcase__actions {align-items: flex-start; } .concha-showcase__actions product-form {display: block; width: min(20rem, calc(50vw - 5rem)) !important; max-width: 100% !important; } .concha-showcase__actions form, .concha-showcase__actions .quick-add__submit {width: 100% !important; max-width: 100% !important; box-sizing: border-box; } .concha-showcase__learn-more {width: min(20rem, calc(50vw - 5rem)); max-width: 100%; text-align: center; }}",
+      ".collection__view-all .button {font-size: 1.6rem !important; font-weight: 700 !important; min-height: 5.5rem;}",
+      "@media (min-width: 600px) {#collection-template--28185882198260__featured_collection .product-grid {display: grid !important; grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 1000px; margin: auto; gap: 12px; } #collection-template--28185882198260__featured_collection .grid__item {width: auto !important; max-width: none !important; min-width: 0; margin: 0 !important; }}"
+    ]
   }
 }
