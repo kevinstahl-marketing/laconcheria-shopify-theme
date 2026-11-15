@@ -126,6 +126,20 @@
         --showcase-image-size: {{ section.settings.product_image_size }}px;
         --showcase-image-size-mobile: {{ section.settings.product_image_size_mobile }}px;
 
+        --showcase-image-size-large: {{ section.settings.product_image_size }}px;
+        --showcase-image-size-desktop: {{ section.settings.product_image_size_desktop }}px;
+        --showcase-image-size-tablet: {{ section.settings.product_image_size_tablet }}px;
+        --showcase-image-size-phone: {{ section.settings.product_image_size_mobile }}px;
+
+        --showcase-image-offset-x-large: {{ section.settings.product_image_offset_x_large }}px;
+        --showcase-image-offset-y-large: {{ section.settings.product_image_offset_y_large }}px;
+        --showcase-image-offset-x-desktop: {{ section.settings.product_image_offset_x_desktop }}px;
+        --showcase-image-offset-y-desktop: {{ section.settings.product_image_offset_y_desktop }}px;
+        --showcase-image-offset-x-tablet: {{ section.settings.product_image_offset_x_tablet }}px;
+        --showcase-image-offset-y-tablet: {{ section.settings.product_image_offset_y_tablet }}px;
+        --showcase-image-offset-x-phone: {{ section.settings.product_image_offset_x_phone }}px;
+        --showcase-image-offset-y-phone: {{ section.settings.product_image_offset_y_phone }}px;
+
         --showcase-row-min-height: {{ section.settings.product_row_min_height }}px;
         --showcase-mobile-side-margin: {{ section.settings.product_mobile_side_margin }}px;
       "
@@ -247,11 +261,9 @@
   "name": "Concha showcase",
   "tag": "section",
   "class": "section",
-
   "disabled_on": {
     "groups": ["header", "footer"]
   },
-
   "settings": [
     {
       "type": "header",
@@ -554,7 +566,7 @@
     {
       "type": "range",
       "id": "product_image_size",
-      "label": "Product image size — desktop",
+      "label": "Product image size — large desktop",
       "min": 300,
       "max": 700,
       "step": 10,
@@ -564,11 +576,127 @@
     {
       "type": "range",
       "id": "product_image_size_mobile",
-      "label": "Product image size — mobile",
+      "label": "Product image size — phone",
       "min": 180,
       "max": 400,
       "step": 10,
       "default": 320,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "product_image_size_desktop",
+      "label": "Product image size — desktop",
+      "min": 300,
+      "max": 700,
+      "step": 10,
+      "default": 520,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "product_image_size_tablet",
+      "label": "Product image size — tablet",
+      "min": 220,
+      "max": 600,
+      "step": 10,
+      "default": 430,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Image position — large desktop"
+    },
+    {
+      "type": "range",
+      "id": "product_image_offset_x_large",
+      "label": "Horizontal position",
+      "min": -200,
+      "max": 200,
+      "step": 5,
+      "default": 0,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "product_image_offset_y_large",
+      "label": "Vertical position",
+      "min": -150,
+      "max": 150,
+      "step": 5,
+      "default": 0,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Image position — desktop"
+    },
+    {
+      "type": "range",
+      "id": "product_image_offset_x_desktop",
+      "label": "Horizontal position",
+      "min": -200,
+      "max": 200,
+      "step": 5,
+      "default": 0,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "product_image_offset_y_desktop",
+      "label": "Vertical position",
+      "min": -150,
+      "max": 150,
+      "step": 5,
+      "default": 0,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Image position — tablet"
+    },
+    {
+      "type": "range",
+      "id": "product_image_offset_x_tablet",
+      "label": "Horizontal position",
+      "min": -200,
+      "max": 200,
+      "step": 5,
+      "default": 0,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "product_image_offset_y_tablet",
+      "label": "Vertical position",
+      "min": -150,
+      "max": 150,
+      "step": 5,
+      "default": 0,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Image position — phone"
+    },
+    {
+      "type": "range",
+      "id": "product_image_offset_x_phone",
+      "label": "Horizontal position",
+      "min": -200,
+      "max": 200,
+      "step": 5,
+      "default": 0,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "product_image_offset_y_phone",
+      "label": "Vertical position",
+      "min": -150,
+      "max": 150,
+      "step": 5,
+      "default": 0,
       "unit": "px"
     },
     {
@@ -822,12 +950,10 @@
       "default": true
     }
   ],
-
   "blocks": [
     {
       "type": "product",
       "name": "Concha",
-
       "settings": [
         {
           "type": "product",
@@ -949,6 +1075,142 @@
         },
         {
           "type": "header",
+          "content": "Breakpoint fine tuning — large desktop"
+        },
+        {
+          "type": "range",
+          "id": "image_size_adjust_large",
+          "label": "Size adjustment",
+          "min": -250,
+          "max": 250,
+          "step": 5,
+          "default": 0,
+          "unit": "px"
+        },
+        {
+          "type": "range",
+          "id": "image_offset_x_large",
+          "label": "Horizontal adjustment",
+          "min": -200,
+          "max": 200,
+          "step": 5,
+          "default": 0,
+          "unit": "px"
+        },
+        {
+          "type": "range",
+          "id": "image_offset_y_large",
+          "label": "Vertical adjustment",
+          "min": -150,
+          "max": 150,
+          "step": 5,
+          "default": 0,
+          "unit": "px"
+        },
+        {
+          "type": "header",
+          "content": "Breakpoint fine tuning — desktop"
+        },
+        {
+          "type": "range",
+          "id": "image_size_adjust_desktop",
+          "label": "Size adjustment",
+          "min": -250,
+          "max": 250,
+          "step": 5,
+          "default": 0,
+          "unit": "px"
+        },
+        {
+          "type": "range",
+          "id": "image_offset_x_desktop",
+          "label": "Horizontal adjustment",
+          "min": -200,
+          "max": 200,
+          "step": 5,
+          "default": 0,
+          "unit": "px"
+        },
+        {
+          "type": "range",
+          "id": "image_offset_y_desktop",
+          "label": "Vertical adjustment",
+          "min": -150,
+          "max": 150,
+          "step": 5,
+          "default": 0,
+          "unit": "px"
+        },
+        {
+          "type": "header",
+          "content": "Breakpoint fine tuning — tablet"
+        },
+        {
+          "type": "range",
+          "id": "image_size_adjust_tablet",
+          "label": "Size adjustment",
+          "min": -250,
+          "max": 250,
+          "step": 5,
+          "default": 0,
+          "unit": "px"
+        },
+        {
+          "type": "range",
+          "id": "image_offset_x_tablet",
+          "label": "Horizontal adjustment",
+          "min": -200,
+          "max": 200,
+          "step": 5,
+          "default": 0,
+          "unit": "px"
+        },
+        {
+          "type": "range",
+          "id": "image_offset_y_tablet",
+          "label": "Vertical adjustment",
+          "min": -150,
+          "max": 150,
+          "step": 5,
+          "default": 0,
+          "unit": "px"
+        },
+        {
+          "type": "header",
+          "content": "Breakpoint fine tuning — phone"
+        },
+        {
+          "type": "range",
+          "id": "image_size_adjust_phone",
+          "label": "Size adjustment",
+          "min": -250,
+          "max": 250,
+          "step": 5,
+          "default": 0,
+          "unit": "px"
+        },
+        {
+          "type": "range",
+          "id": "image_offset_x_phone",
+          "label": "Horizontal adjustment",
+          "min": -200,
+          "max": 200,
+          "step": 5,
+          "default": 0,
+          "unit": "px"
+        },
+        {
+          "type": "range",
+          "id": "image_offset_y_phone",
+          "label": "Vertical adjustment",
+          "min": -150,
+          "max": 150,
+          "step": 5,
+          "default": 0,
+          "unit": "px"
+        },
+        {
+          "type": "header",
           "content": "Color glow"
         },
         {
@@ -980,7 +1242,6 @@
       ]
     }
   ],
-
   "presets": [
     {
       "name": "Concha showcase",

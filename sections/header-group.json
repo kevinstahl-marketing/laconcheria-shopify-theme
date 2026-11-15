@@ -30,6 +30,32 @@
         "padding_bottom": 0
       }
     },
+    "announcement_bar_PrKUpK": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement_7aHGCr": {
+          "type": "announcement",
+          "settings": {
+            "text": "Authentic Mexican Sweet Bread, Delivered to Your Door",
+            "link": "shopify://collections/shop-all"
+          }
+        }
+      },
+      "block_order": [
+        "announcement_7aHGCr"
+      ],
+      "custom_css": [],
+      "name": "t:sections.announcement-bar.presets.name",
+      "settings": {
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "color_scheme": "scheme-2",
+        "show_line_separator": true,
+        "show_social": false,
+        "enable_country_selector": false,
+        "enable_language_selector": false
+      }
+    },
     "talavera_divider_CkmqcN": {
       "type": "talavera-divider",
       "name": "Talavera divider",
@@ -39,37 +65,11 @@
         "opacity": 100,
         "color_scheme": "scheme-1"
       }
-    },
-    "announcement_bar_a6H83w": {
-      "type": "announcement-bar",
-      "blocks": {
-        "announcement_WYzYrT": {
-          "type": "announcement",
-          "settings": {
-            "text": "Free Shipping on All Orders Over $49.99",
-            "link": "shopify://collections/all"
-          }
-        }
-      },
-      "block_order": [
-        "announcement_WYzYrT"
-      ],
-      "custom_css": [],
-      "name": "t:sections.announcement-bar.presets.name",
-      "settings": {
-        "auto_rotate": true,
-        "change_slides_speed": 5,
-        "color_scheme": "scheme-2",
-        "show_line_separator": true,
-        "show_social": false,
-        "enable_country_selector": false,
-        "enable_language_selector": false
-      }
     }
   },
   "order": [
     "header",
-    "talavera_divider_CkmqcN",
-    "announcement_bar_a6H83w"
+    "announcement_bar_PrKUpK",
+    "talavera_divider_CkmqcN"
   ]
 }

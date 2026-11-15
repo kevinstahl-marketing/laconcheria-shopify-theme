@@ -21,8 +21,26 @@
     --concha-image-scale: {{ block.settings.image_scale | divided_by: 100.0 }};
     --concha-image-rotation: {{ block.settings.image_rotation }}deg;
     --concha-image-hover-rotation: {{ block.settings.image_hover_rotation }}deg;
-    --concha-image-offset-y: {{ block.settings.image_offset_y }}px;
-    --concha-image-offset-x: {{ block.settings.image_offset_x }}px;
+    --concha-image-base-offset-y: {{ block.settings.image_offset_y }}px;
+    --concha-image-base-offset-x: {{ block.settings.image_offset_x }}px;
+    --concha-image-offset-y: var(--concha-image-base-offset-y);
+    --concha-image-offset-x: var(--concha-image-base-offset-x);
+
+    --concha-item-size-adjust-large: {{ block.settings.image_size_adjust_large }}px;
+    --concha-item-offset-x-large: {{ block.settings.image_offset_x_large }}px;
+    --concha-item-offset-y-large: {{ block.settings.image_offset_y_large }}px;
+
+    --concha-item-size-adjust-desktop: {{ block.settings.image_size_adjust_desktop }}px;
+    --concha-item-offset-x-desktop: {{ block.settings.image_offset_x_desktop }}px;
+    --concha-item-offset-y-desktop: {{ block.settings.image_offset_y_desktop }}px;
+
+    --concha-item-size-adjust-tablet: {{ block.settings.image_size_adjust_tablet }}px;
+    --concha-item-offset-x-tablet: {{ block.settings.image_offset_x_tablet }}px;
+    --concha-item-offset-y-tablet: {{ block.settings.image_offset_y_tablet }}px;
+
+    --concha-item-size-adjust-phone: {{ block.settings.image_size_adjust_phone }}px;
+    --concha-item-offset-x-phone: {{ block.settings.image_offset_x_phone }}px;
+    --concha-item-offset-y-phone: {{ block.settings.image_offset_y_phone }}px;
   "
   {{ block.shopify_attributes }}
 >
